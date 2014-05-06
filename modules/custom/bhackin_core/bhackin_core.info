@@ -1,0 +1,112 @@
+name = bHack.in core
+description = Core feature for bHack.in
+core = 7.x
+package = bHack.in
+version = 7.x-1.0
+project = bhackin_core
+
+
+
+; Dependencies
+
+dependencies[] = admin_menu
+dependencies[] = admin_select
+dependencies[] = adminimal_admin_menu
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = dindent
+dependencies[] = email
+dependencies[] = entity
+dependencies[] = entityform
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = googleanalytics
+dependencies[] = jquery_update
+dependencies[] = navbar
+dependencies[] = node
+dependencies[] = number
+dependencies[] = oauthconnector
+dependencies[] = page_manager
+dependencies[] = page_title
+dependencies[] = prepro
+dependencies[] = rules
+dependencies[] = sassy
+dependencies[] = sassy_compass
+dependencies[] = smtp
+dependencies[] = strongarm
+dependencies[] = text
+dependencies[] = vegas
+
+
+
+; Features
+
+features[context][] = servser-dev
+
+features[ctools][] = context:context:3
+features[ctools][] = oauthconnector:oauthconnector:1
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = strongarm:strongarm:1
+
+features[entityform_type][] = register_interest
+
+features[features_api][] = api:2
+
+features[field_base][] = body
+features[field_base][] = field_ri_email
+features[field_base][] = field_ri_name
+features[field_base][] = field_ri_postcode
+features[field_base][] = field_ri_referer
+
+features[field_instance][] = entityform-register_interest-field_ri_email
+features[field_instance][] = entityform-register_interest-field_ri_name
+features[field_instance][] = entityform-register_interest-field_ri_postcode
+features[field_instance][] = entityform-register_interest-field_ri_referer
+features[field_instance][] = node-blog-body
+
+features[filter][] = full_html
+
+features[node][] = blog
+
+features[oauthconnector_provider][] = github
+
+features[page_manager_pages][] = home
+
+features[user_permission][] = access content
+
+features[user_role][] = superuser
+
+features[variable][] = admin_select_defaults
+features[variable][] = admin_theme
+features[variable][] = entityform_block_types
+features[variable][] = googleanalytics_account
+features[variable][] = googleanalytics_cross_domains
+features[variable][] = googleanalytics_js_scope
+features[variable][] = jquery_update_compression_type
+features[variable][] = jquery_update_jquery_admin_version
+features[variable][] = jquery_update_jquery_cdn
+features[variable][] = jquery_update_jquery_version
+features[variable][] = menu_options_blog
+features[variable][] = menu_parent_blog
+features[variable][] = node_options_blog
+features[variable][] = node_preview_blog
+features[variable][] = node_submitted_blog
+features[variable][] = prepro
+features[variable][] = site_frontpage
+features[variable][] = site_mail
+features[variable][] = site_name
+features[variable][] = site_slogan
+features[variable][] = smtp_from
+features[variable][] = smtp_fromname
+features[variable][] = smtp_host
+features[variable][] = smtp_library
+features[variable][] = smtp_on
+features[variable][] = smtp_port
+features[variable][] = smtp_protocol
+features[variable][] = smtp_username
+features[variable][] = theme_bhackin_theme_settings
+features[variable][] = theme_default
+features[variable][] = vegas_delay
+features[variable][] = vegas_fade
+features[variable][] = vegas_pages
+features[variable][] = vegas_visibility

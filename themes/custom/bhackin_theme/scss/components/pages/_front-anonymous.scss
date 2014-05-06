@@ -1,0 +1,100 @@
+@import "compass/css3/transition";
+
+.front-landing {
+  color: $color-white;
+
+  // Main sections.
+  .section-page-landing {
+    &.section-color-grey-dark {
+      background-color: $color-grey-dark;
+    }
+
+    &.section-color-grey-light {
+      background-color: $color-grey-light;
+      color: $color-black;
+    }
+
+    .inner-section {
+      padding: 64px 0;
+
+      .the-box-landing {
+        @include transition(All 0.4s ease);
+
+        background: $color-white;
+        margin: 30px 0;
+        padding: 15px;
+
+        &.border-hover-bottom {
+          border-bottom: 3px solid transparent;
+
+          &:hover {
+            border-bottom-color: #0099cc;
+          }
+        }
+
+        h4 {
+          color: $color-black;
+          font-weight: 300;
+        }
+
+        p {
+          font-size: 15px;
+        }
+
+        .youtube {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #header {
+    padding: 10% 0;
+    text-align: center;
+
+    h2 {
+      @include respond-to(phone) { font-size: 35px; }
+      @include respond-to(tablet) { font-size: 40px; }
+      @include respond-to(desktop, wide) { font-size: 60px; }
+
+      color: $color-white;
+      display: block;
+      font-weight: 300;
+      letter-spacing: -2px;
+      line-height: 100%;
+      padding: 15px 20px;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      color: $color-white;
+      display: block;
+      font-size: 30px;
+      font-weight: 300;
+      line-height: 100%;
+      padding: 10px 20px;
+    }
+
+    p {
+      color: $color-white;
+      display: block;
+      font-size: 18px;
+      margin: 8px 0;
+      padding: 5px 10px;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    .social-icons {
+      display: block;
+      padding: 20px;
+
+      img {
+        margin: 2px;
+        width: 35px;
+      }
+    }
+  }
+}

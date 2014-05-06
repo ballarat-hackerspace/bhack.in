@@ -1,0 +1,13 @@
+name = bHack.in
+description = Installation profile for bHack.in.
+core = 7.x
+
+
+
+; Dependencies
+
+dependencies[] = bhackin_core
+
+
+
+; Profiler

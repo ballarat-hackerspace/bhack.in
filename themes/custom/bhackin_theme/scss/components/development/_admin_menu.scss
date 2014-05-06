@@ -1,0 +1,13 @@
+@include respond-to(phone, tablet) {
+  body.admin-menu {
+    margin-top: 0 !important;
+
+    .navbar-fixed-top {
+      top: 0;
+    }
+  }
+
+  #admin-menu {
+    display: none;
+  }
+}

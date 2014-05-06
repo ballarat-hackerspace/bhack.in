@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Code for the bHack.in core feature.
+ */
+
+/**
+ * Features include.
+ */
+include_once 'bhackin_core.features.inc';
+
+/**
+ * Include additional files.
+ */
+$dirname  = dirname(__FILE__);
+$includes = file_scan_directory("{$dirname}/includes", '/.inc$/');
+foreach (module_list() as $module) {
+  if (isset($includes[$file = "{$dirname}/includes/{$module}.inc"])) {
+    require_once $file;
+  }
+}

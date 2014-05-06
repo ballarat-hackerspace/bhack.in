@@ -1,0 +1,32 @@
+name = bHack.in theme
+description = A Bootstrap Sub-theme for bHack.in
+core = 7.x
+base theme = bootstrap
+
+
+
+; CTools plugins
+
+plugins[panels][layouts] = plugins/layouts
+plugins[panels][styles] = plugins/styles
+
+
+
+; Regions
+
+regions[navigation] = 'Navigation'
+regions[header] = 'Top Bar'
+regions[highlighted] = 'Highlighted'
+regions[help] = 'Help'
+regions[content] = 'Content'
+regions[sidebar_first] = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer] = 'Footer'
+regions[page_top] = 'Page top'
+regions[page_bottom] = 'Page bottom'
+
+
+
+; Stylesheets
+
+stylesheets[all][] = scss/style.scss
