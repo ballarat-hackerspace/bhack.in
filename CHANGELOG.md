@@ -1,7 +1,9 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+* Added admin role variable for Superuser (@Decipher).
 * Added ability for Admin to manually enter 'Register Interest' submissions.
+  (@Decipher).
 
 
 bHack.in 7.x-1.1.1, 2014-05-08

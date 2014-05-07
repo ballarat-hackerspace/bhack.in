@@ -217,6 +217,7 @@ features[variable][] = update_check_disabled
 features[variable][] = update_check_frequency
 features[variable][] = update_notification_threshold
 features[variable][] = update_notify_emails
+features[variable][] = user_admin_role
 features[variable][] = vegas_delay
 features[variable][] = vegas_fade
 features[variable][] = vegas_pages
