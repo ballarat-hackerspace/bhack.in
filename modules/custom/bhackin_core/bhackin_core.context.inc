@@ -45,7 +45,7 @@ function bhackin_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'server-dev';
+  $context->name = 'server-development';
   $context->description = '';
   $context->tag = 'bhack.in::server';
   $context->conditions = array(
@@ -57,6 +57,12 @@ function bhackin_core_context_default_contexts() {
             'op' => '==',
             'negate' => 0,
             'value' => 'bhack.ld',
+          ),
+          1 => array(
+            'name' => 'HTTP_HOST',
+            'op' => '==',
+            'negate' => 0,
+            'value' => 'bhack.dev',
           ),
         ),
         'and_or' => 0,
@@ -109,7 +115,46 @@ function bhackin_core_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('bhack.in::server');
-  $export['server-dev'] = $context;
+  $export['server-development'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'server-production';
+  $context->description = '';
+  $context->tag = 'bhack.in::server';
+  $context->conditions = array(
+    'server_vars' => array(
+      'values' => array(
+        'variables' => array(
+          0 => array(
+            'name' => 'HTTP_HOST',
+            'op' => '==',
+            'negate' => 0,
+            'value' => 'bhack.in',
+          ),
+        ),
+        'and_or' => 0,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'module' => array(
+      'module_filter' => 'disable',
+      'coffee' => 'disable',
+      'context_ui' => 'disable',
+      'field_ui' => 'disable',
+      'rules_admin' => 'disable',
+      'dblog' => 'disable',
+      'reroute_email' => 'disable',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::server');
+  $export['server-production'] = $context;
 
   return $export;
 }

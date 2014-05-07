@@ -39,7 +39,7 @@ function bhackin_core_default_rules_configuration() {
         { "mail" : {
             "to" : "[entityform:field-ri-email]",
             "subject" : "Thank you for your interest",
-            "message" : "Hi [entityform:field-ri-name],\\r\\n\\r\\nThank you for registering your interest in bHack.\\r\\n\\r\\nAn event is run every 1st, 3rd and 5th Tuesday at 7pm at our temporary location, 113 Albert St, Sebastopol.\\r\\n\\r\\nMore information can be found at the bHack Google+ Community: https:\\/\\/plus.bhack.in.\\r\\n\\r\\nCheers,\\r\\nbHack team",
+            "message" : "Hi [entityform:field-ri-name],\\r\\n\\r\\nThank you for registering your interest in bHack.\\r\\n\\r\\nAn event is run every 1st, 3rd and 5th Tuesday at 7pm at our temporary location, 113 Albert St, Sebastopol.\\r\\n\\r\\nMore information can be found at the bHack Google+ Community: http:\\/\\/plus.bhack.in.\\r\\n\\r\\nCheers,\\r\\nbHack team",
             "from" : "no-reply@bhack.in",
             "language" : [ "" ]
           }

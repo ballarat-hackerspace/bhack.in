@@ -51,7 +51,8 @@ dependencies[] = vegas
 ; Features
 
 features[context][] = layout-global
-features[context][] = server-dev
+features[context][] = server-development
+features[context][] = server-production
 
 features[ctools][] = context:context:3
 features[ctools][] = oauthconnector:oauthconnector:1

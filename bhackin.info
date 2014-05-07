@@ -18,7 +18,7 @@ nodes[thanks][body][und][0][value] = "Thank you for registering your interest in
 
 An event is run every 1st, 3rd and 5th Tuesday at 7pm at our temporary location, 113 Albert St, Sebastopol.
 
-More information can be found at the [bHack Google+ Community](https://plus.bhack.in)."
+More information can be found at the [bHack Google+ Community](http://plus.bhack.in)."
 nodes[thanks][body][und][0][format] = markdown
 nodes[thanks][uid] = 1
 

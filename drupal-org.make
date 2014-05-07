@@ -135,6 +135,10 @@ projects[field_group][type] = module
 projects[field_group][subdir] = contrib
 projects[field_group][version] = 1.3
 
+projects[fontawesome][type] = module
+projects[fontawesome][subdir] = contrib
+projects[fontawesome][version] = 1.0
+
 projects[geocoder][type] = module
 projects[geocoder][subdir] = contrib
 projects[geocoder][version] = 1.2
@@ -345,6 +349,9 @@ libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/d
 
 libraries[editarea][download][type] = get
 libraries[editarea][download][url] = http://downloads.sourceforge.net/project/editarea/EditArea/EditArea%200.8.2/editarea_0_8_2.zip?r=&ts=1334742944&use_mirror=internode
+
+libraries[fontawesome][download][type] = get
+libraries[fontawesome][download][url] = http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.0.3.zip
 
 libraries[modernizr][download][type] = get
 libraries[modernizr][download][url] = https://github.com/Modernizr/Modernizr/archive/v2.7.1.zip

@@ -1,0 +1,27 @@
+.social-icons {
+  padding: 20px;
+  display: block;
+
+  .social {
+    border-radius: 30%;
+    margin: 4px;
+    padding: 8px;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+  }
+
+  .ico-github:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
+
+  .ico-google-plus {
+    color: $color-branding-gplus;
+
+    &:hover {
+      background-color: $color-branding-gplus;
+      color: $color-white;
+    }
+  }
+}
