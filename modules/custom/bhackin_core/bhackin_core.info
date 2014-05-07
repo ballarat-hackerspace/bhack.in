@@ -2,7 +2,7 @@ name = bHack.in core
 description = Core feature for bHack.in
 core = 7.x
 package = bHack.in
-version = 7.x-1.0
+version = 7.x-1.1
 project = bhackin_core
 
 
@@ -47,6 +47,7 @@ dependencies[] = pathauto
 dependencies[] = picture
 dependencies[] = prepro
 dependencies[] = rules
+dependencies[] = rules_conditional
 dependencies[] = sassy
 dependencies[] = sassy_compass
 dependencies[] = semantic_panels

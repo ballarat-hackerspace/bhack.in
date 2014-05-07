@@ -1,6 +1,7 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+* Added ability for Admin to manually enter 'Register Interest' submissions.
 
 
 bHack.in 7.x-1.1.1, 2014-05-08
