@@ -1,8 +1,28 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+
+
+bHack.in 7.x-1.1.1, 2014-05-08
+--------------------------------------------------------------------------------
+
+* Added Contextual links and TabsNoMore (@Decipher).
+* Fixed missing SPAN around blog post image (@Decipher).
+* Fixed responsive H2/4 styles for landing page (@Decipher).
+
+
+
+bHack.in 7.x-1.1, 2014-05-07
+--------------------------------------------------------------------------------
+
 * Added and configured Administrator role (@Decipher).
 * Added Blog (@Decipher).
+
+
+
+bHack.in 7.x-1.0, 2014-05-07
+--------------------------------------------------------------------------------
+
 * Added GitHub login (@Decipher).
 * Added server-production environment context (@Decipher).
 * Added basic hook_install() functionality for development (@Decipher).

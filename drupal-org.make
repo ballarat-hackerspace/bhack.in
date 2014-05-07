@@ -300,6 +300,16 @@ projects[styleguide][type] = module
 projects[styleguide][subdir] = contrib
 projects[styleguide][version] = 1.1
 
+projects[tabsnomore][type] = module
+projects[tabsnomore][subdir] = contrib
+projects[tabsnomore][download][type] = git
+projects[tabsnomore][download][url] = http://git.drupal.org/sandbox/onkeltem/1730244.git
+projects[tabsnomore][download][revision] = 03ab4283ba71220c988362357b79ff1a20daab6a
+; Code cleanup - https://drupal.org/comment/8350053#comment-8350053
+projects[tabsnomore][patch][] = https://drupal.org/files/issues/cleanup-2168407-2.patch
+; Remove hook_node_view_alter() - https://drupal.org/comment/8350061#comment-8350061
+projects[tabsnomore][patch][] = https://drupal.org/files/issues/node_view_alter-1784338-2.patch
+
 projects[token][type] = module
 projects[token][subdir] = contrib
 projects[token][version] = 1.5

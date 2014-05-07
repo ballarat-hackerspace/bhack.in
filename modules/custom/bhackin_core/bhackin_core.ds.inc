@@ -36,6 +36,18 @@ function bhackin_core_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_blog_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'image',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'field_blog_tags' => array(
       'formatter_settings' => array(
         'ft' => array(

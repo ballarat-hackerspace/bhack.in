@@ -54,7 +54,7 @@
     text-align: center;
 
     h2 {
-      @include respond-to(phone) { font-size: 35px; }
+      @include respond-to(phone) { font-size: 30px; }
       @include respond-to(tablet) { font-size: 40px; }
       @include respond-to(desktop, wide) { font-size: 60px; }
 
@@ -68,9 +68,11 @@
     }
 
     h4 {
+      @include respond-to(phone) { font-size: 20px; }
+      @include respond-to(tablet, desktop, wide) { font-size: 30px; }
+
       color: $color-white;
       display: block;
-      font-size: 30px;
       font-weight: 300;
       line-height: 100%;
       padding: 10px 20px;

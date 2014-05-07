@@ -48,6 +48,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access contextual links'.
+  $permissions['access contextual links'] = array(
+    'name' => 'access contextual links',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'contextual',
+  );
+
   // Exported permission: 'access navbar'.
   $permissions['access navbar'] = array(
     'name' => 'access navbar',
