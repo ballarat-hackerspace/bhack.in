@@ -24,4 +24,13 @@
       color: $color-white;
     }
   }
+
+  .ico-twitter {
+    color: $color-branding-twitter;
+
+    &:hover {
+      background-color: $color-branding-twitter;
+      color: $color-white;
+    }
+  }
 }

@@ -384,6 +384,73 @@ function bhackin_core_default_page_manager_pages() {
     $display->content['new-833eae70-8913-4f7e-afda-2477bbc48ee3'] = $pane;
     $display->panels['header'][2] = 'new-833eae70-8913-4f7e-afda-2477bbc48ee3';
     $pane = new stdClass();
+    $pane->pid = 'new-11fcdffa-7923-4b92-bb54-63f8fb8fc263';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Social icons',
+      'title' => '',
+      'body' => '<a href="https://github.com/ballarat-hackerspace/" data-toggle="tooltip" title="GitHub"><i class="fa fa-2x fa-github-alt social ico-github"></i></a>
+<a href="https://plus.bhack.in" data-toggle="tooltip" title="Google+"><i class="fa fa-2x fa-google-plus social ico-google-plus"></i></a>
+<a href="https://twitter.com/bHackerspace" data-toggle="tooltip" title="Twitter"><i class="fa fa-2x fa-twitter social ico-twitter"></i></a>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'element_title' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_content' => array(
+          'type' => '0',
+          'class_enable' => 0,
+          'class' => '',
+          'attributes' => array(),
+          'link_enabled' => 0,
+          'link' => array(
+            'path' => '',
+            'class_enable' => 0,
+            'class' => '',
+            'attributes' => array(),
+            'attributes_array' => array(),
+          ),
+          'attributes_array' => array(),
+        ),
+        'element_wrapper' => array(
+          'type' => 'div',
+          'class_enable' => 1,
+          'class' => 'social-icons',
+          'attributes' => array(),
+          'attributes_array' => array(),
+        ),
+        'add_default_classes' => 0,
+      ),
+      'style' => 'semantic_panels',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '11fcdffa-7923-4b92-bb54-63f8fb8fc263';
+    $display->content['new-11fcdffa-7923-4b92-bb54-63f8fb8fc263'] = $pane;
+    $display->panels['header'][3] = 'new-11fcdffa-7923-4b92-bb54-63f8fb8fc263';
+    $pane = new stdClass();
     $pane->pid = 'new-9efed2c7-a87e-40c8-8fc8-a5999ab0b729';
     $pane->panel = 'quote';
     $pane->type = 'custom';

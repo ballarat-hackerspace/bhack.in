@@ -12,6 +12,7 @@ project = bhackin_core
 dependencies[] = admin_menu
 dependencies[] = admin_select
 dependencies[] = adminimal_admin_menu
+dependencies[] = connector
 dependencies[] = context
 dependencies[] = context_module
 dependencies[] = context_server_vars
@@ -24,6 +25,7 @@ dependencies[] = entityform
 dependencies[] = entityform_block
 dependencies[] = features
 dependencies[] = filter
+dependencies[] = fontawesome
 dependencies[] = googleanalytics
 dependencies[] = jquery_update
 dependencies[] = markdown
@@ -51,6 +53,7 @@ dependencies[] = vegas
 ; Features
 
 features[context][] = layout-global
+features[context][] = layout-user_op-anonymous
 features[context][] = server-development
 features[context][] = server-production
 
@@ -96,7 +99,9 @@ features[page_manager_pages][] = home
 
 features[rules_config][] = rules_register_interest
 
+features[user_permission][] = access connections tab
 features[user_permission][] = access content
+features[user_permission][] = connect with oauthconnector_github
 
 features[user_role][] = superuser
 

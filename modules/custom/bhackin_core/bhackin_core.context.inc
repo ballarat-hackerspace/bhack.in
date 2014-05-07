@@ -26,6 +26,12 @@ function bhackin_core_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '0',
+        ),
         'bhackin_core-copyright' => array(
           'module' => 'bhackin_core',
           'delta' => 'copyright',
@@ -41,6 +47,44 @@ function bhackin_core_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('bhack.in::layout');
   $export['layout-global'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'layout-user_op-anonymous';
+  $context->description = '';
+  $context->tag = 'bhack.in::layout';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'user' => 'user',
+        'user/register' => 'user/register',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'anonymous user' => 'anonymous user',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'connector-one_click_block' => array(
+          'module' => 'connector',
+          'delta' => 'one_click_block',
+          'region' => 'content',
+          'weight' => '10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::layout');
+  $export['layout-user_op-anonymous'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
