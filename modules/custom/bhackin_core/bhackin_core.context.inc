@@ -13,7 +13,39 @@ function bhackin_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'servser-dev';
+  $context->name = 'layout-global';
+  $context->description = '';
+  $context->tag = 'bhack.in::layout';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'bhackin_core-copyright' => array(
+          'module' => 'bhackin_core',
+          'delta' => 'copyright',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::layout');
+  $export['layout-global'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'server-dev';
   $context->description = '';
   $context->tag = 'bhack.in::server';
   $context->conditions = array(
@@ -34,8 +66,17 @@ function bhackin_core_context_default_contexts() {
   $context->reactions = array(
     'module' => array(
       'reroute_email' => 'enable',
+      'coffee' => 'enable',
+      'module_filter' => 'enable',
+      'context_ui' => 'enable',
+      'field_ui' => 'enable',
+      'rules_admin' => 'enable',
+      'dblog' => 'enable',
     ),
     'variable' => array(
+      'environment_indicator_overwrite' => 1,
+      'environment_indicator_overwritten_name' => 'Development',
+      'googleanalytics_account' => '',
       'prepro' => array(
         'filetypes' => array(
           'sass' => array(
@@ -57,11 +98,10 @@ function bhackin_core_context_default_contexts() {
             'style' => 'expanded',
           ),
         ),
-        'show_warnings' => TRUE,
+        'show_warnings' => FALSE,
       ),
       'reroute_email_enable' => 1,
       'reroute_email_address' => 'admin@bhack.in',
-      'googleanalytics_account' => '',
     ),
   );
   $context->condition_mode = 0;
@@ -69,7 +109,7 @@ function bhackin_core_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('bhack.in::server');
-  $export['servser-dev'] = $context;
+  $export['server-dev'] = $context;
 
   return $export;
 }

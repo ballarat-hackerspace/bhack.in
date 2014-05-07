@@ -19,3 +19,22 @@ foreach (module_list() as $module) {
     require_once $file;
   }
 }
+
+/**
+ * Transform underscored strings to camelcased strings.
+ *
+ * @param $string
+ *   The underscored string to be transformed.
+ * @param $ucfirst
+ *   A boolean value signifying whether the first characted should be
+ *   uppercased.
+ *
+ * @return
+ *   The transformed string.
+ */
+function bhackin_core_underscores_to_camelcase($string, $ucfirst = FALSE) {
+  $parts = explode('_', $string);
+  $parts = $parts ? array_map('ucfirst', $parts) : array($string);
+  $parts[0] = $ucfirst ? ucfirst($parts[0]) : lcfirst($parts[0]);
+  return implode('', $parts);
+}

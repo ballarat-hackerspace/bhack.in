@@ -42,15 +42,15 @@ function bhackin_core_default_entityform_type() {
       "delete_confirm_msg" : "",
       "page_title_view" : "",
       "preview_page" : 0,
-      "submission_page_title" : "Thanks",
-      "submission_text" : { "value" : "Thanks", "format" : "plain_text" },
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "plain_text" },
       "submission_show_submitted" : 0,
       "submissions_view" : "default",
       "user_submissions_view" : "default",
       "form_status" : "ENTITYFORM_OPEN",
       "roles" : { "1" : "1", "2" : 0, "3" : 0 },
       "resubmit_action" : "new",
-      "redirect_path" : "",
+      "redirect_path" : "thank-you",
       "instruction_pre" : { "value" : "", "format" : "plain_text" },
       "current_type" : "register_interest",
       "enable_block" : 1
@@ -68,6 +68,14 @@ function bhackin_core_node_info() {
   $items = array(
     'blog' => array(
       'name' => t('Blog'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'page' => array(
+      'name' => t('Basic page'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

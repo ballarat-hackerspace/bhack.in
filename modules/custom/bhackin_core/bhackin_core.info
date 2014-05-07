@@ -13,25 +13,34 @@ dependencies[] = admin_menu
 dependencies[] = admin_select
 dependencies[] = adminimal_admin_menu
 dependencies[] = context
+dependencies[] = context_module
+dependencies[] = context_server_vars
+dependencies[] = context_variable
 dependencies[] = ctools
 dependencies[] = dindent
 dependencies[] = email
 dependencies[] = entity
 dependencies[] = entityform
+dependencies[] = entityform_block
 dependencies[] = features
 dependencies[] = filter
 dependencies[] = googleanalytics
 dependencies[] = jquery_update
+dependencies[] = markdown
+dependencies[] = menu
 dependencies[] = navbar
 dependencies[] = node
 dependencies[] = number
 dependencies[] = oauthconnector
 dependencies[] = page_manager
 dependencies[] = page_title
+dependencies[] = panels
+dependencies[] = pathauto
 dependencies[] = prepro
 dependencies[] = rules
 dependencies[] = sassy
 dependencies[] = sassy_compass
+dependencies[] = semantic_panels
 dependencies[] = smtp
 dependencies[] = strongarm
 dependencies[] = text
@@ -41,7 +50,8 @@ dependencies[] = vegas
 
 ; Features
 
-features[context][] = servser-dev
+features[context][] = layout-global
+features[context][] = server-dev
 
 features[ctools][] = context:context:3
 features[ctools][] = oauthconnector:oauthconnector:1
@@ -63,14 +73,27 @@ features[field_instance][] = entityform-register_interest-field_ri_name
 features[field_instance][] = entityform-register_interest-field_ri_postcode
 features[field_instance][] = entityform-register_interest-field_ri_referer
 features[field_instance][] = node-blog-body
+features[field_instance][] = node-page-body
 
 features[filter][] = full_html
+features[filter][] = markdown
+
+features[menu_custom][] = main-menu
+
+features[menu_links][] = main-menu_about:<front>
+features[menu_links][] = main-menu_blog:http://pages.bhack.in/blog/
+features[menu_links][] = main-menu_home:<front>
+features[menu_links][] = main-menu_what:<front>
+features[menu_links][] = main-menu_where:<front>
 
 features[node][] = blog
+features[node][] = page
 
 features[oauthconnector_provider][] = github
 
 features[page_manager_pages][] = home
+
+features[rules_config][] = rules_register_interest
 
 features[user_permission][] = access content
 
@@ -78,6 +101,8 @@ features[user_role][] = superuser
 
 features[variable][] = admin_select_defaults
 features[variable][] = admin_theme
+features[variable][] = cache
+features[variable][] = cache_lifetime
 features[variable][] = entityform_block_types
 features[variable][] = googleanalytics_account
 features[variable][] = googleanalytics_cross_domains
@@ -87,11 +112,23 @@ features[variable][] = jquery_update_jquery_admin_version
 features[variable][] = jquery_update_jquery_cdn
 features[variable][] = jquery_update_jquery_version
 features[variable][] = menu_options_blog
+features[variable][] = menu_options_page
 features[variable][] = menu_parent_blog
+features[variable][] = menu_parent_page
 features[variable][] = node_options_blog
+features[variable][] = node_options_page
 features[variable][] = node_preview_blog
+features[variable][] = node_preview_page
 features[variable][] = node_submitted_blog
+features[variable][] = node_submitted_page
+features[variable][] = page_cache_maximum_age
+features[variable][] = page_compression
+features[variable][] = pathauto_node_blog_pattern
+features[variable][] = pathauto_node_page_pattern
+features[variable][] = pathauto_node_pattern
 features[variable][] = prepro
+features[variable][] = preprocess_css
+features[variable][] = preprocess_js
 features[variable][] = site_frontpage
 features[variable][] = site_mail
 features[variable][] = site_name
@@ -110,3 +147,9 @@ features[variable][] = vegas_delay
 features[variable][] = vegas_fade
 features[variable][] = vegas_pages
 features[variable][] = vegas_visibility
+
+
+
+; Files
+
+files[] = classes/block.inc

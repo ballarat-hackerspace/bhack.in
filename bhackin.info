@@ -10,4 +10,21 @@ dependencies[] = bhackin_core
 
 
 
-; Profiler
+; Profiler - Nodes
+
+nodes[thanks][type] = page
+nodes[thanks][title] = Thank you
+nodes[thanks][body][und][0][value] = "Thank you for registering your interest in **bHack**.
+
+An event is run every 1st, 3rd and 5th Tuesday at 7pm at our temporary location, 113 Albert St, Sebastopol.
+
+More information can be found at the [bHack Google+ Community](https://plus.bhack.in)."
+nodes[thanks][body][und][0][format] = markdown
+nodes[thanks][uid] = 1
+
+
+
+; Profiler - Variables
+
+variables[site_mail] = admin@bhack.in
+variables[site_name] = bHack

@@ -1,6 +1,7 @@
 @import "compass/css3/transition";
 
 .front-landing {
+  background-color: lighten($color-grey-dark, 33%);
   color: $color-white;
 
   // Main sections.
@@ -96,5 +97,10 @@
         width: 35px;
       }
     }
+  }
+
+  .footer {
+    border-top: none;
+    margin-top: 0;
   }
 }
