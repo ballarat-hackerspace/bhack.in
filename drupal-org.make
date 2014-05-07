@@ -17,6 +17,10 @@ projects[adminimal_admin_menu][type] = module
 projects[adminimal_admin_menu][subdir] = contrib
 projects[adminimal_admin_menu][version] = 1.5
 
+projects[breakpoints][type] = module
+projects[breakpoints][subdir] = contrib
+projects[breakpoints][version] = 1.1
+
 projects[coder][type] = module
 projects[coder][subdir] = contrib
 projects[coder][version] = 2.2
@@ -75,11 +79,11 @@ projects[custom_formatters][patch][] = http://drupal.org/files/no_makefile-17212
 
 projects[date][type] = module
 projects[date][subdir] = contrib
-projects[date][version] = 2.6
+projects[date][version] = 2.7
 
 projects[devel][type] = module
 projects[devel][subdir] = contrib
-projects[devel][version] = 1.3
+projects[devel][version] = 1.5
 
 projects[diff][type] = module
 projects[diff][subdir] = contrib
@@ -91,7 +95,7 @@ projects[dindent][version] = 1.0
 
 projects[ds][type] = module
 projects[ds][subdir] = contrib
-projects[ds][version] = 2.4
+projects[ds][version] = 2.6
 ; Remove Block dependencies - https://drupal.org/node/1635906#comment-7672781
 projects[ds][patch][] = https://drupal.org/files/remove_block_dependency-1635906-4.patch
 
@@ -164,7 +168,7 @@ projects[http_client][version] = 2.4
 
 projects[hacked][type] = module
 projects[hacked][subdir] = contrib
-projects[hacked][version] = 2.0-beta4
+projects[hacked][version] = 2.0-beta5
 
 projects[jquery_update][type] = module
 projects[jquery_update][subdir] = contrib
@@ -184,7 +188,7 @@ projects[markdown][version] = 1.2
 
 projects[metatag][type] = module
 projects[metatag][subdir] = contrib
-projects[metatag][version] = 1.0-beta7
+projects[metatag][version] = 1.0-beta9
 
 projects[module_filter][type] = module
 projects[module_filter][subdir] = contrib
@@ -192,9 +196,9 @@ projects[module_filter][version] = 2.0-alpha2
 
 projects[mollom][type] = module
 projects[mollom][subdir] = contrib
-projects[mollom][version] = 2.7
+projects[mollom][version] = 2.10
 ; Exportables - https://drupal.org/node/717874#comment-7538947
-projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
+; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
 projects[navbar][type] = module
 projects[navbar][subdir] = contrib
@@ -224,6 +228,10 @@ projects[pathauto][type] = module
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.2
 
+projects[picture][type] = module
+projects[picture][subdir] = contrib
+projects[picture][version] = 1.2
+
 projects[prepro][type] = module
 projects[prepro][subdir] = contrib
 projects[prepro][download][type] = git
@@ -236,9 +244,9 @@ projects[redirect][subdir] = contrib
 projects[redirect][download][type] = git
 projects[redirect][download][revision] = ad09f6caa52b371736e24c9e8657f2ce41b876ad
 ; fix and/or prevent circular redirects - https://drupal.org/node/1796596#comment-7586945
-; projects[redirect][patch][] = https://drupal.org/files/redirect_loop_detection-1796596-68-reroll.patch
+projects[redirect][patch][] = https://drupal.org/files/redirect_loop_detection-1796596-68-reroll.patch
 ; Merge global redirect functions into Redirect module: https://drupal.org/node/905914#comment-7179456
-; projects[redirect][patch][] = https://drupal.org/files/redirect-global-905914-130.patch
+projects[redirect][patch][] = https://drupal.org/files/redirect-global-905914-130.patch
 
 projects[reroute_email][type] = module
 projects[reroute_email][subdir] = contrib
@@ -276,11 +284,11 @@ projects[smtp][version] = 1.0
 
 projects[speedy][type] = module
 projects[speedy][subdir] = contrib
-projects[speedy][version] = 1.2
+projects[speedy][version] = 1.8
 
 projects[stage_file_proxy][type] = module
 projects[stage_file_proxy][subdir] = contrib
-projects[stage_file_proxy][version] = 1.4
+projects[stage_file_proxy][version] = 1.5
 ; Add Variable module integration - https://drupal.org/node/2183195#comment-8421499
 projects[stage_file_proxy][patch][] = https://drupal.org/files/issues/add_variable_module_integration-2183195-1.patch
 
@@ -312,11 +320,11 @@ projects[views][version] = 3.7
 
 projects[views_bulk_operations][type] = module
 projects[views_bulk_operations][subdir] = contrib
-projects[views_bulk_operations][version] = 3.1
+projects[views_bulk_operations][version] = 3.2
 
 projects[views_cache_bully][type] = module
 projects[views_cache_bully][subdir] = contrib
-projects[views_cache_bully][version] = 3.0
+projects[views_cache_bully][version] = 3.1
 
 projects[which_feature][type] = module
 projects[which_feature][subdir] = contrib
@@ -325,7 +333,7 @@ projects[which_feature][download][revision] = 3ba19eea51aa288806c2c6f6032bcf6a92
 
 projects[xmlsitemap][type] = module
 projects[xmlsitemap][subdir] = contrib
-projects[xmlsitemap][version] = 2.0-rc2
+projects[xmlsitemap][version] = 2.0
 ; Variable module integration - http://drupal.org/node/1989862#comment-7389678
 projects[xmlsitemap][patch][] = http://drupal.org/files/variable_integration-1989862-1.patch
 

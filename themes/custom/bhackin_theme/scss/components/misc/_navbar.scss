@@ -1,0 +1,13 @@
+body.navbar-administration {
+  margin-top: 103px !important;
+}
+
+body.navbar-fixed #navbar-administration.navbar-oriented,
+#navbar-administration.navbar-oriented .navbar-bar,
+#navbar-administration.navbar-oriented .navbar-tray {
+  top: 50px;
+
+  @include respond-to(609) {
+    top: -52px;
+  }
+}

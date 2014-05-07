@@ -18,7 +18,11 @@ dependencies[] = context_module
 dependencies[] = context_server_vars
 dependencies[] = context_variable
 dependencies[] = ctools
+dependencies[] = diff
 dependencies[] = dindent
+dependencies[] = ds
+dependencies[] = ds_extras
+dependencies[] = ds_forms
 dependencies[] = email
 dependencies[] = entity
 dependencies[] = entityform
@@ -27,6 +31,7 @@ dependencies[] = features
 dependencies[] = filter
 dependencies[] = fontawesome
 dependencies[] = googleanalytics
+dependencies[] = image
 dependencies[] = jquery_update
 dependencies[] = markdown
 dependencies[] = menu
@@ -38,35 +43,61 @@ dependencies[] = page_manager
 dependencies[] = page_title
 dependencies[] = panels
 dependencies[] = pathauto
+dependencies[] = picture
 dependencies[] = prepro
 dependencies[] = rules
 dependencies[] = sassy
 dependencies[] = sassy_compass
 dependencies[] = semantic_panels
+dependencies[] = shortcut
 dependencies[] = smtp
 dependencies[] = strongarm
+dependencies[] = system
+dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = vegas
+dependencies[] = views
 
 
 
 ; Features
 
+features[breakpoint_group][] = blog_image
+
+features[breakpoints][] = custom.user.desktop
+features[breakpoints][] = custom.user.tablet
+features[breakpoints][] = custom.user.wide
+
+features[context][] = layout-blog
+features[context][] = layout-blog-post
 features[context][] = layout-global
 features[context][] = layout-user_op-anonymous
 features[context][] = server-development
 features[context][] = server-production
 
+features[ctools][] = breakpoints:default_breakpoint_group:1
+features[ctools][] = breakpoints:default_breakpoints:1
 features[ctools][] = context:context:3
+features[ctools][] = ds:ds:1
 features[ctools][] = oauthconnector:oauthconnector:1
 features[ctools][] = page_manager:pages_default:1
+features[ctools][] = picture:default_picture_mapping:1
 features[ctools][] = strongarm:strongarm:1
+features[ctools][] = views:views_default:3.0
+
+features[ds_field_settings][] = node|blog|default
+features[ds_field_settings][] = node|blog|teaser
+
+features[ds_layout_settings][] = node|blog|default
+features[ds_layout_settings][] = node|blog|teaser
 
 features[entityform_type][] = register_interest
 
 features[features_api][] = api:2
 
 features[field_base][] = body
+features[field_base][] = field_blog_image
+features[field_base][] = field_blog_tags
 features[field_base][] = field_ri_email
 features[field_base][] = field_ri_name
 features[field_base][] = field_ri_postcode
@@ -77,15 +108,21 @@ features[field_instance][] = entityform-register_interest-field_ri_name
 features[field_instance][] = entityform-register_interest-field_ri_postcode
 features[field_instance][] = entityform-register_interest-field_ri_referer
 features[field_instance][] = node-blog-body
+features[field_instance][] = node-blog-field_blog_image
+features[field_instance][] = node-blog-field_blog_tags
 features[field_instance][] = node-page-body
 
 features[filter][] = full_html
 features[filter][] = markdown
 
+features[image][] = blog
+features[image][] = blog_custom_user_desktop_1x
+features[image][] = blog_custom_user_tablet_1x
+features[image][] = blog_custom_user_wide_1x
+
 features[menu_custom][] = main-menu
 
 features[menu_links][] = main-menu_about:<front>
-features[menu_links][] = main-menu_blog:http://pages.bhack.in/blog/
 features[menu_links][] = main-menu_home:<front>
 features[menu_links][] = main-menu_what:<front>
 features[menu_links][] = main-menu_where:<front>
@@ -97,19 +134,42 @@ features[oauthconnector_provider][] = github
 
 features[page_manager_pages][] = home
 
+features[picture_mapping][] = blog_image
+
 features[rules_config][] = rules_register_interest
 
+features[taxonomy][] = tags
+
+features[user_permission][] = access administration menu
+features[user_permission][] = access administration pages
 features[user_permission][] = access connections tab
 features[user_permission][] = access content
+features[user_permission][] = access navbar
 features[user_permission][] = connect with oauthconnector_github
+features[user_permission][] = create blog content
+features[user_permission][] = create page content
+features[user_permission][] = delete any blog content
+features[user_permission][] = delete any page content
+features[user_permission][] = delete own blog content
+features[user_permission][] = delete own page content
+features[user_permission][] = edit any blog content
+features[user_permission][] = edit any page content
+features[user_permission][] = edit own blog content
+features[user_permission][] = edit own page content
+features[user_permission][] = use text format markdown
 
+features[user_role][] = administrator
 features[user_role][] = superuser
 
 features[variable][] = admin_select_defaults
 features[variable][] = admin_theme
 features[variable][] = cache
 features[variable][] = cache_lifetime
+features[variable][] = date_format_short
+features[variable][] = ds_extras_field_template
 features[variable][] = entityform_block_types
+features[variable][] = field_bundle_settings_node__blog
+features[variable][] = ft-default
 features[variable][] = googleanalytics_account
 features[variable][] = googleanalytics_cross_domains
 features[variable][] = googleanalytics_js_scope
@@ -149,10 +209,16 @@ features[variable][] = smtp_protocol
 features[variable][] = smtp_username
 features[variable][] = theme_bhackin_theme_settings
 features[variable][] = theme_default
+features[variable][] = update_check_disabled
+features[variable][] = update_check_frequency
+features[variable][] = update_notification_threshold
+features[variable][] = update_notify_emails
 features[variable][] = vegas_delay
 features[variable][] = vegas_fade
 features[variable][] = vegas_pages
 features[variable][] = vegas_visibility
+
+features[views_view][] = blog
 
 
 

@@ -10,6 +10,12 @@
 function bhackin_core_user_default_roles() {
   $roles = array();
 
+  // Exported role: administrator.
+  $roles['administrator'] = array(
+    'name' => 'administrator',
+    'weight' => 3,
+  );
+
   // Exported role: superuser.
   $roles['superuser'] = array(
     'name' => 'superuser',

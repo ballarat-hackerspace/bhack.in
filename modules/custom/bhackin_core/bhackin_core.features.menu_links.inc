@@ -31,26 +31,6 @@ function bhackin_core_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_blog:http://pages.bhack.in/blog/
-  $menu_links['main-menu_blog:http://pages.bhack.in/blog/'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'http://pages.bhack.in/blog/',
-    'router_path' => '',
-    'link_title' => 'Blog',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'main-menu_blog:http://pages.bhack.in/blog/',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-  );
   // Exported menu link: main-menu_home:<front>
   $menu_links['main-menu_home:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -116,7 +96,6 @@ function bhackin_core_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
-  t('Blog');
   t('Home');
   t('What');
   t('Where');

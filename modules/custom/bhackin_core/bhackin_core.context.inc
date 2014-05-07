@@ -13,6 +13,62 @@ function bhackin_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'layout-blog';
+  $context->description = '';
+  $context->tag = 'bhack.in::layout';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'blog*' => 'blog*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-blog-block_1' => array(
+          'module' => 'views',
+          'delta' => 'blog-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::layout');
+  $export['layout-blog'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'layout-blog-post';
+  $context->description = '';
+  $context->tag = 'bhack.in::layout';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'blog/*' => 'blog/*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'breadcrumb' => 'blog',
+    'menu' => 'blog',
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::layout');
+  $export['layout-blog-post'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'layout-global';
   $context->description = '';
   $context->tag = 'bhack.in::layout';
@@ -122,6 +178,13 @@ function bhackin_core_context_default_contexts() {
       'field_ui' => 'enable',
       'rules_admin' => 'enable',
       'dblog' => 'enable',
+      'views_ui' => 'enable',
+      'stage_file_proxy' => 'enable',
+      'which_feature' => 'enable',
+      'devel' => 'enable',
+      'devel_generate' => 'enable',
+      'syslog' => 'disable',
+      'ds_ui' => 'enable',
     ),
     'variable' => array(
       'environment_indicator_overwrite' => 1,
@@ -152,6 +215,10 @@ function bhackin_core_context_default_contexts() {
       ),
       'reroute_email_enable' => 1,
       'reroute_email_address' => 'admin@bhack.in',
+      'stage_file_proxy_origin' => 'http://bhack.in',
+      'stage_file_proxy_origin_dir' => 'sites/bhack.in/files',
+      'preprocess_css' => 0,
+      'preprocess_js' => 0,
     ),
   );
   $context->condition_mode = 0;
@@ -184,6 +251,7 @@ function bhackin_core_context_default_contexts() {
   );
   $context->reactions = array(
     'module' => array(
+      'syslog' => 'enable',
       'module_filter' => 'disable',
       'coffee' => 'disable',
       'context_ui' => 'disable',
@@ -191,6 +259,12 @@ function bhackin_core_context_default_contexts() {
       'rules_admin' => 'disable',
       'dblog' => 'disable',
       'reroute_email' => 'disable',
+      'views_ui' => 'disable',
+      'stage_file_proxy' => 'disable',
+      'which_feature' => 'disable',
+      'devel' => 'disable',
+      'devel_generate' => 'disable',
+      'ds_ui' => 'disable',
     ),
   );
   $context->condition_mode = 0;

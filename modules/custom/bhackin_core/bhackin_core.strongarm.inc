@@ -15,13 +15,17 @@ function bhackin_core_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_select_defaults';
   $strongarm->value = array(
+    3 => array(
+      'admin_select_default' => 'admin_menu',
+      'weight' => '-3',
+    ),
+    4 => array(
+      'admin_select_default' => 'navbar',
+      'weight' => '-2',
+    ),
     2 => array(
       'admin_select_default' => '',
       'weight' => '-1',
-    ),
-    3 => array(
-      'admin_select_default' => 'admin_menu',
-      'weight' => '-2',
     ),
   );
   $export['admin_select_defaults'] = $strongarm;
@@ -50,11 +54,74 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short';
+  $strongarm->value = 'j M Y - H:i';
+  $export['date_format_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_extras_field_template';
+  $strongarm->value = 1;
+  $export['ds_extras_field_template'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entityform_block_types';
   $strongarm->value = array(
     0 => 'register_interest',
   );
   $export['entityform_block_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__blog';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '2',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '1',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__blog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ft-default';
+  $strongarm->value = 'theme_ds_field_expert';
+  $export['ft-default'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -141,6 +208,7 @@ function bhackin_core_strongarm() {
   $strongarm->name = 'node_options_blog';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_blog'] = $strongarm;
 
@@ -150,6 +218,7 @@ function bhackin_core_strongarm() {
   $strongarm->name = 'node_options_page';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_page'] = $strongarm;
 
@@ -364,9 +433,9 @@ function bhackin_core_strongarm() {
     'favicon_path' => '',
     'favicon_upload' => '',
     'general__active_tab' => 'edit-theme-settings',
-    'bootstrap__active_tab' => 'edit-advanced',
-    'bootstrap_breadcrumb' => '0',
-    'bootstrap_breadcrumb_home' => 0,
+    'bootstrap__active_tab' => 'edit-components',
+    'bootstrap_breadcrumb' => '1',
+    'bootstrap_breadcrumb_home' => 1,
     'bootstrap_breadcrumb_title' => 1,
     'bootstrap_navbar_position' => 'fixed-top',
     'bootstrap_navbar_inverse' => 1,
@@ -424,6 +493,36 @@ function bhackin_core_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'bhackin_theme';
   $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'update_check_disabled';
+  $strongarm->value = 1;
+  $export['update_check_disabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'update_check_frequency';
+  $strongarm->value = '7';
+  $export['update_check_frequency'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'update_notification_threshold';
+  $strongarm->value = 'security';
+  $export['update_notification_threshold'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'update_notify_emails';
+  $strongarm->value = array(
+    0 => 'admin@bhack.in',
+  );
+  $export['update_notify_emails'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

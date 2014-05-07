@@ -21,7 +21,7 @@ function bhackin_core_default_oauthconnector_provider() {
     'signature method' => 'HMAC-SHA1',
     'authentication realm' => '',
     'request token endpoint' => '/oauth/request_token',
-    'authorization scope' => 'repo,user',
+    'authorization scope' => 'public_repo,user,user:email',
     'authorization endpoint' => '/login/oauth/authorize',
     'access token endpoint' => '/login/oauth/access_token',
   );
@@ -33,6 +33,13 @@ function bhackin_core_default_oauthconnector_provider() {
         'field' => 'login',
         'querypath' => FALSE,
         'sync_with_field' => 'name',
+      ),
+      'email' => array(
+        'resource' => 'https://api.github.com/user',
+        'method post' => 0,
+        'field' => 'email',
+        'querypath' => FALSE,
+        'sync_with_field' => 'mail',
       ),
       'name' => array(
         'resource' => 'https://api.github.com/user',

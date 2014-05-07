@@ -25,6 +25,21 @@ function bhackin_core_install() {
     }
   }
   user_save($user);
+
+  // @TODO - Add OAuth Connector 'email' field during install.
+  // @TODO - Make OAuth Connector fields exportable. #2260353
+}
+
+/**
+ * Delete old Blog link, flush caches and revert the feature.
+ */
+function bhackin_core_update_7100() {
+  // Delete old Blog link.
+  menu_link_delete(205);
+
+  // Flush caches and revert the feature.
+  _bhackin_core_flush_revert();
+  features_revert(array('bhackin_core' => array('variable', 'permissions')));
 }
 
 /**
