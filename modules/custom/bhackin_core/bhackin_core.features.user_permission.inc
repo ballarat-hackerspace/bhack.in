@@ -187,5 +187,12 @@ function bhackin_core_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'view bot logs: #bHack'.
+  $permissions['view bot logs: #bHack'] = array(
+    'name' => 'view bot logs: #bHack',
+    'roles' => array(),
+    'module' => 'bot_log',
+  );
+
   return $permissions;
 }

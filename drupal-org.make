@@ -17,6 +17,10 @@ projects[adminimal_admin_menu][type] = module
 projects[adminimal_admin_menu][subdir] = contrib
 projects[adminimal_admin_menu][version] = 1.5
 
+projects[bot][type] = module
+projects[bot][subdir] = contrib
+projects[bot][version] = 1.3
+
 projects[breakpoints][type] = module
 projects[breakpoints][subdir] = contrib
 projects[breakpoints][version] = 1.1

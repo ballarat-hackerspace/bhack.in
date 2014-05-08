@@ -12,6 +12,10 @@ project = bhackin_core
 dependencies[] = admin_menu
 dependencies[] = admin_select
 dependencies[] = adminimal_admin_menu
+dependencies[] = bot
+dependencies[] = bot_log
+dependencies[] = bot_seen
+dependencies[] = bot_tell
 dependencies[] = connector
 dependencies[] = context
 dependencies[] = context_module
@@ -161,12 +165,16 @@ features[user_permission][] = edit any page content
 features[user_permission][] = edit own blog content
 features[user_permission][] = edit own page content
 features[user_permission][] = use text format markdown
+features[user_permission][] = view bot logs: #bHack
 
 features[user_role][] = administrator
 features[user_role][] = superuser
 
 features[variable][] = admin_select_defaults
 features[variable][] = admin_theme
+features[variable][] = bot_channels
+features[variable][] = bot_log_channels
+features[variable][] = bot_nickname
 features[variable][] = cache
 features[variable][] = cache_lifetime
 features[variable][] = date_format_short
