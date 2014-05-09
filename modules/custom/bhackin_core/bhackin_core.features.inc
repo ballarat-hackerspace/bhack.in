@@ -246,6 +246,38 @@ function bhackin_core_image_default_styles() {
 }
 
 /**
+ * Implements hook_default_mailchimp_list().
+ */
+function bhackin_core_default_mailchimp_list() {
+  $items = array();
+  $items['register_interest'] = entity_import('mailchimp_list', '{
+    "name" : "register_interest",
+    "mc_list_id" : "e82fdfd78f",
+    "label" : "Register interest",
+    "description" : "",
+    "settings" : {
+      "roles" : { "1" : 1 },
+      "mergefields" : { "EMAIL" : "mail", "FNAME" : "name", "LNAME" : "" },
+      "mergefields_display" : { "EMAIL" : true, "FNAME" : 0, "LNAME" : 0 },
+      "doublein" : 0,
+      "show_register_form" : 0,
+      "default_register_form_optin" : 0,
+      "show_account_form" : 0,
+      "form_label" : "",
+      "submit_label" : "Submit",
+      "include_interest_groups" : 0,
+      "opt_in_interest_groups" : 0,
+      "interest_groups_label" : "Interest Groups",
+      "cron" : 0,
+      "webhooks" : 0,
+      "allow_anonymous" : 1,
+      "required" : 0
+    }
+  }');
+  return $items;
+}
+
+/**
  * Implements hook_node_info().
  */
 function bhackin_core_node_info() {

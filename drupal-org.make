@@ -186,6 +186,12 @@ projects[link][type] = module
 projects[link][subdir] = contrib
 projects[link][version] = 1.2
 
+projects[mailchimp][type] = module
+projects[mailchimp][subdir] = contrib
+projects[mailchimp][version] = 2.12
+; Add Subscribe e-mail to list rule - https://drupal.org/node/1909306#comment-7034190
+projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_subscribe_email.patch
+
 projects[markdown][type] = module
 projects[markdown][subdir] = contrib
 projects[markdown][version] = 1.2
@@ -378,6 +384,9 @@ libraries[editarea][download][url] = http://downloads.sourceforge.net/project/ed
 
 libraries[fontawesome][download][type] = get
 libraries[fontawesome][download][url] = http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.0.3.zip
+
+libraries[mailchimp][download][type] = get
+libraries[mailchimp][download][url] = http://apidocs.mailchimp.com/api/downloads/mailchimp-api-class.zip
 
 libraries[modernizr][download][type] = get
 libraries[modernizr][download][url] = https://github.com/Modernizr/Modernizr/archive/v2.7.1.zip

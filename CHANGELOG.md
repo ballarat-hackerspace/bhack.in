@@ -1,6 +1,7 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+* Added Mailchimp integration (@Decipher).
 * Added Bot module for IRC integration (@Decipher).
 * Added admin role variable for Superuser (@Decipher).
 * Added ability for Admin to manually enter 'Register Interest' submissions.

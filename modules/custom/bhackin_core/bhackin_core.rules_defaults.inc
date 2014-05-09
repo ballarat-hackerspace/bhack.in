@@ -13,8 +13,8 @@ function bhackin_core_default_rules_configuration() {
       "LABEL" : "Register interest",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "bHack modifications" ],
-      "REQUIRES" : [ "rules", "rules_conditional", "entityform" ],
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "mailchimp_lists", "entityform" ],
       "ON" : { "entityform_insert" : [] },
       "IF" : [
         { "entity_is_of_bundle" : {
@@ -46,6 +46,12 @@ function bhackin_core_default_rules_configuration() {
                     "message" : "Hi [entityform:field-ri-name],\\r\\n\\r\\nThank you for registering your interest in bHack.\\r\\n\\r\\nAn event is run every 1st, 3rd and 5th Tuesday at 7pm at our temporary location, 113 Albert St, Sebastopol.\\r\\n\\r\\nMore information can be found at the bHack Google+ Community: http:\\/\\/plus.bhack.in.\\r\\n\\r\\nCheers,\\r\\nbHack team",
                     "from" : "no-reply@bhack.in",
                     "language" : [ "" ]
+                  }
+                },
+                { "mailchimp_lists_email_subscribe_list" : {
+                    "mail" : [ "entityform:field-ri-email" ],
+                    "list" : "register_interest",
+                    "mergevars" : [ "" ]
                   }
                 }
               ]

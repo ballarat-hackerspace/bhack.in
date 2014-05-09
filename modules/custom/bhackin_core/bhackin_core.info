@@ -39,6 +39,9 @@ dependencies[] = fontawesome
 dependencies[] = googleanalytics
 dependencies[] = image
 dependencies[] = jquery_update
+dependencies[] = mailchimp
+dependencies[] = mailchimp_activity
+dependencies[] = mailchimp_lists
 dependencies[] = markdown
 dependencies[] = menu
 dependencies[] = navbar
@@ -127,6 +130,8 @@ features[image][] = blog
 features[image][] = blog_custom_user_desktop_1x
 features[image][] = blog_custom_user_tablet_1x
 features[image][] = blog_custom_user_wide_1x
+
+features[mailchimp_list][] = register_interest
 
 features[menu_custom][] = main-menu
 
