@@ -1,36 +1,58 @@
+@import "compass/css3/border-radius";
+
 .social-icons {
-  padding: 20px;
   display: block;
+  margin-top: 5px;
 
   .social {
-    border-radius: 30%;
-    margin: 4px;
-    padding: 8px;
+    @include border-radius(30%);
+
+    background-color: $color-grey-dark;
+    color: $color-grey-light;
+    height: 32px;
+    width: 32px;
+    margin-right: 5px;
+    padding: 10px 0;
     text-align: center;
-    background-color: #fff;
-    color: #000;
-  }
-
-  .ico-github:hover {
-    background-color: $color-black;
-    color: $color-white;
-  }
-
-  .ico-google-plus {
-    color: $color-branding-gplus;
 
     &:hover {
-      background-color: $color-branding-gplus;
+      background-color: $color-grey-light;
+      color: $color-grey-dark;
+    }
+  }
+
+  .fa-facebook {
+    &:hover {
+      color: $color-white;
+      background-color: $color-branding-facebook;
+    }
+  }
+
+  .fa-github-alt {
+    &:hover {
+      background-color: $color-grey-light;
+      color: $color-branding-github;
+    }
+  }
+
+  .fa-google-plus {
+    &:hover {
+      background-color: $color-branding-gplus !important;
+      color: $color-white !important;
+    }
+  }
+
+  .fa-linkedin {
+    &:hover {
+      background-color: $color-branding-linkedin;
       color: $color-white;
     }
   }
 
-  .ico-twitter {
-    color: $color-branding-twitter;
-
+  .fa-twitter {
     &:hover {
-      background-color: $color-branding-twitter;
-      color: $color-white;
+      background-color: $color-branding-twitter !important;
+      color: $color-white !important;
     }
   }
 }

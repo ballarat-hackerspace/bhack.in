@@ -91,12 +91,31 @@
     }
 
     .social-icons {
-      display: block;
+      margin: 0;
       padding: 20px;
 
-      img {
-        margin: 2px;
-        width: 35px;
+      .social {
+        background-color: $color-white;
+        color: $color-black;
+        height: auto;
+        margin: 4px;
+        padding: 8px;
+        width: auto;
+
+        &:hover {
+          background-color: $color-black;
+          color: $color-white;
+        }
+      }
+
+      .fa-github-alt {
+        background-color: $color-white;
+        color: $color-branding-github;
+
+        &:hover {
+          background-color: $color-branding-github;
+          color: $color-white;
+        }
       }
     }
   }

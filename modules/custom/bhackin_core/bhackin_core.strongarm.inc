@@ -84,6 +84,18 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'custom_formatters_settings';
+  $strongarm->value = array(
+    'label_prefix' => 0,
+    'label_prefix_value' => 'Custom',
+    'contextual' => '0',
+    'contextual_list' => '',
+  );
+  $export['custom_formatters_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
   $strongarm->value = 'Australia/Melbourne';
   $export['date_default_timezone'] = $strongarm;
@@ -101,6 +113,43 @@ function bhackin_core_strongarm() {
   $strongarm->name = 'date_format_short';
   $strongarm->value = 'j M Y - H:i';
   $export['date_format_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_classes_fields';
+  $strongarm->value = '';
+  $export['ds_classes_fields'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_classes_regions';
+  $strongarm->value = 'col-sm-1
+col-sm-offset-1
+col-sm-2
+col-sm-offset-2
+col-sm-3
+col-sm-offset-3
+col-sm-4
+col-sm-offset-4
+col-sm-5
+col-sm-offset-5
+col-sm-6
+col-sm-offset-6
+col-sm-7
+col-sm-offset-7
+col-sm-8
+col-sm-offset-8
+col-sm-9
+col-sm-offset-9
+col-sm-10
+col-sm-offset-10
+col-sm-11
+col-sm-offset-11
+col-sm-12
+col-sm-offset-12';
+  $export['ds_classes_regions'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -163,6 +212,63 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_user__user';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'admin_select' => array(
+          'weight' => '10',
+        ),
+        'googleanalytics' => array(
+          'weight' => '3',
+        ),
+        'account' => array(
+          'weight' => '-10',
+        ),
+        'timezone' => array(
+          'weight' => '6',
+        ),
+        'picture' => array(
+          'weight' => '5',
+        ),
+      ),
+      'display' => array(
+        'summary' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_user__user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ft-default';
   $strongarm->value = 'theme_ds_field_expert';
   $export['ft-default'] = $strongarm;
@@ -205,6 +311,20 @@ function bhackin_core_strongarm() {
     'error' => 'error',
   );
   $export['googleanalytics_trackmessages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'gravatar_default';
+  $strongarm->value = 'mm';
+  $export['gravatar_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'gravatar_rating';
+  $strongarm->value = 'PG';
+  $export['gravatar_rating'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -350,6 +470,13 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_user_pattern';
+  $strongarm->value = 'members/[user:name-raw]';
+  $export['pathauto_user_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'prepro';
   $strongarm->value = array(
     'filetypes' => array(
@@ -389,6 +516,13 @@ function bhackin_core_strongarm() {
   $strongarm->name = 'preprocess_js';
   $strongarm->value = 1;
   $export['preprocess_js'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'realname_pattern';
+  $strongarm->value = '[user:field-user-name]';
+  $export['realname_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -603,6 +737,13 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'user_pictures';
+  $strongarm->value = 1;
+  $export['user_pictures'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'vegas_delay';
   $strongarm->value = '9000';
   $export['vegas_delay'] = $strongarm;
@@ -627,6 +768,43 @@ function bhackin_core_strongarm() {
   $strongarm->name = 'vegas_visibility';
   $strongarm->value = '1';
   $export['vegas_visibility'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_base_url';
+  $strongarm->value = 'http://bhack.in';
+  $export['xmlsitemap_base_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_engines_engines';
+  $strongarm->value = array(
+    0 => 'bing',
+    1 => 'google',
+  );
+  $export['xmlsitemap_engines_engines'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_menu_link_main-menu';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.8',
+  );
+  $export['xmlsitemap_settings_menu_link_main-menu'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_blog';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.8',
+  );
+  $export['xmlsitemap_settings_node_blog'] = $strongarm;
 
   return $export;
 }

@@ -1,0 +1,48 @@
+.page-members {
+  .view-members {
+    .row {
+      .left {
+        @include respond-to(phone) {
+          float: left;
+        }
+
+        .avatar {
+          @include respond-to-all(tablet, desktop, wide) {
+            img {
+              height: auto;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .right {
+        h2 {
+          margin-top: 0;
+        }
+      }
+
+      border-bottom: 1px solid #E5E5E5;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+//.page-user {
+//  .row {
+//    .left {
+//      img {
+//        height: auto;
+//        width: 100%;
+//        margin-bottom: 20px;
+//      }
+//    }
+//
+//    .right {
+//      h2 {
+//        margin-top: 0;
+//      }
+//    }
+//  }
+//}

@@ -11,7 +11,8 @@ projects[admin_menu][version] = 3.0-rc4
 
 projects[admin_select][type] = module
 projects[admin_select][subdir] = contrib
-projects[admin_select][version] = 1.5
+projects[admin_select][download][type] = git
+projects[admin_select][download][revision] = 8caa5d52638bac8aa74109c3cc6afea28263b60b
 
 projects[adminimal_admin_menu][type] = module
 projects[adminimal_admin_menu][subdir] = contrib
@@ -20,6 +21,10 @@ projects[adminimal_admin_menu][version] = 1.5
 projects[bot][type] = module
 projects[bot][subdir] = contrib
 projects[bot][version] = 1.3
+
+projects[botrules][type] = module
+projects[botrules][subdir] = contrib
+projects[botrules][version] = 1.0-rc1
 
 projects[breakpoints][type] = module
 projects[breakpoints][subdir] = contrib
@@ -166,6 +171,10 @@ projects[google_analytics][download][revision] = d5c42e145e218cf54397b70bb275484
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
 
+projects[gravatar][type] = module
+projects[gravatar][subdir] = contrib
+projects[gravatar][version] = 1.1
+
 projects[http_client][type] = module
 projects[http_client][subdir] = contrib
 projects[http_client][version] = 2.4
@@ -210,6 +219,10 @@ projects[mollom][version] = 2.10
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
+projects[multifield][type] = module
+projects[multifield][subdir] = contrib
+projects[multifield][version] = 1.0-unstable9
+
 projects[navbar][type] = module
 projects[navbar][subdir] = contrib
 projects[navbar][version] = 1.4
@@ -248,6 +261,10 @@ projects[prepro][download][type] = git
 projects[prepro][download][revision] = 306d6c59e539add57c287c60c53dbe755550dd7a
 ; Variable integration - http://drupal.org/node/1958564#comment-7269614
 projects[prepro][patch][] = http://drupal.org/files/variable_integration-1958564-3.patch
+
+projects[realname][type] = module
+projects[realname][subdir] = contrib
+projects[realname][version] = 1.2
 
 projects[redirect][type] = module
 projects[redirect][subdir] = contrib
@@ -291,6 +308,10 @@ projects[securesite][download][revision] = bff993c675dbb678c5b9a45e27586a856cc5d
 projects[semantic_panels][type] = module
 projects[semantic_panels][subdir] = contrib
 projects[semantic_panels][version] = 1.2
+
+projects[site_verify][type] = module
+projects[site_verify][subdir] = contrib
+projects[site_verify][version] = 1.1
 
 projects[smtp][type] = module
 projects[smtp][subdir] = contrib

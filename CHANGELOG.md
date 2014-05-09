@@ -1,11 +1,19 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+
+
+bHack.in 7.x-1.2, 2014-05-09
+--------------------------------------------------------------------------------
+
+* Added Members listing (@Decipher).
 * Added Mailchimp integration (@Decipher).
+* Added Date/Timezone configuration (@Decipher).
 * Added Bot module for IRC integration (@Decipher).
 * Added admin role variable for Superuser (@Decipher).
 * Added ability for Admin to manually enter 'Register Interest' submissions.
   (@Decipher).
+
 
 
 bHack.in 7.x-1.1.1, 2014-05-08

@@ -107,6 +107,32 @@ function bhackin_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'layout-members-profile';
+  $context->description = '';
+  $context->tag = 'bhack.in::layout';
+  $context->conditions = array(
+    'user_page' => array(
+      'values' => array(
+        'view' => 'view',
+      ),
+      'options' => array(
+        'mode' => 'all',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'breadcrumb' => 'members',
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::layout');
+  $export['layout-members-profile'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'layout-user_op-anonymous';
   $context->description = '';
   $context->tag = 'bhack.in::layout';
@@ -183,8 +209,9 @@ function bhackin_core_context_default_contexts() {
       'which_feature' => 'enable',
       'devel' => 'enable',
       'devel_generate' => 'enable',
-      'syslog' => 'disable',
       'ds_ui' => 'enable',
+      'syslog' => 'disable',
+      'xmlsitemap_engines' => 'disable',
     ),
     'variable' => array(
       'environment_indicator_overwrite' => 1,
@@ -265,6 +292,7 @@ function bhackin_core_context_default_contexts() {
       'devel' => 'disable',
       'devel_generate' => 'disable',
       'ds_ui' => 'disable',
+      'xmlsitemap_engines' => 'enable',
     ),
   );
   $context->condition_mode = 0;

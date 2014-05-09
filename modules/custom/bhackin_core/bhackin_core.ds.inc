@@ -128,6 +128,99 @@ function bhackin_core_ds_field_settings_info() {
   );
   $export['node|blog|teaser'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'user|user|full';
+  $ds_fieldsetting->entity_type = 'user';
+  $ds_fieldsetting->bundle = 'user';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'ds_user_picture' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'ds_picture_blog',
+    ),
+    'field_user_irc' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'IRC',
+          'lb-el' => 'strong',
+        ),
+      ),
+    ),
+    'field_user_bio' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb-el' => 'h2',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+    'field_user_links' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'social-icons',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['user|user|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'user|user|teaser';
+  $ds_fieldsetting->entity_type = 'user';
+  $ds_fieldsetting->bundle = 'user';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'name' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'ds_user_picture' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'ds_picture_blog',
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'avatar',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_user_irc' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'IRC',
+          'lb-el' => 'strong',
+        ),
+      ),
+    ),
+    'field_user_links' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'social-icons',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['user|user|teaser'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -206,6 +299,118 @@ function bhackin_core_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|blog|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|full';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'panels-bhackin_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'ds_user_picture',
+        1 => 'field_user_irc',
+        2 => 'field_user_links',
+      ),
+      'right' => array(
+        3 => 'field_user_bio',
+      ),
+    ),
+    'fields' => array(
+      'ds_user_picture' => 'left',
+      'field_user_irc' => 'left',
+      'field_user_links' => 'left',
+      'field_user_bio' => 'right',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+      'left' => array(
+        'col-sm-3' => 'col-sm-3',
+      ),
+      'right' => array(
+        'col-sm-9' => 'col-sm-9',
+      ),
+    ),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['user|user|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|teaser';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'panels-bhackin_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'ds_user_picture',
+      ),
+      'right' => array(
+        1 => 'name',
+        2 => 'field_user_irc',
+        3 => 'field_user_links',
+      ),
+    ),
+    'fields' => array(
+      'ds_user_picture' => 'left',
+      'name' => 'right',
+      'field_user_irc' => 'right',
+      'field_user_links' => 'right',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+      'left' => array(
+        'col-sm-2' => 'col-sm-2',
+      ),
+      'right' => array(
+        'col-sm-10' => 'col-sm-10',
+      ),
+    ),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['user|user|teaser'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function bhackin_core_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'teaser';
+  $ds_view_mode->label = 'Teaser';
+  $ds_view_mode->entities = array(
+    'user' => 'user',
+  );
+  $export['teaser'] = $ds_view_mode;
 
   return $export;
 }

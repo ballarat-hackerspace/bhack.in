@@ -67,6 +67,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'navbar',
   );
 
+  // Exported permission: 'access user profiles'.
+  $permissions['access user profiles'] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'user',
+  );
+
   // Exported permission: 'connect with oauthconnector_github'.
   $permissions['connect with oauthconnector_github'] = array(
     'name' => 'connect with oauthconnector_github',
@@ -174,6 +184,17 @@ function bhackin_core_user_default_permissions() {
       'superuser' => 'superuser',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'use gravatar'.
+  $permissions['use gravatar'] = array(
+    'name' => 'use gravatar',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'gravatar',
   );
 
   // Exported permission: 'use text format markdown'.

@@ -13,7 +13,7 @@ function bhackin_core_install() {
 
   // Assign 'superuser' role to 'admin'.
   // @TODO - Patch Profiler to allow updating of existing users.
-  $user  = user_load(1);
+  $user = user_load(1);
 
   $user->mail = 'admin@bhack.in';
 
@@ -45,9 +45,21 @@ function bhackin_core_update_7100() {
 /**
  * Flush caches and revert the feature.
  */
-function bhackin_core_update_7101() {
+function bhackin_core_update_7102() {
   // Flush caches and revert the feature.
   _bhackin_core_flush_revert();
+
+  // Run a second time due to Multifield oddity.
+  _bhackin_core_flush_revert();
+
+  // Delete existing User aliases.
+  db_delete('url_alias')->condition('source', db_like('user/') . '%', 'LIKE')
+    ->execute();
+
+  // Regenerate User aliases.
+  $uids = db_select('users', 'u')->fields('u', array('uid'))
+    ->condition('uid', '0', '>')->execute()->fetchCol('uid');
+  pathauto_user_update_alias_multiple($uids, 'bulkupdate', array('alias blog' => FALSE));
 }
 
 /**
@@ -57,6 +69,7 @@ function _bhackin_core_flush_revert() {
   $info = system_get_info('module', 'bhackin_core');
   module_enable($info['dependencies']);
 
+  // Forcefully clear Features caches.
   module_load_include('inc', 'features', 'features.export');
   foreach (array_keys($info['features']) as $component) {
     features_get_components($component, NULL, TRUE);
@@ -67,6 +80,11 @@ function _bhackin_core_flush_revert() {
   // Flush Prepro cache.
   cache_clear_all('prepro:map', 'cache_prepro');
 
+  // Flush all standard Drupal caches.
   drupal_flush_all_caches();
-  features_revert(array('bhackin_core' => array()));
+
+  // Revert all feature components except for 'OAuth Connector providers'.
+  unset($info['features']['oauthconnector_provider']);
+  $components = array_keys($info['features']);
+  features_revert(array('bhackin_core' => $components));
 }
