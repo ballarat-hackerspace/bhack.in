@@ -1,8 +1,11 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+* Added Services and Service Rules modules (@Decipher).
+* Added Rules integration to the OAuth module (@Decipher).
 * Updated Dindent module (@Decipher).
 * Updated BOT module and related configuration (@Decipher).
+
 
 
 bHack.in 7.x-1.2, 2014-05-09

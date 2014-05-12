@@ -237,6 +237,8 @@ projects[navbar][version] = 1.4
 projects[oauth][type] = module
 projects[oauth][subdir] = contrib
 projects[oauth][version] = 3.2
+; Rules integration - https://drupal.org/node/1248184#comment-8771229
+projects[oauth][patch][] = https://drupal.org/files/issues/rules_integration-1248184-2.patch
 
 projects[oauthconnector][type] = module
 projects[oauthconnector][subdir] = contrib
@@ -315,6 +317,18 @@ projects[securesite][download][revision] = bff993c675dbb678c5b9a45e27586a856cc5d
 projects[semantic_panels][type] = module
 projects[semantic_panels][subdir] = contrib
 projects[semantic_panels][version] = 1.2
+
+projects[services][type] = module
+projects[services][subdir] = contrib
+projects[services][version] = 3.7
+; Fixed unsigned consumer OAuth - https://drupal.org/node/1526308#comment-8527959
+projects[services][patch][] = https://drupal.org/files/issues/1526308-services_oauth-with-multiple-authentication-oauth-fix-2.patch
+
+projects[services_rules][type] = module
+projects[services_rules][subdir] = contrib
+projects[services_rules][version] = 1.0-beta1
+; Remove 'rules_' prefix and add GET requests - https://drupal.org/node/2063819#comment-7765855
+projects[services_rules][patch][] = https://drupal.org/files/combo-2063819-2067629-3.patch
 
 projects[site_verify][type] = module
 projects[site_verify][subdir] = contrib
