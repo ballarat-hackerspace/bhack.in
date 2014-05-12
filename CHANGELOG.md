@@ -1,6 +1,7 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+* Updated Dindent module (@Decipher).
 * Updated BOT module and related configuration (@Decipher).
 
 

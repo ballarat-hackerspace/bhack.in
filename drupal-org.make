@@ -107,7 +107,7 @@ projects[diff][version] = 3.2
 
 projects[dindent][type] = module
 projects[dindent][subdir] = contrib
-projects[dindent][version] = 1.0
+projects[dindent][version] = 1.1
 
 projects[ds][type] = module
 projects[ds][subdir] = contrib
