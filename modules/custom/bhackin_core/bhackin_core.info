@@ -195,6 +195,7 @@ features[page_manager_pages][] = home
 
 features[picture_mapping][] = blog_image
 
+features[rules_config][] = rules_blog_new
 features[rules_config][] = rules_register_interest
 
 features[taxonomy][] = tags

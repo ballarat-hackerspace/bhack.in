@@ -9,6 +9,39 @@
  */
 function bhackin_core_default_rules_configuration() {
   $items = array();
+  $items['rules_blog_new'] = entity_import('rules_config', '{ "rules_blog_new" : {
+      "LABEL" : "Node: New blog post",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional", "botrules" ],
+      "ON" : { "node_insert--blog" : { "bundle" : "blog" } },
+      "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "text", "value" : "[node:author:name]" },
+            "PROVIDE" : { "variable_added" : { "name" : "Name" } }
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is_empty" : { "data" : [ "node:author:field-user-irc" ] } },
+              "DO" : [
+                { "data_set" : { "data" : [ "name" ], "value" : [ "node:author:field-user-irc" ] } }
+              ]
+            }
+          ]
+        },
+        { "variable_add" : {
+            "USING" : {
+              "type" : "text",
+              "value" : "[bHack.in] New blog post by [name:value]: [node:title] - [node:url]"
+            },
+            "PROVIDE" : { "variable_added" : { "message" : "Message" } }
+          }
+        },
+        { "botrules_action_message" : { "target" : "#bHack", "text" : [ "message" ] } }
+      ]
+    }
+  }');
   $items['rules_register_interest'] = entity_import('rules_config', '{ "rules_register_interest" : {
       "LABEL" : "Register interest",
       "PLUGIN" : "reaction rule",
