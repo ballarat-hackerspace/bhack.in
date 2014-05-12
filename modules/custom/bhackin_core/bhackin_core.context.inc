@@ -214,6 +214,9 @@ function bhackin_core_context_default_contexts() {
       'xmlsitemap_engines' => 'disable',
     ),
     'variable' => array(
+      'bot_channels' => '#bHack-dev',
+      'bot_nickname' => 'bOTHack-dev',
+      'bot_password' => '',
       'environment_indicator_overwrite' => 1,
       'environment_indicator_overwritten_name' => 'Development',
       'googleanalytics_account' => '',

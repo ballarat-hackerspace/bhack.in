@@ -1,6 +1,7 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+* Updated BOT module and related configuration (@Decipher).
 
 
 bHack.in 7.x-1.2, 2014-05-09

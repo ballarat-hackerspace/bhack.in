@@ -20,11 +20,18 @@ projects[adminimal_admin_menu][version] = 1.5
 
 projects[bot][type] = module
 projects[bot][subdir] = contrib
-projects[bot][version] = 1.3
+projects[bot][download][type] = git
+projects[bot][download][revision] = d0e10c65616f267543e717addc17422979f83bd2
+; Allow Net_SmartIRC to be a Library - https://drupal.org/node/1944086#comment-7227558
+projects[bot][patch][] = https://drupal.org/files/bot_0.patch
+; Add variable module integration - https://drupal.org/node/2264785#comment-8770721
+projects[bot][patch][] = https://drupal.org/files/issues/variable_integration-2264785-1.patch
 
 projects[botrules][type] = module
 projects[botrules][subdir] = contrib
 projects[botrules][version] = 1.0-rc1
+; Fixed PARTing of mixed case channels - https://drupal.org/node/2263641#comment-8767617
+projects[botrules][patch][] = https://drupal.org/files/issues/part_mixed_case_fix-2263641-1.patch
 
 projects[breakpoints][type] = module
 projects[breakpoints][subdir] = contrib
@@ -411,6 +418,9 @@ libraries[mailchimp][download][url] = http://apidocs.mailchimp.com/api/downloads
 
 libraries[modernizr][download][type] = get
 libraries[modernizr][download][url] = https://github.com/Modernizr/Modernizr/archive/v2.7.1.zip
+
+libraries[Net_SmartIRC][download][type] = get
+libraries[Net_SmartIRC][download][url] = http://download.pear.php.net/package/Net_SmartIRC-1.0.2.tgz
 
 libraries[phpsass][download][type] = git
 libraries[phpsass][download][url] = https://github.com/Decipher/phpsass.git

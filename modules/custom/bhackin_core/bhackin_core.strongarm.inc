@@ -63,6 +63,27 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'bot_server';
+  $strongarm->value = 'bradbury.freenode.net';
+  $export['bot_server'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'bot_server_port';
+  $strongarm->value = '6665';
+  $export['bot_server_port'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'bot_smartirc_path';
+  $strongarm->value = 'profiles/bhackin/libraries/Net_SmartIRC/Net_SmartIRC-1.0.2';
+  $export['bot_smartirc_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'cache';
   $strongarm->value = 1;
   $export['cache'] = $strongarm;
