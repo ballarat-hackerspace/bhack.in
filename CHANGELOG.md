@@ -4,6 +4,7 @@ bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 * Added Rule to post new Blog posts to IRC (@Decipher).
 * Added Services and Service Rules modules (@Decipher).
 * Added Rules integration to the OAuth module (@Decipher).
+* Fixed Font-Awesome download URL (@Decipher).
 * Updated Dindent module (@Decipher).
 * Updated BOT module and related configuration (@Decipher).
 

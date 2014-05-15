@@ -425,7 +425,7 @@ libraries[editarea][download][type] = get
 libraries[editarea][download][url] = http://downloads.sourceforge.net/project/editarea/EditArea/EditArea%200.8.2/editarea_0_8_2.zip?r=&ts=1334742944&use_mirror=internode
 
 libraries[fontawesome][download][type] = get
-libraries[fontawesome][download][url] = http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.0.3.zip
+libraries[fontawesome][download][url] = https://github.com/FortAwesome/Font-Awesome/archive/v4.1.0.zip
 
 libraries[mailchimp][download][type] = get
 libraries[mailchimp][download][url] = http://apidocs.mailchimp.com/api/downloads/mailchimp-api-class.zip
