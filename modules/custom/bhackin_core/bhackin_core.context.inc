@@ -210,6 +210,7 @@ function bhackin_core_context_default_contexts() {
       'devel' => 'enable',
       'devel_generate' => 'enable',
       'ds_ui' => 'enable',
+      'variable_admin' => 'enable',
       'syslog' => 'disable',
       'xmlsitemap_engines' => 'disable',
     ),
@@ -282,6 +283,7 @@ function bhackin_core_context_default_contexts() {
   $context->reactions = array(
     'module' => array(
       'syslog' => 'enable',
+      'xmlsitemap_engines' => 'enable',
       'module_filter' => 'disable',
       'coffee' => 'disable',
       'context_ui' => 'disable',
@@ -295,7 +297,7 @@ function bhackin_core_context_default_contexts() {
       'devel' => 'disable',
       'devel_generate' => 'disable',
       'ds_ui' => 'disable',
-      'xmlsitemap_engines' => 'enable',
+      'variable_admin' => 'disable',
     ),
   );
   $context->condition_mode = 0;

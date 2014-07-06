@@ -17,15 +17,19 @@ function bhackin_core_strongarm() {
   $strongarm->value = array(
     3 => array(
       'admin_select_default' => 'admin_menu',
-      'weight' => '-3',
+      'weight' => '-4',
     ),
     4 => array(
       'admin_select_default' => 'navbar',
-      'weight' => '-2',
+      'weight' => '-3',
     ),
     2 => array(
       'admin_select_default' => '',
       'weight' => '-1',
+    ),
+    5 => array(
+      'admin_select_default' => 'navbar',
+      'weight' => '-2',
     ),
   );
   $export['admin_select_defaults'] = $strongarm;
