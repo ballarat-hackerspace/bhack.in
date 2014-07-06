@@ -16,4 +16,4 @@ projects[drupal][download][tag] = 7.28
 projects[bhackin][type] = profile
 projects[bhackin][download][type] = git
 projects[bhackin][download][url] = https://github.com/ballarat-hackerspace/bhack.in.git
-projects[bhackin][download][branch] = development
+projects[bhackin][download][branch] = 7.x-1.x
