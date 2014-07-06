@@ -12,6 +12,7 @@ $plugin = array(
   'css'      => 'bhackin_landing.css',
   'regions'  => array(
     'header' => t('Header'),
+    'blog'   => t('Blog'),
     'about'  => t('About'),
     'what'   => t('What'),
     'quote'  => t('Quote'),

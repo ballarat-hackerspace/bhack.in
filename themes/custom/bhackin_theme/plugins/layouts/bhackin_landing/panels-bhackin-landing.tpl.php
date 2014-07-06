@@ -20,7 +20,15 @@
   </div>
 </div>
 
-<div class="section-page-landing section-color-grey-light" id="about">
+<div class="section-page-landing section-color-grey-light" id="blog">
+  <div class="inner-section">
+    <div class="container">
+      <?php print $content['blog']; ?>
+    </div>
+  </div>
+</div>
+
+<div class="section-page-landing section-color-grey-dark" id="about">
   <div class="inner-section">
     <div class="container">
       <?php print $content['about']; ?>
@@ -28,7 +36,7 @@
   </div>
 </div>
 
-<div class="section-page-landing section-color-grey-dark" id="what">
+<div class="section-page-landing section-color-grey-light" id="what">
   <div class="inner-section">
     <div class="container">
       <?php print $content['what']; ?>

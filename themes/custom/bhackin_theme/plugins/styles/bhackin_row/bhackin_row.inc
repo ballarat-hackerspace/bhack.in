@@ -39,6 +39,9 @@ function theme_panels_bhackin_row_render_pane($vars) {
     $vars['content']->title = "<h1 class='text-center'>{$vars['content']->title}</h1>";
   }
 
+  if (is_array($vars['content']->content)) {
+    $vars['content']->content = render($vars['content']->content);
+  }
   return "<div class='row'><div class='{$class}'>{$vars['content']->title}{$vars['content']->content}</div></div>";
 }
 
