@@ -35,7 +35,7 @@ projects[botrules][patch][] = https://drupal.org/files/issues/part_mixed_case_fi
 
 projects[breakpoints][type] = module
 projects[breakpoints][subdir] = contrib
-projects[breakpoints][version] = 1.1
+projects[breakpoints][version] = 1.2
 
 projects[coder][type] = module
 projects[coder][subdir] = contrib
@@ -133,9 +133,7 @@ projects[entityform][version] = 2.0-beta3
 
 projects[entityform_block][type] = module
 projects[entityform_block][subdir] = contrib
-projects[entityform_block][version] = 1.0
-; Fixed undefined index - https://drupal.org/node/2066903#comment-8693015
-projects[entityform_block][patch][] = https://drupal.org/files/issues/entityform_block.2066903.undefined_index.8.D7.patch
+projects[entityform_block][version] = 1.1
 
 projects[entityreference][type] = module
 projects[entityreference][subdir] = contrib
@@ -143,7 +141,7 @@ projects[entityreference][version] = 1.1
 
 projects[environment_indicator][type] = module
 projects[environment_indicator][subdir] = contrib
-projects[environment_indicator][version] = 2.3
+projects[environment_indicator][version] = 2.5
 
 projects[features][type] = module
 projects[features][subdir] = contrib
@@ -153,7 +151,7 @@ projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-21557
 
 projects[field_group][type] = module
 projects[field_group][subdir] = contrib
-projects[field_group][version] = 1.3
+projects[field_group][version] = 1.4
 
 projects[fontawesome][type] = module
 projects[fontawesome][subdir] = contrib
@@ -262,7 +260,7 @@ projects[pathauto][version] = 1.2
 
 projects[picture][type] = module
 projects[picture][subdir] = contrib
-projects[picture][version] = 1.2
+projects[picture][version] = 1.5
 
 projects[prepro][type] = module
 projects[prepro][subdir] = contrib
@@ -382,7 +380,7 @@ projects[vegas][patch][] = https://drupal.org/files/issues/page_control-1929888-
 
 projects[views][type] = module
 projects[views][subdir] = contrib
-projects[views][version] = 3.7
+projects[views][version] = 3.8
 
 projects[views_bulk_operations][type] = module
 projects[views_bulk_operations][subdir] = contrib
@@ -417,6 +415,12 @@ projects[bootstrap][version] = 3.0
 
 libraries[backbone][download][type] = get
 libraries[backbone][download][url] = https://github.com/jashkenas/backbone/archive/1.1.2.zip
+
+libraries[bootstrap][download][type] = get
+libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.2.zip
+libraries[bootstrap][directory_name] = bootstrap
+libraries[bootstrap][destination] = themes/contrib/bootstrap
+libraries[bootstrap][overwrite] = TRUE
 
 libraries[dindent][download][type] = get
 libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/dindent/master/src/Parser.php
