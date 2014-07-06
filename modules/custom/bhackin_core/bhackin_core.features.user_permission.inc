@@ -77,6 +77,15 @@ function bhackin_core_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer nodes'.
+  $permissions['administer nodes'] = array(
+    'name' => 'administer nodes',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'connect with oauthconnector_github'.
   $permissions['connect with oauthconnector_github'] = array(
     'name' => 'connect with oauthconnector_github',

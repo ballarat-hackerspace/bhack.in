@@ -11,6 +11,245 @@ function bhackin_core_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'content';
+  $page->task = 'page';
+  $page->admin_title = 'Admin: Content';
+  $page->admin_description = '';
+  $page->path = 'admin/content';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => TRUE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_content_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'content';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Superuser',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Find content';
+  $display->uuid = '7ea6ff58-1b93-4ac8-a572-64439d07032a';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-787be360-781a-48a4-b70e-b825c6c90053';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'views-admin_content-block_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '787be360-781a-48a4-b70e-b825c6c90053';
+    $display->content['new-787be360-781a-48a4-b70e-b825c6c90053'] = $pane;
+    $display->panels['middle'][0] = 'new-787be360-781a-48a4-b70e-b825c6c90053';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_content_panel_context_2';
+  $handler->task = 'page';
+  $handler->subtask = 'content';
+  $handler->handler = 'panel_context';
+  $handler->weight = 1;
+  $handler->conf = array(
+    'title' => 'Administrator',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 4,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Find content';
+  $display->uuid = '5cea34a3-6e79-4d1a-944e-8b8679a22682';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-0f20cfda-45e3-4c85-ad0e-32da3943f941';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'views-admin_content-block_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0f20cfda-45e3-4c85-ad0e-32da3943f941';
+    $display->content['new-0f20cfda-45e3-4c85-ad0e-32da3943f941'] = $pane;
+    $display->panels['middle'][0] = 'new-0f20cfda-45e3-4c85-ad0e-32da3943f941';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-0f20cfda-45e3-4c85-ad0e-32da3943f941';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_content_panel_context_3';
+  $handler->task = 'page';
+  $handler->subtask = 'content';
+  $handler->handler = 'panel_context';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'Member',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 5,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Find content';
+  $display->uuid = '5cea34a3-6e79-4d1a-944e-8b8679a22682';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-7e739bf3-3102-4950-b421-d7fded0d99e3';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'views-admin_content-block_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7e739bf3-3102-4950-b421-d7fded0d99e3';
+    $display->content['new-7e739bf3-3102-4950-b421-d7fded0d99e3'] = $pane;
+    $display->panels['middle'][0] = 'new-7e739bf3-3102-4950-b421-d7fded0d99e3';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['content'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'home';
   $page->task = 'page';
   $page->admin_title = 'Home';
@@ -175,6 +414,7 @@ function bhackin_core_default_page_manager_pages() {
       'default' => NULL,
       'header' => NULL,
       'what' => NULL,
+      'blog' => NULL,
     ),
     'about' => array(
       'style' => 'naked',
@@ -193,6 +433,9 @@ function bhackin_core_default_page_manager_pages() {
     ),
     'style' => 'naked',
     'header' => array(
+      'style' => 'naked',
+    ),
+    'blog' => array(
       'style' => 'naked',
     ),
   );
@@ -270,6 +513,32 @@ function bhackin_core_default_page_manager_pages() {
     $pane->uuid = 'd568b89a-9161-4351-a905-22fc588d3a59';
     $display->content['new-d568b89a-9161-4351-a905-22fc588d3a59'] = $pane;
     $display->panels['about'][1] = 'new-d568b89a-9161-4351-a905-22fc588d3a59';
+    $pane = new stdClass();
+    $pane->pid = 'new-66a25b61-0b93-4e4f-a20b-53f1d936f359';
+    $pane->panel = 'blog';
+    $pane->type = 'block';
+    $pane->subtype = 'views-blog-block_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'column_size' => '12',
+        'offset_size' => '0',
+      ),
+      'style' => 'bhackin_row',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '66a25b61-0b93-4e4f-a20b-53f1d936f359';
+    $display->content['new-66a25b61-0b93-4e4f-a20b-53f1d936f359'] = $pane;
+    $display->panels['blog'][0] = 'new-66a25b61-0b93-4e4f-a20b-53f1d936f359';
     $pane = new stdClass();
     $pane->pid = 'new-ba3b178a-b600-4001-af60-33b62dced1e4';
     $pane->panel = 'header';

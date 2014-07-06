@@ -93,9 +93,96 @@ function bhackin_core_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
+  // Exported menu link: menu-administration_add-content:node/add
+  $menu_links['menu-administration_add-content:node/add'] = array(
+    'menu_name' => 'menu-administration',
+    'link_path' => 'node/add',
+    'router_path' => 'node/add',
+    'link_title' => 'Add content',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-administration_add-content:node/add',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'menu-administration_content:admin/content',
+  );
+  // Exported menu link: menu-administration_basic-page:node/add/page
+  $menu_links['menu-administration_basic-page:node/add/page'] = array(
+    'menu_name' => 'menu-administration',
+    'link_path' => 'node/add/page',
+    'router_path' => 'node/add/page',
+    'link_title' => 'Basic page',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-administration_basic-page:node/add/page',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'menu-administration_add-content:node/add',
+  );
+  // Exported menu link: menu-administration_blog-post:node/add/blog
+  $menu_links['menu-administration_blog-post:node/add/blog'] = array(
+    'menu_name' => 'menu-administration',
+    'link_path' => 'node/add/blog',
+    'router_path' => 'node/add/blog',
+    'link_title' => 'Blog post',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-administration_blog-post:node/add/blog',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'menu-administration_add-content:node/add',
+  );
+  // Exported menu link: menu-administration_content:admin/content
+  $menu_links['menu-administration_content:admin/content'] = array(
+    'menu_name' => 'menu-administration',
+    'link_path' => 'admin/content',
+    'router_path' => 'admin/content',
+    'link_title' => 'Content',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-administration_content:admin/content',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
+  t('Add content');
+  t('Basic page');
+  t('Blog post');
+  t('Content');
   t('Home');
   t('What');
   t('Where');
