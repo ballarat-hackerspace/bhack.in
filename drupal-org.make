@@ -27,7 +27,9 @@ projects[botrules][version] = 1.0-rc1
 ; Fixed PARTing of mixed case channels - https://drupal.org/node/2263641#comment-8767617
 projects[botrules][patch][] = https://drupal.org/files/issues/part_mixed_case_fix-2263641-1.patch
 
-projects[breakpoints][version] = 1.2
+projects[breakpoints][type] = module
+projects[breakpoints][subdir] = contrib
+projects[breakpoints][version] = 1.3
 
 projects[coder][version] = 2.2
 
@@ -59,13 +61,17 @@ projects[custom_formatters][download][revision] = 6463508a3b9dbfb7feb5662b0f6825
 ; Remove Custom Formatters makefile to prevent duplicate downloads - http://drupal.org/node/1721294#comment-6395368
 projects[custom_formatters][patch][] = http://drupal.org/files/no_makefile-1721294-1.patch
 
+projects[date][type] = module
+projects[date][subdir] = contrib
 projects[date][version] = 2.8
 
 projects[devel][version] = 1.5
 
 projects[diff][version] = 3.2
 
-projects[dindent][version] = 1.1
+projects[dindent][type] = module
+projects[dindent][subdir] = contrib
+projects[dindent][version] = 1.2
 
 projects[ds][version] = 2.6
 ; Remove Block dependencies - https://drupal.org/node/1635906#comment-7672781
@@ -77,7 +83,9 @@ projects[entity][version] = 1.5
 
 projects[entitycache][version] = 1.2
 
-projects[entityform][version] = 2.0-beta3
+projects[entityform][type] = module
+projects[entityform][subdir] = contrib
+projects[entityform][version] = 2.0-beta4
 
 projects[entityform_block][version] = 1.1
 
@@ -85,7 +93,9 @@ projects[entityreference][version] = 1.1
 
 projects[environment_indicator][version] = 2.5
 
-projects[features][version] = 2.0
+projects[features][type] = module
+projects[features][subdir] = contrib
+projects[features][version] = 2.2
 ; Cleaner info format - https://drupal.org/comment/8270327#comment-8270327
 projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
 
@@ -121,7 +131,9 @@ projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_su
 
 projects[markdown][version] = 1.2
 
-projects[metatag][version] = 1.0-beta9
+projects[metatag][type] = module
+projects[metatag][subdir] = contrib
+projects[metatag][version] = 1.0-rc2
 
 projects[module_filter][version] = 2.0-alpha2
 
@@ -129,7 +141,9 @@ projects[mollom][version] = 2.11
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
-projects[multifield][version] = 1.0-unstable9
+projects[multifield][type] = module
+projects[multifield][subdir] = contrib
+projects[multifield][version] = 1.0-alpha1
 
 projects[navbar][version] = 1.4
 
@@ -191,9 +205,13 @@ projects[site_verify][version] = 1.1
 
 projects[smtp][version] = 1.0
 
-projects[speedy][version] = 1.8
+projects[speedy][type] = module
+projects[speedy][subdir] = contrib
+projects[speedy][version] = 1.12
 
-projects[stage_file_proxy][version] = 1.5
+projects[stage_file_proxy][type] = module
+projects[stage_file_proxy][subdir] = contrib
+projects[stage_file_proxy][version] = 1.6
 ; Add Variable module integration - https://drupal.org/node/2183195#comment-8421499
 projects[stage_file_proxy][patch][] = https://drupal.org/files/issues/add_variable_module_integration-2183195-1.patch
 
