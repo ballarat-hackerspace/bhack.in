@@ -167,7 +167,9 @@ projects[mollom][version] = 2.11
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
-projects[multifield][version] = 1.0-unstable9
+projects[multifield][type] = module
+projects[multifield][subdir] = contrib
+projects[multifield][version] = 1.0-alpha1
 
 projects[navbar][type] = module
 projects[navbar][subdir] = contrib
