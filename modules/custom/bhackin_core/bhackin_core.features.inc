@@ -5,6 +5,22 @@
  */
 
 /**
+ * Implements hook_commerce_product_default_types().
+ */
+function bhackin_core_commerce_product_default_types() {
+  $items = array(
+    'membership' => array(
+      'type' => 'membership',
+      'name' => 'Membership',
+      'description' => '',
+      'help' => '',
+      'revision' => 0,
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implements hook_ctools_plugin_api().
  */
 function bhackin_core_ctools_plugin_api($module = NULL, $api = NULL) {
@@ -24,9 +40,6 @@ function bhackin_core_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
   if ($module == "field_group" && $api == "field_group") {
-    return array("version" => "1");
-  }
-  if ($module == "multifield" && $api == "multifield") {
     return array("version" => "1");
   }
   if ($module == "oauthconnector" && $api == "oauthconnector") {
@@ -262,17 +275,21 @@ function bhackin_core_default_mailchimp_list() {
   $items['register_interest'] = entity_import('mailchimp_list', '{
     "name" : "register_interest",
     "mc_list_id" : "e82fdfd78f",
-    "label" : "Register interest",
+    "label" : "bHack newsletter",
     "description" : "",
     "settings" : {
       "roles" : { "1" : 1 },
-      "mergefields" : { "EMAIL" : "mail", "FNAME" : "name", "LNAME" : "" },
-      "mergefields_display" : { "EMAIL" : true, "FNAME" : 0, "LNAME" : 0 },
+      "mergefields" : {
+        "EMAIL" : "mail",
+        "FNAME" : "profile-profile:field_profile_first_name",
+        "LNAME" : "profile-profile:field-profile-last-name"
+      },
+      "mergefields_display" : { "EMAIL" : true, "FNAME" : 1, "LNAME" : 1 },
       "doublein" : 0,
-      "show_register_form" : 0,
+      "show_register_form" : 1,
       "default_register_form_optin" : 0,
-      "show_account_form" : 0,
-      "form_label" : "",
+      "show_account_form" : 1,
+      "form_label" : "bHack newsletter",
       "submit_label" : "Submit",
       "include_interest_groups" : 0,
       "opt_in_interest_groups" : 0,
@@ -308,5 +325,30 @@ function bhackin_core_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
+  return $items;
+}
+
+/**
+ * Implements hook_default_profile2_type().
+ */
+function bhackin_core_default_profile2_type() {
+  $items = array();
+  $items['membership'] = entity_import('profile2_type', '{
+    "userCategory" : false,
+    "userView" : false,
+    "type" : "membership",
+    "label" : "Membership",
+    "weight" : "0",
+    "data" : { "registration" : 1, "use_page" : 1 }
+  }');
+  $items['profile'] = entity_import('profile2_type', '{
+    "userCategory" : false,
+    "userView" : false,
+    "type" : "profile",
+    "label" : "Profile",
+    "weight" : "0",
+    "data" : { "registration" : 1, "use_page" : 1 }
+  }');
   return $items;
 }

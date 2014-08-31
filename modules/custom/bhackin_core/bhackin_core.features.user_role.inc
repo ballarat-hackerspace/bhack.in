@@ -16,6 +16,12 @@ function bhackin_core_user_default_roles() {
     'weight' => 3,
   );
 
+  // Exported role: member.
+  $roles['member'] = array(
+    'name' => 'member',
+    'weight' => 4,
+  );
+
   // Exported role: superuser.
   $roles['superuser'] = array(
     'name' => 'superuser',

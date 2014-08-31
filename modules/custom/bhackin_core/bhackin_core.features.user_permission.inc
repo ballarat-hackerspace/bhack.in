@@ -32,7 +32,6 @@ function bhackin_core_user_default_permissions() {
   $permissions['access connections tab'] = array(
     'name' => 'access connections tab',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
       'superuser' => 'superuser',
     ),
     'module' => 'connector',
@@ -52,7 +51,6 @@ function bhackin_core_user_default_permissions() {
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
     'roles' => array(
-      'administrator' => 'administrator',
       'superuser' => 'superuser',
     ),
     'module' => 'contextual',
@@ -89,9 +87,7 @@ function bhackin_core_user_default_permissions() {
   // Exported permission: 'connect with oauthconnector_github'.
   $permissions['connect with oauthconnector_github'] = array(
     'name' => 'connect with oauthconnector_github',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-    ),
+    'roles' => array(),
     'module' => 'connector',
   );
 
@@ -100,6 +96,7 @@ function bhackin_core_user_default_permissions() {
     'name' => 'create blog content',
     'roles' => array(
       'administrator' => 'administrator',
+      'member' => 'member',
       'superuser' => 'superuser',
     ),
     'module' => 'node',
@@ -140,6 +137,7 @@ function bhackin_core_user_default_permissions() {
     'name' => 'delete own blog content',
     'roles' => array(
       'administrator' => 'administrator',
+      'member' => 'member',
       'superuser' => 'superuser',
     ),
     'module' => 'node',
@@ -180,6 +178,7 @@ function bhackin_core_user_default_permissions() {
     'name' => 'edit own blog content',
     'roles' => array(
       'administrator' => 'administrator',
+      'member' => 'member',
       'superuser' => 'superuser',
     ),
     'module' => 'node',
@@ -193,17 +192,6 @@ function bhackin_core_user_default_permissions() {
       'superuser' => 'superuser',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'use gravatar'.
-  $permissions['use gravatar'] = array(
-    'name' => 'use gravatar',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'superuser' => 'superuser',
-    ),
-    'module' => 'gravatar',
   );
 
   // Exported permission: 'use text format markdown'.

@@ -155,6 +155,10 @@ projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_su
 
 projects[markdown][version] = 1.2
 
+projects[maxlength][type] = module
+projects[maxlength][subdir] = contrib
+projects[maxlength][version] = 3.0-beta1
+
 projects[metatag][type] = module
 projects[metatag][subdir] = contrib
 projects[metatag][version] = 1.0-rc2
@@ -165,10 +169,8 @@ projects[mollom][version] = 2.11
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
-projects[multifield][type] = module
-projects[multifield][subdir] = contrib
-projects[multifield][version] = 1.0-alpha1
-
+projects[navbar][type] = module
+projects[navbar][subdir] = contrib
 projects[navbar][version] = 1.4
 
 projects[oauth][version] = 3.2
@@ -326,3 +328,11 @@ libraries[underscore][download][url] = https://github.com/jashkenas/underscore/a
 
 libraries[vegas][download][type] = get
 libraries[vegas][download][url] = https://github.com/jaysalvat/vegas/archive/v1.3.1.zip
+
+
+
+; Deprecated
+
+projects[multifield][type] = module
+projects[multifield][subdir] = contrib
+projects[multifield][version] = 1.0-alpha1

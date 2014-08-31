@@ -63,7 +63,6 @@ function bhackin_core_update_7102() {
   pathauto_user_update_alias_multiple($uids, 'bulkupdate', array('alias blog' => FALSE));
 }
 
-
 /**
  * Flush caches and revert the feature.
  */
@@ -72,11 +71,84 @@ function bhackin_core_update_7103() {
 }
 
 /**
+ * Migrate fields from user to profile and flush caches and revert the feature.
+ */
+function bhackin_core_update_7104() {
+  // Flush caches and revert the feature.
+  _bhackin_core_flush_revert();
+
+  // Migrate fields from user to profile.
+  $link_map = array(
+    'home'        => 'field_profile_website',
+    'facebook'    => 'field_profile_facebook',
+    'github-alt'  => 'field_profile_github',
+    'google-plus' => 'field_profile_gplus',
+    'linkedin'    => 'field_profile_linkedin',
+    'twitter'     => 'field_profile_twitter',
+  );
+  $users    = user_load_multiple(array(), array('status' => 1));
+  foreach ($users as $user) {
+    if ($user->uid > 1) {
+      $user_mdw    = entity_metadata_wrapper('user', $user);
+      $profile     = profile2_by_uid_load($user->uid, 'profile');
+      $profile_mdw = entity_metadata_wrapper('profile2', $profile);
+
+      // Name to First name / Last name.
+      list($first_name, $last_name) = explode(' ', $user_mdw->field_user_name->value());
+      $profile_mdw->field_profile_first_name = $first_name;
+      $profile_mdw->field_profile_last_name  = $last_name;
+
+      // Links multifield to individual fields.
+      $links = field_get_items('user', $user, 'field_user_links');
+      foreach ($links as $link) {
+        if (isset($link_map[$link['field_links_type'][LANGUAGE_NONE][0]['value']])) {
+          $profile_mdw->{$link_map[$link['field_links_type'][LANGUAGE_NONE][0]['value']]}->url = url($link['field_links_url'][LANGUAGE_NONE][0]['url'], array('absolute' => TRUE));
+        }
+      }
+
+      // Biography to Bio.
+      $profile_mdw->field_profile_bio = $user_mdw->field_user_bio->value();
+
+      // IRC nickname to IRC nick.
+      $profile_mdw->field_profile_irc = $user_mdw->field_user_irc->value();
+
+      // Save profile.
+      $profile_mdw->save();
+    }
+  }
+
+  // Remove deprecated fields.  $fields = array()
+  $fields = array(
+    'field_links_type',
+    'field_links_url',
+    'field_user_name',
+    'field_user_links',
+    'field_user_bio',
+    'field_user_irc',
+  );
+  foreach ($fields as $field) {
+    field_delete_field($field);
+  }
+
+  //
+  ctools_include('export');
+  $view = ctools_export_crud_load('views_view', 'members');
+  ctools_export_crud_delete('views_view', $view);
+
+  // Remove deprecated profiles.
+  $type = profile2_type_load('main');
+  profile2_type_delete($type);
+
+  // Flush caches and revert the feature.
+  _bhackin_core_flush_revert();
+}
+
+/**
  * Helper function; Enable dependencies, flush caches and revert the feature.
  */
 function _bhackin_core_flush_revert() {
   if (empty($modules)) {
-    $modules = basename(__FILE__, '.install');;
+    $modules = basename(__FILE__, '.install');
   }
   if (!is_array($modules)) {
     $modules = array($modules);
@@ -97,6 +169,9 @@ function _bhackin_core_flush_revert() {
       features_get_default($component, $module, TRUE, TRUE);
     }
 
+    // Revert all feature components except for 'OAuth Connector providers'.
+    unset($info['features']['oauthconnector_provider']);
+
     // Build components list for feature revert.
     $revert[$module] = array_keys($info['features']);
   }
@@ -107,8 +182,5 @@ function _bhackin_core_flush_revert() {
   // Flush all standard Drupal caches.
   drupal_flush_all_caches();
 
-  // Revert all feature components except for 'OAuth Connector providers'.
-  unset($info['features']['oauthconnector_provider']);
-  $components = array_keys($info['features']);
-  features_revert(array('bhackin_core' => $components));
+  features_revert($revert);
 }

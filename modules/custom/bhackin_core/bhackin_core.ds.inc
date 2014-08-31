@@ -140,34 +140,6 @@ function bhackin_core_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'ds_picture_blog',
     ),
-    'field_user_irc' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'IRC',
-          'lb-el' => 'strong',
-        ),
-      ),
-    ),
-    'field_user_bio' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb-el' => 'h2',
-          'lb-col' => TRUE,
-        ),
-      ),
-    ),
-    'field_user_links' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'social-icons',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
   );
   $export['user|user|full'] = $ds_fieldsetting;
 
@@ -192,26 +164,6 @@ function bhackin_core_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'avatar',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_user_irc' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'lb' => 'IRC',
-          'lb-el' => 'strong',
-        ),
-      ),
-    ),
-    'field_user_links' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'social-icons',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -302,6 +254,52 @@ function bhackin_core_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|form';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'form';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'profile_profile',
+        1 => 'account',
+      ),
+      'hidden' => array(
+        2 => 'admin_select',
+        3 => 'googleanalytics',
+        4 => 'picture',
+        5 => 'timezone',
+        6 => '_add_existing_field',
+      ),
+    ),
+    'fields' => array(
+      'profile_profile' => 'ds_content',
+      'account' => 'ds_content',
+      'admin_select' => 'hidden',
+      'googleanalytics' => 'hidden',
+      'picture' => 'hidden',
+      'timezone' => 'hidden',
+      '_add_existing_field' => 'hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['user|user|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'user|user|full';
   $ds_layout->entity_type = 'user';
   $ds_layout->bundle = 'user';
@@ -311,18 +309,11 @@ function bhackin_core_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'ds_user_picture',
-        1 => 'field_user_irc',
-        2 => 'field_user_links',
       ),
-      'right' => array(
-        3 => 'field_user_bio',
-      ),
+      'right' => array(),
     ),
     'fields' => array(
       'ds_user_picture' => 'left',
-      'field_user_irc' => 'left',
-      'field_user_links' => 'left',
-      'field_user_bio' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -361,15 +352,11 @@ function bhackin_core_ds_layout_settings_info() {
       ),
       'right' => array(
         1 => 'name',
-        2 => 'field_user_irc',
-        3 => 'field_user_links',
       ),
     ),
     'fields' => array(
       'ds_user_picture' => 'left',
       'name' => 'right',
-      'field_user_irc' => 'right',
-      'field_user_links' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(

@@ -56,8 +56,8 @@ dependencies[] = mailchimp
 dependencies[] = mailchimp_activity
 dependencies[] = mailchimp_lists
 dependencies[] = markdown
+dependencies[] = maxlength
 dependencies[] = menu
-dependencies[] = multifield
 dependencies[] = navbar
 dependencies[] = node
 dependencies[] = number
@@ -69,6 +69,8 @@ dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = picture
 dependencies[] = prepro
+dependencies[] = profile2
+dependencies[] = profile2_page
 dependencies[] = realname
 dependencies[] = rules
 dependencies[] = rules_conditional
@@ -117,7 +119,6 @@ features[ctools][] = context:context:3
 features[ctools][] = custom_formatters:custom_formatters:2
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
-features[ctools][] = multifield:multifield:1
 features[ctools][] = oauthconnector:oauthconnector:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = picture:default_picture_mapping:1
@@ -131,6 +132,7 @@ features[ds_field_settings][] = user|user|teaser
 
 features[ds_layout_settings][] = node|blog|default
 features[ds_layout_settings][] = node|blog|teaser
+features[ds_layout_settings][] = user|user|form
 features[ds_layout_settings][] = user|user|full
 features[ds_layout_settings][] = user|user|teaser
 
@@ -146,17 +148,23 @@ features[field_base][] = field_blog_image
 features[field_base][] = field_blog_tags
 features[field_base][] = field_links_type
 features[field_base][] = field_links_url
+features[field_base][] = field_profile_bio
+features[field_base][] = field_profile_facebook
+features[field_base][] = field_profile_first_name
+features[field_base][] = field_profile_github
+features[field_base][] = field_profile_gplus
+features[field_base][] = field_profile_irc
+features[field_base][] = field_profile_last_name
+features[field_base][] = field_profile_linkedin
+features[field_base][] = field_profile_twitter
+features[field_base][] = field_profile_website
 features[field_base][] = field_ri_email
 features[field_base][] = field_ri_name
 features[field_base][] = field_ri_postcode
 features[field_base][] = field_ri_referer
-features[field_base][] = field_user_bio
-features[field_base][] = field_user_irc
-features[field_base][] = field_user_links
-features[field_base][] = field_user_name
 
-features[field_group][] = group_user_account|user|user|form
-features[field_group][] = group_user_profile|user|user|form
+features[field_group][] = group_profile_main|profile2|profile|form
+features[field_group][] = group_profile_social|profile2|profile|form
 features[field_group][] = group_user|user|user|form
 
 features[field_instance][] = commerce_product-membership-commerce_price
@@ -164,16 +172,20 @@ features[field_instance][] = entityform-register_interest-field_ri_email
 features[field_instance][] = entityform-register_interest-field_ri_name
 features[field_instance][] = entityform-register_interest-field_ri_postcode
 features[field_instance][] = entityform-register_interest-field_ri_referer
-features[field_instance][] = multifield-links-field_links_type
-features[field_instance][] = multifield-links-field_links_url
 features[field_instance][] = node-blog-body
 features[field_instance][] = node-blog-field_blog_image
 features[field_instance][] = node-blog-field_blog_tags
 features[field_instance][] = node-page-body
-features[field_instance][] = user-user-field_user_bio
-features[field_instance][] = user-user-field_user_irc
-features[field_instance][] = user-user-field_user_links
-features[field_instance][] = user-user-field_user_name
+features[field_instance][] = profile2-profile-field_profile_bio
+features[field_instance][] = profile2-profile-field_profile_facebook
+features[field_instance][] = profile2-profile-field_profile_first_name
+features[field_instance][] = profile2-profile-field_profile_github
+features[field_instance][] = profile2-profile-field_profile_gplus
+features[field_instance][] = profile2-profile-field_profile_irc
+features[field_instance][] = profile2-profile-field_profile_last_name
+features[field_instance][] = profile2-profile-field_profile_linkedin
+features[field_instance][] = profile2-profile-field_profile_twitter
+features[field_instance][] = profile2-profile-field_profile_website
 
 features[filter][] = full_html
 features[filter][] = markdown
@@ -199,8 +211,6 @@ features[menu_links][] = menu-administration_basic-page:node/add/page
 features[menu_links][] = menu-administration_blog-post:node/add/blog
 features[menu_links][] = menu-administration_content:admin/content
 
-features[multifield][] = links
-
 features[node][] = blog
 features[node][] = page
 
@@ -210,6 +220,9 @@ features[page_manager_pages][] = content
 features[page_manager_pages][] = home
 
 features[picture_mapping][] = blog_image
+
+features[profile2_type][] = membership
+features[profile2_type][] = profile
 
 features[rules_config][] = rules_blog_new
 features[rules_config][] = rules_register_interest
@@ -240,6 +253,7 @@ features[user_permission][] = use text format markdown
 features[user_permission][] = view bot logs: #bHack
 
 features[user_role][] = administrator
+features[user_role][] = member
 features[user_role][] = superuser
 
 features[variable][] = admin_select_defaults
@@ -329,7 +343,6 @@ features[variable][] = xmlsitemap_settings_node_blog
 
 features[views_view][] = admin_content
 features[views_view][] = blog
-features[views_view][] = members
 
 
 

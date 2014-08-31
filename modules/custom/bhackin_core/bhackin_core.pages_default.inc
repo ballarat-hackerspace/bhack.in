@@ -627,32 +627,6 @@ function bhackin_core_default_page_manager_pages() {
     $display->content['new-42ad42ac-5cd6-4508-8b18-262e666d5e26'] = $pane;
     $display->panels['header'][1] = 'new-42ad42ac-5cd6-4508-8b18-262e666d5e26';
     $pane = new stdClass();
-    $pane->pid = 'new-833eae70-8913-4f7e-afda-2477bbc48ee3';
-    $pane->panel = 'header';
-    $pane->type = 'block';
-    $pane->subtype = 'entityform_block-register_interest';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'style' => 'bhackin_row',
-      'settings' => array(
-        'column_size' => '6',
-        'offset_size' => '3',
-      ),
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '833eae70-8913-4f7e-afda-2477bbc48ee3';
-    $display->content['new-833eae70-8913-4f7e-afda-2477bbc48ee3'] = $pane;
-    $display->panels['header'][2] = 'new-833eae70-8913-4f7e-afda-2477bbc48ee3';
-    $pane = new stdClass();
     $pane->pid = 'new-11fcdffa-7923-4b92-bb54-63f8fb8fc263';
     $pane->panel = 'header';
     $pane->type = 'custom';
@@ -714,11 +688,50 @@ function bhackin_core_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '11fcdffa-7923-4b92-bb54-63f8fb8fc263';
     $display->content['new-11fcdffa-7923-4b92-bb54-63f8fb8fc263'] = $pane;
-    $display->panels['header'][3] = 'new-11fcdffa-7923-4b92-bb54-63f8fb8fc263';
+    $display->panels['header'][2] = 'new-11fcdffa-7923-4b92-bb54-63f8fb8fc263';
+    $pane = new stdClass();
+    $pane->pid = 'new-d3c602e9-ac33-4be3-91f6-319a46fdbbbe';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Join / Log in',
+      'title' => '',
+      'body' => '<a href="/user/register" class="btn btn-primary btn-lg" role="button">Join us</a>
+<a href="/user" class="btn btn-default btn-lg" role="button">Log in</a>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'd3c602e9-ac33-4be3-91f6-319a46fdbbbe';
+    $display->content['new-d3c602e9-ac33-4be3-91f6-319a46fdbbbe'] = $pane;
+    $display->panels['header'][3] = 'new-d3c602e9-ac33-4be3-91f6-319a46fdbbbe';
     $pane = new stdClass();
     $pane->pid = 'new-9efed2c7-a87e-40c8-8fc8-a5999ab0b729';
     $pane->panel = 'quote';

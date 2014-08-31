@@ -43,7 +43,7 @@ function bhackin_core_default_rules_configuration() {
     }
   }');
   $items['rules_register_interest'] = entity_import('rules_config', '{ "rules_register_interest" : {
-      "LABEL" : "Register interest",
+      "LABEL" : "Entityform: New registration of interest",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "bHack.in" ],

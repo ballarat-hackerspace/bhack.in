@@ -13,67 +13,64 @@ function bhackin_core_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_account|user|user|form';
-  $field_group->group_name = 'group_user_account';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
+  $field_group->identifier = 'group_profile_main|profile2|profile|form';
+  $field_group->group_name = 'group_profile_main';
+  $field_group->entity_type = 'profile2';
+  $field_group->bundle = 'profile';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_user';
+  $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Account',
-    'weight' => '3',
+    'label' => 'Main',
+    'weight' => '0',
     'children' => array(
-      0 => 'admin_select',
-      1 => 'googleanalytics',
-      2 => 'account',
-      3 => 'timezone',
+      0 => 'field_profile_bio',
+      1 => 'field_profile_first_name',
+      2 => 'field_profile_last_name',
+      3 => 'field_profile_website',
     ),
-    'format_type' => 'htab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Account',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
-        'required_fields' => 1,
-        'id' => '',
-        'classes' => '',
         'description' => '',
+        'classes' => 'group-profile-main field-group-fieldset',
+        'required_fields' => 1,
       ),
-      'formatter' => 'closed',
     ),
   );
-  $export['group_user_account|user|user|form'] = $field_group;
+  $export['group_profile_main|profile2|profile|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_profile|user|user|form';
-  $field_group->group_name = 'group_user_profile';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
+  $field_group->identifier = 'group_profile_social|profile2|profile|form';
+  $field_group->group_name = 'group_profile_social';
+  $field_group->entity_type = 'profile2';
+  $field_group->bundle = 'profile';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_user';
+  $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Profile',
-    'weight' => '4',
+    'label' => 'Social',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_user_irc',
-      1 => 'field_user_name',
-      2 => 'field_user_bio',
-      3 => 'picture',
-      4 => 'field_user_links',
+      0 => 'field_profile_irc',
+      1 => 'field_profile_facebook',
+      2 => 'field_profile_github',
+      3 => 'field_profile_gplus',
+      4 => 'field_profile_linkedin',
+      5 => 'field_profile_twitter',
     ),
-    'format_type' => 'htab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Profile',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
-        'required_fields' => 1,
-        'id' => '',
-        'classes' => '',
         'description' => '',
+        'classes' => 'group-profile-social field-group-fieldset',
+        'required_fields' => 1,
       ),
-      'formatter' => 'closed',
     ),
   );
-  $export['group_user_profile|user|user|form'] = $field_group;
+  $export['group_profile_social|profile2|profile|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

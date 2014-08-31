@@ -12,6 +12,16 @@ function bhackin_core_init() {
 }
 
 /**
+ * Implements hook_module_implementations_alter().
+ */
+function bhackin_core_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    unset($implementations['bhackin_core']);
+    $implementations['bhackin_core'] = FALSE;
+  }
+}
+
+/**
  * Implements hook_preprocess().
  */
 function bhackin_core_preprocess(&$vars, $hook) {
