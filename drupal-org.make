@@ -11,6 +11,12 @@ defaults[projects][subdir] = contrib
 
 ; Modules
 
+projects[addressfield][type] = module
+projects[addressfield][subdir] = contrib
+projects[addressfield][version] = 1.0-beta5
+
+projects[admin_menu][type] = module
+projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc4
 
 projects[admin_select][download][revision] = 8caa5d52638bac8aa74109c3cc6afea28263b60b
@@ -35,6 +41,21 @@ projects[coder][version] = 2.2
 
 projects[coffee][version] = 2.2
 
+projects[commerce][type] = module
+projects[commerce][subdir] = contrib
+projects[commerce][version] = 1.9
+
+projects[commerce_features][type] = module
+projects[commerce_features][subdir] = contrib
+projects[commerce_features][version] = 1.0
+
+projects[commerce_paypal][type] = module
+projects[commerce_paypal][subdir] = contrib
+projects[commerce_paypal][version] = 2.3
+
+projects[connector][type] = module
+projects[connector][subdir] = contrib
+projects[connector][download][type] = git
 projects[connector][download][revision] = 46cade3620061a41b3853374dc357f9eaf31829d
 ; Fix data mapping - https://drupal.org/node/1503258#comment-8596491
 projects[connector][patch][] = https://drupal.org/files/issues/fix_map-1503258-13.patch

@@ -1,6 +1,7 @@
 bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
 --------------------------------------------------------------------------------
 
+* Added initial Commerce integration (@Decipher).
 * Updated Drupal core and contrib (@Decipher).
 
 
