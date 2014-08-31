@@ -113,7 +113,10 @@ projects[google_analytics][download][revision] = d5c42e145e218cf54397b70bb275484
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
 
-projects[gravatar][version] = 1.1
+projects[gravatar][type] = module
+projects[gravatar][subdir] = contrib
+projects[gravatar][download][type] = git
+projects[gravatar][download][revision] = bb2f81e6b0e93156ab86e62db70cfe169418cc92
 
 projects[http_client][version] = 2.4
 
@@ -163,7 +166,9 @@ projects[panels][version] = 3.4
 
 projects[pathauto][version] = 1.2
 
-projects[picture][version] = 1.5
+projects[profile2][type] = module
+projects[profile2][subdir] = contrib
+projects[profile2][version] = 1.3
 
 projects[prepro][download][revision] = 306d6c59e539add57c287c60c53dbe755550dd7a
 ; Variable integration - http://drupal.org/node/1958564#comment-7269614
