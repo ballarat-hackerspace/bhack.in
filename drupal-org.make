@@ -191,6 +191,10 @@ projects[panels][version] = 3.4
 
 projects[pathauto][version] = 1.2
 
+projects[picture][version] = 1.5
+projects[profile2][type] = module
+projects[profile2][subdir] = contrib
+projects[profile2][version] = 1.3
 projects[picture][type] = module
 projects[picture][subdir] = contrib
 projects[picture][version] = 2.6
