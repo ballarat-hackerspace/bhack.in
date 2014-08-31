@@ -130,6 +130,11 @@ function bhackin_core_update_7104() {
     field_delete_field($field);
   }
 
+  //
+  ctools_include('export');
+  $view = ctools_export_crud_load('views_view', 'members');
+  ctools_export_crud_delete('views_view', $view);
+
   // Remove deprecated profiles.
   $type = profile2_type_load('main');
   profile2_type_delete($type);
