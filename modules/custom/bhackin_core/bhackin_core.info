@@ -112,6 +112,7 @@ features[context][] = layout-members-profile
 features[context][] = layout-user_op-anonymous
 features[context][] = server-development
 features[context][] = server-production
+features[context][] = server-staging
 
 features[ctools][] = breakpoints:default_breakpoint_group:1
 features[ctools][] = breakpoints:default_breakpoints:1

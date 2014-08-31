@@ -213,6 +213,7 @@ function bhackin_core_context_default_contexts() {
       'variable_admin' => 'enable',
       'syslog' => 'disable',
       'xmlsitemap_engines' => 'disable',
+      'securesite' => 'disable',
     ),
     'variable' => array(
       'bot_channels' => '#bHack-dev',
@@ -298,6 +299,7 @@ function bhackin_core_context_default_contexts() {
       'devel_generate' => 'disable',
       'ds_ui' => 'disable',
       'variable_admin' => 'disable',
+      'securesite' => 'disable',
     ),
   );
   $context->condition_mode = 0;
@@ -306,6 +308,92 @@ function bhackin_core_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('bhack.in::server');
   $export['server-production'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'server-staging';
+  $context->description = '';
+  $context->tag = 'bhack.in::server';
+  $context->conditions = array(
+    'server_vars' => array(
+      'values' => array(
+        'variables' => array(
+          0 => array(
+            'name' => 'HTTP_HOST',
+            'op' => '==',
+            'negate' => 0,
+            'value' => 'stage.bhack.in',
+          ),
+          1 => array(
+            'name' => 'HTTP_HOST',
+            'op' => '==',
+            'negate' => 0,
+            'value' => 'bhack.stage',
+          ),
+        ),
+        'and_or' => 0,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'module' => array(
+      'reroute_email' => 'enable',
+      'dblog' => 'enable',
+      'syslog' => 'disable',
+      'xmlsitemap_engines' => 'disable',
+      'devel' => 'disable',
+      'devel_generate' => 'disable',
+      'coffee' => 'disable',
+      'module_filter' => 'disable',
+      'context_ui' => 'disable',
+      'field_ui' => 'disable',
+      'rules_admin' => 'disable',
+      'views_ui' => 'disable',
+      'stage_file_proxy' => 'disable',
+      'which_feature' => 'disable',
+      'ds_ui' => 'disable',
+      'variable_admin' => 'disable',
+      'securesite' => 'enable',
+    ),
+    'variable' => array(
+      'bot_channels' => '#bHack-dev',
+      'bot_nickname' => 'bOTHack-dev',
+      'bot_password' => '',
+      'googleanalytics_account' => '',
+      'prepro' => array(
+        'filetypes' => array(
+          'sass' => array(
+            'compile_handler' => 'sassy/sassy',
+            'cache_handler' => 'prepro/cache',
+            'cache_path' => 'public://prepro',
+          ),
+          'scss' => array(
+            'compile_handler' => 'sassy/sassy',
+            'cache_handler' => 'prepro/cache',
+            'cache_path' => 'public://prepro',
+          ),
+        ),
+        'additional' => array(
+          'sassy' => array(
+            'watchdog' => 1,
+            'debug' => 0,
+            'errors' => 'watchdog',
+            'style' => 'nested',
+          ),
+        ),
+        'show_warnings' => FALSE,
+      ),
+      'reroute_email_enable' => 1,
+      'reroute_email_address' => 'admin@bhack.in',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::server');
+  $export['server-staging'] = $context;
 
   return $export;
 }
