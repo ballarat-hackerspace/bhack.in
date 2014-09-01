@@ -61,6 +61,7 @@ function bhackin_core_user_default_permissions() {
     'name' => 'access navbar',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'navbar',
   );
@@ -82,6 +83,15 @@ function bhackin_core_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'cancel account'.
+  $permissions['cancel account'] = array(
+    'name' => 'cancel account',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'user',
   );
 
   // Exported permission: 'connect with oauthconnector_github'.
