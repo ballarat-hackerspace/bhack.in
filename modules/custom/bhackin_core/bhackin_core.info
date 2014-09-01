@@ -251,9 +251,11 @@ features[user_permission][] = edit any blog content
 features[user_permission][] = edit any page content
 features[user_permission][] = edit own blog content
 features[user_permission][] = edit own page content
+features[user_permission][] = edit own profile profile
 features[user_permission][] = use gravatar
 features[user_permission][] = use text format markdown
 features[user_permission][] = view bot logs: #bHack
+features[user_permission][] = view own profile profile
 
 features[user_role][] = administrator
 features[user_role][] = member

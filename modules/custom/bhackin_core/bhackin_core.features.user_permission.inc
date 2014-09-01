@@ -204,6 +204,15 @@ function bhackin_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own profile profile'.
+  $permissions['edit own profile profile'] = array(
+    'name' => 'edit own profile profile',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
+  );
+
   // Exported permission: 'use gravatar'.
   $permissions['use gravatar'] = array(
     'name' => 'use gravatar',
@@ -231,6 +240,15 @@ function bhackin_core_user_default_permissions() {
     'name' => 'view bot logs: #bHack',
     'roles' => array(),
     'module' => 'bot_log',
+  );
+
+  // Exported permission: 'view own profile profile'.
+  $permissions['view own profile profile'] = array(
+    'name' => 'view own profile profile',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'profile2',
   );
 
   return $permissions;
