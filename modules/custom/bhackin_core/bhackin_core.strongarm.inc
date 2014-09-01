@@ -713,6 +713,20 @@ col-sm-offset-12';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'prlp_destination';
+  $strongarm->value = 'user/%uid/profile';
+  $export['prlp_destination'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prlp_password_required';
+  $strongarm->value = 0;
+  $export['prlp_password_required'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'realname_pattern';
   $strongarm->value = '[user:profile-profile:field-profile-first-name] [user:profile-profile:field-profile-last-name]';
   $export['realname_pattern'] = $strongarm;

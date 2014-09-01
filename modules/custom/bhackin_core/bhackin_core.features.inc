@@ -279,12 +279,8 @@ function bhackin_core_default_mailchimp_list() {
     "description" : "",
     "settings" : {
       "roles" : { "1" : 1 },
-      "mergefields" : {
-        "EMAIL" : "mail",
-        "FNAME" : "profile-profile:field-profile-first-name",
-        "LNAME" : "profile-profile:field-profile-last-name"
-      },
-      "mergefields_display" : { "EMAIL" : true, "FNAME" : 1, "LNAME" : 1 },
+      "mergefields" : { "EMAIL" : "mail", "FNAME" : "", "LNAME" : "" },
+      "mergefields_display" : { "EMAIL" : true, "FNAME" : 0, "LNAME" : 0 },
       "doublein" : 0,
       "show_register_form" : 1,
       "default_register_form_optin" : 0,
@@ -340,7 +336,7 @@ function bhackin_core_default_profile2_type() {
     "type" : "membership",
     "label" : "Membership",
     "weight" : "0",
-    "data" : { "registration" : 1, "use_page" : 1 }
+    "data" : { "registration" : 0, "use_page" : 1 }
   }');
   $items['profile'] = entity_import('profile2_type', '{
     "userCategory" : false,

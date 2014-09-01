@@ -193,6 +193,10 @@ projects[picture][type] = module
 projects[picture][subdir] = contrib
 projects[picture][version] = 2.6
 
+projects[prlp][type] = module
+projects[prlp][subdir] = contrib
+projects[prlp][version] = 1.0
+
 projects[profile2][type] = module
 projects[profile2][subdir] = contrib
 projects[profile2][version] = 1.3
