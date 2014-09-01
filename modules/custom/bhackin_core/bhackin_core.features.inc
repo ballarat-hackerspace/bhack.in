@@ -281,7 +281,7 @@ function bhackin_core_default_mailchimp_list() {
       "roles" : { "1" : 1 },
       "mergefields" : {
         "EMAIL" : "mail",
-        "FNAME" : "profile-profile:field_profile_first_name",
+        "FNAME" : "profile-profile:field-profile-first-name",
         "LNAME" : "profile-profile:field-profile-last-name"
       },
       "mergefields_display" : { "EMAIL" : true, "FNAME" : 1, "LNAME" : 1 },

@@ -19,4 +19,8 @@ function profile2_bhackin_core_form_user_register_form_alter(&$form, &$form_stat
   foreach (element_children($form['profile_profile']) as $child) {
     $form['profile_profile'][$child]['#access'] = $form['profile_profile'][$child][LANGUAGE_NONE]['#required'];
   }
+
+  $form['profile_profile']['#attributes']['class'][] = 'row';
+  $form['profile_profile']['field_profile_first_name']['#attributes']['class'][] = 'col-xs-6';
+  $form['profile_profile']['field_profile_last_name']['#attributes']['class'][] = 'col-xs-6';
 }
