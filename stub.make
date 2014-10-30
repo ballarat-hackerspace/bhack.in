@@ -6,7 +6,8 @@ api = 2
 ; Drupal core
 
 projects[drupal][type] = core
-projects[drupal][version] = 7.32
+projects[drupal][download][type] = git
+projects[drupal][download][tag] = 7.32
 
 
 
