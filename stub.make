@@ -7,7 +7,7 @@ api = 2
 
 projects[drupal][type] = core
 projects[drupal][download][type] = git
-projects[drupal][download][tag] = 7.28
+projects[drupal][download][tag] = 7.32
 
 
 
