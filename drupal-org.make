@@ -165,9 +165,11 @@ projects[metatag][version] = 1.0-rc2
 
 projects[module_filter][version] = 2.0-alpha2
 
-projects[mollom][version] = 2.11
+projects[mollom][version] = 2.10
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
+
+projects[multifield][version] = 1.0-unstable9
 
 projects[navbar][type] = module
 projects[navbar][subdir] = contrib
@@ -192,14 +194,6 @@ projects[pathauto][version] = 1.2
 projects[picture][type] = module
 projects[picture][subdir] = contrib
 projects[picture][version] = 2.6
-
-projects[prlp][type] = module
-projects[prlp][subdir] = contrib
-projects[prlp][version] = 1.0
-
-projects[profile2][type] = module
-projects[profile2][subdir] = contrib
-projects[profile2][version] = 1.3
 
 projects[prepro][download][revision] = 306d6c59e539add57c287c60c53dbe755550dd7a
 ; Variable integration - http://drupal.org/node/1958564#comment-7269614
