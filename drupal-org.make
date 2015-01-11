@@ -36,7 +36,7 @@ projects[coder][version] = 2.2
 
 projects[coffee][version] = 2.2
 
-projects[commerce][version] = 1.9
+projects[commerce][version] = 1.10
 
 projects[commerce_features][version] = 1.0
 
