@@ -54,12 +54,16 @@ function bhackin_core_update_7102() {
   _bhackin_core_flush_revert();
 
   // Delete existing User aliases.
-  db_delete('url_alias')->condition('source', db_like('user/') . '%', 'LIKE')
+  db_delete('url_alias')
+    ->condition('source', db_like('user/') . '%', 'LIKE')
     ->execute();
 
   // Regenerate User aliases.
-  $uids = db_select('users', 'u')->fields('u', array('uid'))
-    ->condition('uid', '0', '>')->execute()->fetchCol('uid');
+  $uids = db_select('users', 'u')
+    ->fields('u', array('uid'))
+    ->condition('uid', '0', '>')
+    ->execute()
+    ->fetchCol('uid');
   pathauto_user_update_alias_multiple($uids, 'bulkupdate', array('alias blog' => FALSE));
 }
 
@@ -96,13 +100,17 @@ function bhackin_core_update_7104() {
       // Name to First name / Last name.
       list($first_name, $last_name) = explode(' ', $user_mdw->field_user_name->value());
       $profile_mdw->field_profile_first_name = $first_name;
-      $profile_mdw->field_profile_last_name  = $last_name;
+      if (!empty($last_name)) {
+        $profile_mdw->field_profile_last_name = $last_name;
+      }
 
       // Links multifield to individual fields.
       $links = field_get_items('user', $user, 'field_user_links');
-      foreach ($links as $link) {
-        if (isset($link_map[$link['field_links_type'][LANGUAGE_NONE][0]['value']])) {
-          $profile_mdw->{$link_map[$link['field_links_type'][LANGUAGE_NONE][0]['value']]}->url = url($link['field_links_url'][LANGUAGE_NONE][0]['url'], array('absolute' => TRUE));
+      if (is_array($links)) {
+        foreach ($links as $link) {
+          if (isset($link_map[$link['field_links_type'][LANGUAGE_NONE][0]['value']])) {
+            $profile_mdw->{$link_map[$link['field_links_type'][LANGUAGE_NONE][0]['value']]}->url = url($link['field_links_url'][LANGUAGE_NONE][0]['url'], array('absolute' => TRUE));
+          }
         }
       }
 
@@ -129,11 +137,6 @@ function bhackin_core_update_7104() {
   foreach ($fields as $field) {
     field_delete_field($field);
   }
-
-  //
-  ctools_include('export');
-  $view = ctools_export_crud_load('views_view', 'members');
-  ctools_export_crud_delete('views_view', $view);
 
   // Remove deprecated profiles.
   $type = profile2_type_load('main');
