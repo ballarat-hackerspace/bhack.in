@@ -140,8 +140,6 @@ projects[mollom][version] = 2.11
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
-projects[multifield][version] = 1.0-alpha1
-
 projects[navbar][version] = 1.4
 
 projects[oauth][version] = 3.2
@@ -161,6 +159,8 @@ projects[panels][version] = 3.4
 projects[pathauto][version] = 1.2
 
 projects[picture][version] = 2.6
+
+projects[prlp][version] = 1.0
 
 projects[profile2][version] = 1.3
 
