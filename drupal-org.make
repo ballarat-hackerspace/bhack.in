@@ -9,14 +9,11 @@ defaults[projects][type] = module
 defaults[projects][subdir] = contrib
 
 
+
 ; Modules
 
-projects[addressfield][type] = module
-projects[addressfield][subdir] = contrib
 projects[addressfield][version] = 1.0-beta5
 
-projects[admin_menu][type] = module
-projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc4
 
 projects[admin_select][download][revision] = 8caa5d52638bac8aa74109c3cc6afea28263b60b
@@ -33,29 +30,18 @@ projects[botrules][version] = 1.0-rc1
 ; Fixed PARTing of mixed case channels - https://drupal.org/node/2263641#comment-8767617
 projects[botrules][patch][] = https://drupal.org/files/issues/part_mixed_case_fix-2263641-1.patch
 
-projects[breakpoints][type] = module
-projects[breakpoints][subdir] = contrib
 projects[breakpoints][version] = 1.3
 
 projects[coder][version] = 2.2
 
 projects[coffee][version] = 2.2
 
-projects[commerce][type] = module
-projects[commerce][subdir] = contrib
 projects[commerce][version] = 1.9
 
-projects[commerce_features][type] = module
-projects[commerce_features][subdir] = contrib
 projects[commerce_features][version] = 1.0
 
-projects[commerce_paypal][type] = module
-projects[commerce_paypal][subdir] = contrib
 projects[commerce_paypal][version] = 2.3
 
-projects[connector][type] = module
-projects[connector][subdir] = contrib
-projects[connector][download][type] = git
 projects[connector][download][revision] = 46cade3620061a41b3853374dc357f9eaf31829d
 ; Fix data mapping - https://drupal.org/node/1503258#comment-8596491
 projects[connector][patch][] = https://drupal.org/files/issues/fix_map-1503258-13.patch
@@ -68,7 +54,7 @@ projects[context][patch][] = https://drupal.org/files/context_menu_fix_2013-07-0
 
 projects[context_condition_theme][version] = 1.0
 
-projects[context_module][download][revision] = b7a05aa1299d9286b77f66c539826de9bebde2fb
+projects[context_module][download][revision] = b7a05aa12clear99d9286b77f66c539826de9bebde2fb
 ; Prevent rederict loop - https://drupal.org/node/2076565#comment-7804715
 projects[context_module][patch][] = https://drupal.org/files/redirect_loop-2076565-1.patch
 
@@ -88,8 +74,6 @@ projects[devel][version] = 1.5
 
 projects[diff][version] = 3.2
 
-projects[dindent][type] = module
-projects[dindent][subdir] = contrib
 projects[dindent][version] = 1.2
 
 projects[ds][version] = 2.6
@@ -102,8 +86,6 @@ projects[entity][version] = 1.5
 
 projects[entitycache][version] = 1.2
 
-projects[entityform][type] = module
-projects[entityform][subdir] = contrib
 projects[entityform][version] = 2.0-beta4
 
 projects[entityform_block][version] = 1.1
@@ -112,8 +94,6 @@ projects[entityreference][version] = 1.1
 
 projects[environment_indicator][version] = 2.5
 
-projects[features][type] = module
-projects[features][subdir] = contrib
 projects[features][version] = 2.2
 ; Cleaner info format - https://drupal.org/comment/8270327#comment-8270327
 projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
@@ -132,9 +112,6 @@ projects[google_analytics][download][revision] = d5c42e145e218cf54397b70bb275484
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
 
-projects[gravatar][type] = module
-projects[gravatar][subdir] = contrib
-projects[gravatar][download][type] = git
 projects[gravatar][download][revision] = bb2f81e6b0e93156ab86e62db70cfe169418cc92
 
 projects[http_client][version] = 2.4
@@ -153,12 +130,8 @@ projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_su
 
 projects[markdown][version] = 1.2
 
-projects[maxlength][type] = module
-projects[maxlength][subdir] = contrib
 projects[maxlength][version] = 3.0-beta1
 
-projects[metatag][type] = module
-projects[metatag][subdir] = contrib
 projects[metatag][version] = 1.0-rc2
 
 projects[module_filter][version] = 2.0-alpha2
@@ -167,12 +140,8 @@ projects[mollom][version] = 2.11
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
-projects[multifield][type] = module
-projects[multifield][subdir] = contrib
 projects[multifield][version] = 1.0-alpha1
 
-projects[navbar][type] = module
-projects[navbar][subdir] = contrib
 projects[navbar][version] = 1.4
 
 projects[oauth][version] = 3.2
@@ -191,16 +160,9 @@ projects[panels][version] = 3.4
 
 projects[pathauto][version] = 1.2
 
-projects[picture][type] = module
-projects[picture][subdir] = contrib
 projects[picture][version] = 2.6
 
-projects[profile2][type] = module
-projects[profile2][subdir] = contrib
 projects[profile2][version] = 1.3
-projects[picture][type] = module
-projects[picture][subdir] = contrib
-projects[picture][version] = 2.6
 
 projects[prepro][download][revision] = 306d6c59e539add57c287c60c53dbe755550dd7a
 ; Variable integration - http://drupal.org/node/1958564#comment-7269614
@@ -242,12 +204,8 @@ projects[site_verify][version] = 1.1
 
 projects[smtp][version] = 1.0
 
-projects[speedy][type] = module
-projects[speedy][subdir] = contrib
 projects[speedy][version] = 1.12
 
-projects[stage_file_proxy][type] = module
-projects[stage_file_proxy][subdir] = contrib
 projects[stage_file_proxy][version] = 1.6
 ; Add Variable module integration - https://drupal.org/node/2183195#comment-8421499
 projects[stage_file_proxy][patch][] = https://drupal.org/files/issues/add_variable_module_integration-2183195-1.patch
@@ -342,6 +300,4 @@ libraries[vegas][download][url] = https://github.com/jaysalvat/vegas/archive/v1.
 
 ; Deprecated
 
-projects[multifield][type] = module
-projects[multifield][subdir] = contrib
 projects[multifield][version] = 1.0-alpha1
