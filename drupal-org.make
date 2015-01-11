@@ -59,7 +59,7 @@ projects[custom_formatters][download][revision] = 6463508a3b9dbfb7feb5662b0f6825
 ; Remove Custom Formatters makefile to prevent duplicate downloads - http://drupal.org/node/1721294#comment-6395368
 projects[custom_formatters][patch][] = http://drupal.org/files/no_makefile-1721294-1.patch
 
-projects[date][version] = 2.7
+projects[date][version] = 2.8
 
 projects[devel][version] = 1.5
 
@@ -125,7 +125,7 @@ projects[metatag][version] = 1.0-beta9
 
 projects[module_filter][version] = 2.0-alpha2
 
-projects[mollom][version] = 2.10
+projects[mollom][version] = 2.11
 ; Exportables - https://drupal.org/node/717874#comment-7538947
 ; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
 
