@@ -318,9 +318,7 @@ projects[semantic_panels][version] = 1.2
 
 projects[services][type] = module
 projects[services][subdir] = contrib
-projects[services][version] = 3.7
-; Fixed unsigned consumer OAuth - https://drupal.org/node/1526308#comment-8527959
-projects[services][patch][] = https://drupal.org/files/issues/1526308-services_oauth-with-multiple-authentication-oauth-fix-2.patch
+projects[services][version] = 3.11
 
 projects[services_rules][type] = module
 projects[services_rules][subdir] = contrib
