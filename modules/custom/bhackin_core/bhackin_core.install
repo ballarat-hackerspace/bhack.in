@@ -8,6 +8,11 @@
  * Implements hook_install().
  */
 function bhackin_core_install() {
+  // Ensure persistent update isn't skipped.
+  // @TODO - We don't want to re-run any updates on subsequent installs. Ensure
+  // That on install we set the update hook prior to the 8000 update is set.
+  drupal_set_installed_schema_version('bhackin_core', 0);
+
   // Flush caches and revert the feature.
   _bhackin_core_flush_revert();
 
@@ -28,6 +33,61 @@ function bhackin_core_install() {
 
   // @TODO - Add OAuth Connector 'email' field during install.
   // @TODO - Make OAuth Connector fields exportable. #2260353
+}
+
+/**
+ * [PERSISTENT] Flush caches and revert features.
+ */
+function bhackin_core_update_8000() {
+  // Flush caches and revert features.
+  _bhackin_core_flush_revert();
+
+  // Set the schema back to the last non-persistent update.
+  $schemas = drupal_get_schema_versions('bhackin_core');
+  array_unshift($schemas, 0);
+  drupal_set_installed_schema_version('bhackin_core', $schemas[count($schemas) - 2]);
+}
+
+/**
+ * Helper function; Enable dependencies, flush caches and revert the feature.
+ */
+function _bhackin_core_flush_revert() {
+  if (empty($modules)) {
+    $modules = basename(__FILE__, '.install');
+  }
+  if (!is_array($modules)) {
+    $modules = array($modules);
+  }
+
+  $revert = array();
+  foreach ($modules as $module) {
+    $info = system_get_info('module', $module);
+
+    // Enable all dependencies.
+    module_enable($info['dependencies']);
+
+    // Forcefully clear Features caches.
+    module_load_include('inc', 'features', 'features.export');
+    foreach (array_keys($info['features']) as $component) {
+      features_get_components($component, NULL, TRUE);
+      features_include_defaults($component, TRUE);
+      features_get_default($component, $module, TRUE, TRUE);
+    }
+
+    // Revert all feature components except for 'OAuth Connector providers'.
+    unset($info['features']['oauthconnector_provider']);
+
+    // Build components list for feature revert.
+    $revert[$module] = array_keys($info['features']);
+  }
+
+  // Flush Prepro cache.
+  cache_clear_all('prepro:map', 'cache_prepro');
+
+  // Flush all standard Drupal caches.
+  drupal_flush_all_caches();
+
+  features_revert($revert);
 }
 
 /**
@@ -141,49 +201,4 @@ function bhackin_core_update_7104() {
   // Remove deprecated profiles.
   $type = profile2_type_load('main');
   profile2_type_delete($type);
-
-  // Flush caches and revert the feature.
-  _bhackin_core_flush_revert();
-}
-
-/**
- * Helper function; Enable dependencies, flush caches and revert the feature.
- */
-function _bhackin_core_flush_revert() {
-  if (empty($modules)) {
-    $modules = basename(__FILE__, '.install');
-  }
-  if (!is_array($modules)) {
-    $modules = array($modules);
-  }
-
-  $revert = array();
-  foreach ($modules as $module) {
-    $info = system_get_info('module', $module);
-
-    // Enable all dependencies.
-    module_enable($info['dependencies']);
-
-    // Forcefully clear Features caches.
-    module_load_include('inc', 'features', 'features.export');
-    foreach (array_keys($info['features']) as $component) {
-      features_get_components($component, NULL, TRUE);
-      features_include_defaults($component, TRUE);
-      features_get_default($component, $module, TRUE, TRUE);
-    }
-
-    // Revert all feature components except for 'OAuth Connector providers'.
-    unset($info['features']['oauthconnector_provider']);
-
-    // Build components list for feature revert.
-    $revert[$module] = array_keys($info['features']);
-  }
-
-  // Flush Prepro cache.
-  cache_clear_all('prepro:map', 'cache_prepro');
-
-  // Flush all standard Drupal caches.
-  drupal_flush_all_caches();
-
-  features_revert($revert);
 }
