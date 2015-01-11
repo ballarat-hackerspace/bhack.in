@@ -30,3 +30,11 @@ regions[page_bottom] = 'Page bottom'
 ; Stylesheets
 
 stylesheets[all][] = scss/style.scss
+
+
+
+; Theme settings
+
+settings[bootstrap_breadcrumb_home] = 1
+settings[bootstrap_navbar_position] = fixed-top
+settings[bootstrap_navbar_inverse] = 1

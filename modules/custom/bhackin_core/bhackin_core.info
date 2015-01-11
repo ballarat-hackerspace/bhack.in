@@ -331,7 +331,6 @@ features[variable][] = smtp_on
 features[variable][] = smtp_port
 features[variable][] = smtp_protocol
 features[variable][] = smtp_username
-features[variable][] = theme_bhackin_theme_settings
 features[variable][] = theme_default
 features[variable][] = update_check_disabled
 features[variable][] = update_check_frequency

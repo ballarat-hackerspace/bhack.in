@@ -135,11 +135,19 @@ function bhackin_core_update_7103() {
 }
 
 /**
- * Migrate fields from user to profile and flush caches and revert the feature.
+ * Toggle default themes, migrate fields from user to profile and flush caches
+ * and revert the feature.
  */
 function bhackin_core_update_7104() {
   // Flush caches and revert the feature.
   _bhackin_core_flush_revert();
+
+  // Toggle default theems.
+  theme_enable(array('bhackin_theme'));
+  theme_disable(array('bartik'));
+
+  // Remove overrideen theme settings.
+  variable_del('theme_bhackin_theme_settings');
 
   // Migrate fields from user to profile.
   $link_map = array(
