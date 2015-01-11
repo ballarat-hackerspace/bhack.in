@@ -54,7 +54,7 @@ projects[context][patch][] = https://drupal.org/files/context_menu_fix_2013-07-0
 
 projects[context_condition_theme][version] = 1.0
 
-projects[context_module][download][revision] = b7a05aa12clear99d9286b77f66c539826de9bebde2fb
+projects[context_module][download][revision] = b7a05aa1299d9286b77f66c539826de9bebde2fb
 ; Prevent rederict loop - https://drupal.org/node/2076565#comment-7804715
 projects[context_module][patch][] = https://drupal.org/files/redirect_loop-2076565-1.patch
 
