@@ -86,6 +86,51 @@ function bhackin_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_product-recurring-field_recurring_role'
+  $field_instances['commerce_product-recurring-field_recurring_role'] = array(
+    'bundle' => 'recurring',
+    'commerce_cart_settings' => array(
+      'attribute_field' => 0,
+      'attribute_widget' => 'select',
+      'attribute_widget_title' => 'Role',
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'role_field',
+        'settings' => array(),
+        'type' => 'role_field_formatter',
+        'weight' => 4,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_recurring_role',
+    'label' => 'Role',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 39,
+    ),
+  );
+
   // Exported field_instance: 'entityform-register_interest-field_ri_email'
   $field_instances['entityform-register_interest-field_ri_email'] = array(
     'bundle' => 'register_interest',
@@ -925,6 +970,7 @@ function bhackin_core_field_default_field_instances() {
   t('Postcode');
   t('Price');
   t('Referer');
+  t('Role');
   t('Tags');
   t('Twitter');
   t('Website');

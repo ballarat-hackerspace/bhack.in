@@ -184,6 +184,8 @@ projects[reroute_email][download][revision] = f2e3878ec1ecba067d7206a4ba98482e6c
 ; Variable integration - http://drupal.org/node/1964070#comment-7294928
 projects[reroute_email][patch][] = http://drupal.org/files/reroute_email-add-variable-module-integration-1964070-2.patch
 
+projects[role_field][version] = 1.0-alpha2
+
 projects[rules][version] = 2.7
 
 projects[rules_conditional][version] = 1.0-beta2

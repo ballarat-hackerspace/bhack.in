@@ -521,6 +521,29 @@ function bhackin_core_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_recurring_role'
+  $field_bases['field_recurring_role'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_recurring_role',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'role_field',
+    'settings' => array(
+      'exclusive' => 0,
+      'profile2_private' => FALSE,
+      'roles' => array(
+        5 => 5,
+        6 => 6,
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'role',
+  );
+
   // Exported field_base: 'field_ri_email'
   $field_bases['field_ri_email'] = array(
     'active' => 1,

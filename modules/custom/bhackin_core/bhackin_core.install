@@ -216,11 +216,13 @@ function bhackin_core_update_7104() {
       'title'  => 'Association',
       'price'  => 50,
       'period' => 'year',
+      'role'   => 'association member',
     ),
     'WORK1' => array(
       'title'  => 'Workshop',
       'price'  => 60,
       'period' => 'month',
+      'role'   => 'workshop member',
     ),
   );
   foreach ($products as $sku => $product) {
@@ -251,6 +253,8 @@ function bhackin_core_update_7104() {
         'period'   => $product['period'],
       );
     }
+
+    $commerce_product->field_recurring_role[LANGUAGE_NONE][]['value'] = user_role_load_by_name($product['role'])->rid;
 
     commerce_product_save($commerce_product);
   }
