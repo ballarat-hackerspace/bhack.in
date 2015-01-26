@@ -448,12 +448,11 @@ function bhackin_core_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'profile2',
     'field_name' => 'field_membership_type',
-    'label' => 'Membership type',
+    'label' => 'Membership type(s)',
     'required' => 0,
     'settings' => array(
       'field_injection' => 1,
       'referenceable_types' => array(
-        'membership' => 0,
         'product' => 0,
         'recurring' => 'recurring',
       ),
@@ -465,7 +464,7 @@ function bhackin_core_field_default_field_instances() {
       'settings' => array(
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 1,
     ),
   );
@@ -921,7 +920,7 @@ function bhackin_core_field_default_field_instances() {
   t('Image');
   t('Last name');
   t('LinkedIn');
-  t('Membership type');
+  t('Membership type(s)');
   t('Name');
   t('Postcode');
   t('Price');

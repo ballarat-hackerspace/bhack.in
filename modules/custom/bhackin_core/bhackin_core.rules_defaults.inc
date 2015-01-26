@@ -93,22 +93,34 @@ function bhackin_core_default_rules_configuration() {
         { "NOT data_is_empty" : { "data" : [ "profile2:field-membership-type" ] } }
       ],
       "DO" : [
-        { "commerce_cart_product_add_by_sku" : {
-            "USING" : {
-              "user" : [ "profile2:user" ],
-              "sku" : [ "profile2:field-membership-type:sku" ],
-              "quantity" : "1",
-              "combine" : 0
-            },
-            "PROVIDE" : { "product_add_line_item" : { "membership" : "Membership" } }
+        { "LOOP" : {
+            "USING" : { "list" : [ "profile2:field-membership-type" ] },
+            "ITEM" : { "membership_type" : "Membership type" },
+            "DO" : [
+              { "commerce_cart_product_add_by_sku" : {
+                  "USING" : {
+                    "user" : [ "profile2:user" ],
+                    "sku" : [ "membership-type:sku" ],
+                    "quantity" : "1",
+                    "combine" : 0
+                  },
+                  "PROVIDE" : { "product_add_line_item" : { "membership" : "Membership" } }
+                }
+              }
+            ]
           }
         },
-        { "entity_fetch" : {
-            "USING" : { "type" : "commerce_order", "id" : [ "membership:order-id" ] },
+        { "entity_query" : {
+            "USING" : {
+              "type" : "commerce_order",
+              "property" : "uid",
+              "value" : [ "profile2:user:uid" ],
+              "limit" : "1"
+            },
             "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
           }
         },
-        { "commerce_checkout_complete" : { "commerce_order" : [ "order" ] } }
+        { "commerce_checkout_complete" : { "commerce_order" : [ "order:0" ] } }
       ]
     }
   }');

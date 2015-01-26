@@ -12,29 +12,27 @@
 function bhackin_core_field_widget_options_buttons_form_alter(&$element, &$form_state, $context) {
   if ($context['field']['type'] == 'commerce_product_reference') {
     foreach ($element['#options'] as $key => &$value) {
-      if ($key == '_none') {
-        $value = t('Free user');
-      }
-      else {
-        $product = commerce_product_load($key);
+      $product = commerce_product_load($key);
 
-        $field    = field_info_field('commerce_price');
-        $instance = field_info_instance('commerce_product', 'commerce_price', 'membership');
-        $langtype = field_language('commerce_product', $product, 'commerce_price');
-        $items    = field_get_items('commerce_product', $product, 'commerce_price');
-        $display  = array(
-          'type' => 'commerce_price_formatted_amount',
-        );
-        $price    = commerce_price_field_formatter_view('commerce_product', $product, $field, $instance, $langtype, $items, $display);
+      // Get product price.
+      $field    = field_info_field('commerce_price');
+      $instance = field_info_instance('commerce_product', 'commerce_price', 'membership');
+      $langcode = field_language('commerce_product', $product, 'commerce_price');
+      $items    = field_get_items('commerce_product', $product, 'commerce_price');
+      $display  = array(
+        'type' => 'commerce_price_formatted_amount',
+      );
+      $price    = commerce_price_field_formatter_view('commerce_product', $product, $field, $instance, $langcode, $items, $display);
 
-        $value = t('@title - @price', array(
-          '@title' => $product->title,
-          '@price' => render($price),
-        ));
-      }
+      // Get product recurring period.
+      $langcode = field_language('commerce_product', $product, 'commerce_recurring_rec_period');
+      $period   = $product->commerce_recurring_rec_period[$langcode][0]['period'];
+
+      $value = t('@title - @price per @period', array(
+        '@title'  => $product->title,
+        '@price'  => render($price),
+        '@period' => $period,
+      ));
     }
-
-    $element['#required'] = TRUE;
-    $element['#default_value'] = !isset($element['#default_value']) ? '_none' : $element['#default_value'];
   }
 }
