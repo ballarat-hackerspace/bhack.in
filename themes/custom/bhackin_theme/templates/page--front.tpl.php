@@ -73,7 +73,6 @@
  * @ingroup themeable
  */
 ?>
-<?php if (user_is_anonymous()) : ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     <div class="navbar-header">
@@ -116,7 +115,6 @@
     <?php endif; ?>
   </div>
 </header>
-<?php endif; ?>
 
 <div class="container">
   <?php print $messages; ?>

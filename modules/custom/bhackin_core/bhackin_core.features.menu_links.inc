@@ -28,8 +28,9 @@ function bhackin_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -50,
     'customized' => 1,
+    'parent_identifier' => 'main-menu_home:<front>',
   );
   // Exported menu link: main-menu_home:<front>
   $menu_links['main-menu_home:<front>'] = array(
@@ -46,8 +47,8 @@ function bhackin_core_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => 0,
     'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
+    'has_children' => 1,
+    'expanded' => 1,
     'weight' => -50,
     'customized' => 1,
   );
@@ -69,8 +70,9 @@ function bhackin_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -49,
     'customized' => 1,
+    'parent_identifier' => 'main-menu_home:<front>',
   );
   // Exported menu link: main-menu_where:<front>
   $menu_links['main-menu_where:<front>'] = array(
@@ -90,8 +92,9 @@ function bhackin_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -48,
     'customized' => 1,
+    'parent_identifier' => 'main-menu_home:<front>',
   );
   // Exported menu link: menu-administration_add-content:node/add
   $menu_links['menu-administration_add-content:node/add'] = array(
