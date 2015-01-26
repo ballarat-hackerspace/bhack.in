@@ -475,6 +475,65 @@ function bhackin_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'profile2-membership-field_membership_address'
+  $field_instances['profile2-membership-field_membership_address'] = array(
+    'bundle' => 'membership',
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'profile2|membership|field_membership_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'locality' => '',
+        'administrative_area' => '',
+        'postal_code' => '',
+        'country' => 'AU',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'profile2',
+    'field_name' => 'field_membership_address',
+    'label' => 'Address',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'AU' => 'AU',
+        ),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+        ),
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'profile2-membership-field_membership_type'
   $field_instances['profile2-membership-field_membership_type'] = array(
     'bundle' => 'membership',
@@ -954,6 +1013,7 @@ function bhackin_core_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Address');
   t('Bio');
   t('Body');
   t('Email');

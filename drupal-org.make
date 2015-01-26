@@ -48,6 +48,8 @@ projects[commerce_features][version] = 1.0
 
 projects[commerce_recurring][download][revision] = 406cfa9d9e5ddfd295babefd68d11064d2fbaa85
 
+projects[conditional_fields][version] = 3.0-alpha1
+
 projects[connector][download][revision] = 46cade3620061a41b3853374dc357f9eaf31829d
 ; Fix data mapping - https://drupal.org/node/1503258#comment-8596491
 projects[connector][patch][] = https://drupal.org/files/issues/fix_map-1503258-13.patch

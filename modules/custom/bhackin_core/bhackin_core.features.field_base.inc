@@ -186,6 +186,24 @@ function bhackin_core_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_membership_address'
+  $field_bases['field_membership_address'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_membership_address',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'addressfield',
+    'settings' => array(
+      'profile2_private' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'addressfield',
+  );
+
   // Exported field_base: 'field_membership_type'
   $field_bases['field_membership_type'] = array(
     'active' => 1,
