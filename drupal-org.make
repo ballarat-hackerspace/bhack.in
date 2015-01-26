@@ -247,7 +247,7 @@ projects[xmlsitemap][patch][] = http://drupal.org/files/variable_integration-198
 ; Themes
 
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = 3.0
+projects[bootstrap][download][revision] = f05a44e
 
 
 
@@ -258,9 +258,6 @@ libraries[backbone][download][url] = https://github.com/jashkenas/backbone/archi
 
 libraries[bootstrap][download][type] = get
 libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.2.zip
-libraries[bootstrap][directory_name] = bootstrap
-libraries[bootstrap][destination] = themes/contrib/bootstrap
-libraries[bootstrap][overwrite] = TRUE
 
 libraries[dindent][download][type] = get
 libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/dindent/master/src/Parser.php
