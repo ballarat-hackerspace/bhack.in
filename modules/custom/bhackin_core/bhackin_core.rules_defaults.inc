@@ -45,6 +45,7 @@ function bhackin_core_default_rules_configuration() {
   $items['rules_blog_new'] = entity_import('rules_config', '{ "rules_blog_new" : {
       "LABEL" : "Node: New blog post",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "rules_conditional", "botrules" ],
       "ON" : { "node_insert--blog" : { "bundle" : "blog" } },
@@ -114,6 +115,7 @@ function bhackin_core_default_rules_configuration() {
   $items['rules_register_interest'] = entity_import('rules_config', '{ "rules_register_interest" : {
       "LABEL" : "Entityform: New registration of interest",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "TAGS" : [ "bHack.in" ],
       "REQUIRES" : [ "rules", "rules_conditional", "mailchimp_lists", "entityform" ],

@@ -135,8 +135,8 @@ function bhackin_core_update_7103() {
 }
 
 /**
- * Toggle default themes, migrate fields from user to profile and flush caches
- * and revert the feature.
+ * Toggle default themes, migrate fields from user to profile, add products and
+ * disable rules.
  */
 function bhackin_core_update_7104() {
   // Flush caches and revert the feature.
@@ -253,5 +253,22 @@ function bhackin_core_update_7104() {
     }
 
     commerce_product_save($commerce_product);
+  }
+
+  // Disable rules.
+  $rules = array(
+    'commerce_cart_add_to_cart_message',
+    'commerce_cart_order_status_reset',
+    'commerce_cart_unset_disabled_products',
+    'commerce_checkout_new_account',
+    'commerce_checkout_order_email',
+    'commerce_checkout_order_convert',
+    'commerce_checkout_order_created_date_update',
+    'commerce_recurring_assign_recurring_entity',
+  );
+  foreach ($rules as $rule) {
+    $rule         = rules_config_load($rule);
+    $rule->active = FALSE;
+    $rule->save();
   }
 }
