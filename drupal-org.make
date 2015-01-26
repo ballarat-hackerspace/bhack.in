@@ -37,6 +37,10 @@ projects[coder][version] = 2.2
 projects[coffee][version] = 2.2
 
 projects[commerce][version] = 1.10
+; Fix illegal string offset 'title' error - https://www.drupal.org/node/2341617#comment-9552807
+projects[commerce][patch][] = https://www.drupal.org/files/issues/illegal_titles-2341617-2.patch
+; Add missing transaction setters - https://www.drupal.org/node/1604916#comment-9552891
+projects[commerce][patch][] = https://www.drupal.org/files/issues/missing_setters-1604916-4.patch
 
 projects[commerce_bank_transfer][version] = 1.0-alpha3
 
