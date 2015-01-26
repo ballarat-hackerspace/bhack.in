@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Product Reference module integration.
+ */
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * Some visual tweaks to the product reference field.
+ */
+function bhackin_core_field_widget_options_buttons_form_alter(&$element, &$form_state, $context) {
+  if ($context['field']['type'] == 'commerce_product_reference') {
+    foreach ($element['#options'] as $key => &$value) {
+      if ($key == '_none') {
+        $value = t('Free user');
+      }
+      else {
+        $product = commerce_product_load($key);
+
+        $field    = field_info_field('commerce_price');
+        $instance = field_info_instance('commerce_product', 'commerce_price', 'membership');
+        $langtype = field_language('commerce_product', $product, 'commerce_price');
+        $items    = field_get_items('commerce_product', $product, 'commerce_price');
+        $display  = array(
+          'type' => 'commerce_price_formatted_amount',
+        );
+        $price    = commerce_price_field_formatter_view('commerce_product', $product, $field, $instance, $langtype, $items, $display);
+
+        $value = t('@title - @price', array(
+          '@title' => $product->title,
+          '@price' => render($price),
+        ));
+      }
+    }
+
+    $element['#required'] = TRUE;
+    $element['#default_value'] = !isset($element['#default_value']) ? '_none' : $element['#default_value'];
+  }
+}

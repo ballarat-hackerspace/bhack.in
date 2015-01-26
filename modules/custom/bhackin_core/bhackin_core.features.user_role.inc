@@ -16,9 +16,9 @@ function bhackin_core_user_default_roles() {
     'weight' => 3,
   );
 
-  // Exported role: member.
-  $roles['member'] = array(
-    'name' => 'member',
+  // Exported role: association member.
+  $roles['association member'] = array(
+    'name' => 'association member',
     'weight' => 4,
   );
 
@@ -26,6 +26,12 @@ function bhackin_core_user_default_roles() {
   $roles['superuser'] = array(
     'name' => 'superuser',
     'weight' => 2,
+  );
+
+  // Exported role: workshop member.
+  $roles['workshop member'] = array(
+    'name' => 'workshop member',
+    'weight' => 5,
   );
 
   return $roles;

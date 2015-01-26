@@ -38,9 +38,11 @@ projects[coffee][version] = 2.2
 
 projects[commerce][version] = 1.10
 
+projects[commerce_bank_transfer][version] = 1.0-alpha3
+
 projects[commerce_features][version] = 1.0
 
-projects[commerce_paypal][version] = 2.3
+projects[commerce_recurring][download][revision] = 406cfa9d9e5ddfd295babefd68d11064d2fbaa85
 
 projects[connector][download][revision] = 46cade3620061a41b3853374dc357f9eaf31829d
 ; Fix data mapping - https://drupal.org/node/1503258#comment-8596491
@@ -117,6 +119,8 @@ projects[gravatar][download][revision] = bb2f81e6b0e93156ab86e62db70cfe169418cc9
 projects[http_client][version] = 2.4
 
 projects[hacked][version] = 2.0-beta5
+
+projects[interval][version] = 1.0
 
 projects[jquery_update][version] = 2.4
 

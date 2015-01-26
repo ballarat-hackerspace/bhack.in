@@ -5,22 +5,6 @@
  */
 
 /**
- * Implements hook_commerce_product_default_types().
- */
-function bhackin_core_commerce_product_default_types() {
-  $items = array(
-    'membership' => array(
-      'type' => 'membership',
-      'name' => 'Membership',
-      'description' => '',
-      'help' => '',
-      'revision' => 0,
-    ),
-  );
-  return $items;
-}
-
-/**
  * Implements hook_ctools_plugin_api().
  */
 function bhackin_core_ctools_plugin_api($module = NULL, $api = NULL) {

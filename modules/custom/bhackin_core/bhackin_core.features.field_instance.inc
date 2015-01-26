@@ -44,6 +44,12 @@ function bhackin_core_field_default_field_instances() {
         'type' => 'commerce_price_formatted_amount',
         'weight' => 0,
       ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'node_teaser' => array(
         'label' => 'hidden',
         'module' => 'commerce_price',
@@ -421,6 +427,46 @@ function bhackin_core_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-membership-field_membership_type'
+  $field_instances['profile2-membership-field_membership_type'] = array(
+    'bundle' => 'membership',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_product_reference',
+        'settings' => array(),
+        'type' => 'commerce_product_reference_title_link',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'profile2',
+    'field_name' => 'field_membership_type',
+    'label' => 'Membership type',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'membership' => 0,
+        'product' => 0,
+        'recurring' => 'recurring',
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
     ),
   );
 
@@ -875,6 +921,7 @@ function bhackin_core_field_default_field_instances() {
   t('Image');
   t('Last name');
   t('LinkedIn');
+  t('Membership type');
   t('Name');
   t('Postcode');
   t('Price');

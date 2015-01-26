@@ -9,6 +9,39 @@
  */
 function bhackin_core_default_rules_configuration() {
   $items = array();
+  $items['commerce_payment_bhackin_bank_transfer'] = entity_import('rules_config', '{ "commerce_payment_bhackin_bank_transfer" : {
+      "LABEL" : "Bank Transfer",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "commerce_payment" ],
+      "ON" : { "commerce_payment_methods" : [] },
+      "DO" : [
+        { "commerce_payment_enable_bank_transfer" : {
+            "commerce_order" : [ "commerce-order" ],
+            "payment_method" : { "value" : {
+                "method_id" : "bank_transfer",
+                "settings" : {
+                  "details" : {
+                    "account_owner" : "",
+                    "account_number" : "",
+                    "account_iban" : "",
+                    "bank_code_appellation" : "",
+                    "bank_code" : "",
+                    "account_swift" : "",
+                    "account_bank" : "",
+                    "account_branch" : ""
+                  },
+                  "subject_oid" : 0,
+                  "policy" : ""
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_blog_new'] = entity_import('rules_config', '{ "rules_blog_new" : {
       "LABEL" : "Node: New blog post",
       "PLUGIN" : "reaction rule",
@@ -39,6 +72,42 @@ function bhackin_core_default_rules_configuration() {
           }
         },
         { "botrules_action_message" : { "target" : "#bHack", "text" : [ "message" ] } }
+      ]
+    }
+  }');
+  $items['rules_membership'] = entity_import('rules_config', '{ "rules_membership" : {
+      "LABEL" : "Membership",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "rules", "commerce_cart", "commerce_checkout", "profile2" ],
+      "ON" : { "profile2_insert" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "profile2" ],
+            "type" : "profile2",
+            "bundle" : { "value" : { "membership" : "membership" } }
+          }
+        },
+        { "NOT data_is_empty" : { "data" : [ "profile2:field-membership-type" ] } }
+      ],
+      "DO" : [
+        { "commerce_cart_product_add_by_sku" : {
+            "USING" : {
+              "user" : [ "profile2:user" ],
+              "sku" : [ "profile2:field-membership-type:sku" ],
+              "quantity" : "1",
+              "combine" : 0
+            },
+            "PROVIDE" : { "product_add_line_item" : { "membership" : "Membership" } }
+          }
+        },
+        { "entity_fetch" : {
+            "USING" : { "type" : "commerce_order", "id" : [ "membership:order-id" ] },
+            "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
+          }
+        },
+        { "commerce_checkout_complete" : { "commerce_order" : [ "order" ] } }
       ]
     }
   }');
