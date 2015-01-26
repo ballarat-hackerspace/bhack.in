@@ -120,7 +120,28 @@ function bhackin_core_default_rules_configuration() {
             "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
           }
         },
-        { "commerce_checkout_complete" : { "commerce_order" : [ "order:0" ] } }
+        { "commerce_checkout_complete" : { "commerce_order" : [ "order:0" ] } },
+        { "entity_create" : {
+            "USING" : {
+              "type" : "commerce_payment_transaction",
+              "param_user" : [ "profile2:user" ],
+              "param_order" : [ "order:0" ],
+              "param_payment_method" : "bank_transfer"
+            },
+            "PROVIDE" : { "entity_created" : { "transaction" : "Transaction" } }
+          }
+        },
+        { "data_set" : { "data" : [ "transaction:status" ], "value" : "pending" } },
+        { "data_set" : {
+            "data" : [ "transaction:amount" ],
+            "value" : [ "order:0:commerce-order-total:amount" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "transaction:currency-code" ],
+            "value" : [ "order:0:commerce-order-total:currency-code" ]
+          }
+        }
       ]
     }
   }');
