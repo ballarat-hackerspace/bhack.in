@@ -275,4 +275,9 @@ function bhackin_core_update_7104() {
     $rule->active = FALSE;
     $rule->save();
   }
+
+  // Disable and uninstall unused modules.
+  $modules = array('navbar');
+  module_disable($modules);
+  drupal_uninstall_modules($modules);
 }

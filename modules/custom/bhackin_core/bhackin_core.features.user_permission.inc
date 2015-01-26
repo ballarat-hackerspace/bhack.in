@@ -56,16 +56,6 @@ function bhackin_core_user_default_permissions() {
     'module' => 'contextual',
   );
 
-  // Exported permission: 'access navbar'.
-  $permissions['access navbar'] = array(
-    'name' => 'access navbar',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'navbar',
-  );
-
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
