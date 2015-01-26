@@ -14,7 +14,21 @@ function bhackin_theme_preprocess(&$vars, $hook) {
 /** */
 
 /**
- * Implements hook_preprocess_page().
+ * Implements hook_preprocess_HOOK().
+ */
+function bhackin_theme_preprocess_block(&$vars) {
+  // Wrap 'sidebar_second' region based blocks with the bootstrap panel classes.
+  if ('sidebar_second' == $vars['block']->region) {
+    $vars['classes_array'][]                   = 'panel';
+    $vars['classes_array'][]                   = 'panel-default';
+    $vars['title_attributes_array']['class'][] = 'panel-heading';
+    $vars['title_attributes_array']['class'][] = 'panel-title';
+    $vars['content']                           = "<div class='panel-body'>{$vars['content']}</div>";
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
  */
 function bhackin_theme_preprocess_page(&$vars) {
   $vars['logo'] = file_create_url(drupal_get_path('theme', 'bhackin_theme') . '/logo.svg');
