@@ -118,8 +118,6 @@ projects[google_analytics][download][revision] = d5c42e145e218cf54397b70bb275484
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
 
-projects[gravatar][download][revision] = bb2f81e6b0e93156ab86e62db70cfe169418cc92
-
 projects[http_client][version] = 2.4
 
 projects[hacked][version] = 2.0-beta5

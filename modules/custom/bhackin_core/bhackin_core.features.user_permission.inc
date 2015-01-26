@@ -213,17 +213,6 @@ function bhackin_core_user_default_permissions() {
     'module' => 'profile2',
   );
 
-  // Exported permission: 'use gravatar'.
-  $permissions['use gravatar'] = array(
-    'name' => 'use gravatar',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'superuser' => 'superuser',
-    ),
-    'module' => 'gravatar',
-  );
-
   // Exported permission: 'use text format markdown'.
   $permissions['use text format markdown'] = array(
     'name' => 'use text format markdown',
