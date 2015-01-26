@@ -209,4 +209,49 @@ function bhackin_core_update_7104() {
   // Remove deprecated profiles.
   $type = profile2_type_load('main');
   profile2_type_delete($type);
+
+  // Add products.
+  $products = array(
+    'ASSOC' => array(
+      'title'  => 'Association',
+      'price'  => 50,
+      'period' => 'year',
+    ),
+    'WORK1' => array(
+      'title'  => 'Workshop',
+      'price'  => 60,
+      'period' => 'month',
+    ),
+  );
+  foreach ($products as $sku => $product) {
+    $commerce_product        = commerce_product_new('recurring');
+    $commerce_product->sku   = $sku;
+    $commerce_product->title = $product['title'];
+
+    $fields = array(
+      'commerce_price',
+      'commerce_recurring_ini_price',
+      'commerce_recurring_rec_price'
+    );
+    foreach ($fields as $field) {
+      $commerce_product->{$field}[LANGUAGE_NONE][] = array(
+        'amount'        => $product['price'] * 100,
+        'currency_code' => 'AUD',
+      );
+    }
+
+    $fields = array(
+      'commerce_recurring_ini_period',
+      'commerce_recurring_rec_period',
+      'commerce_recurring_end_period',
+    );
+    foreach ($fields as $field) {
+      $commerce_product->{$field}[LANGUAGE_NONE][] = array(
+        'interval' => 1,
+        'period'   => $product['period'],
+      );
+    }
+
+    commerce_product_save($commerce_product);
+  }
 }
