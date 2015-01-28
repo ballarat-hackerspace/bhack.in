@@ -903,9 +903,7 @@ function bhackin_core_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Where',
-      'body' => '<p>
-  Whilst bHack does not yet have permanent home, it does not stop us from getting together and sharing our projects. Our temporary location is at Pilates Ballarat located at 113 Albert St, Sebastopol. There is parking at the rear.
-</p>',
+      'body' => '<p>&nbsp;</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -935,7 +933,7 @@ function bhackin_core_default_page_manager_pages() {
       'admin_title' => 'Map',
       'title' => '',
       'body' => '<div class="the-box-landing border-hover-bottom text-center">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3161.4412906296457!2d143.841486!3d-37.591772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad15b4b35371405%3A0xa2845dd5cd0bafe5!2s113+Albert+St!5e0!3m2!1sen!2sau!4v1395922552175" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3162.557667332649!2d143.857577!3d-37.565484000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad144fa1820aff1%3A0xcccfffb2cb152dd7!2sBallarat+Hackerspace!5e0!3m2!1sen!2sau!4v1422321706092" width="100%" height="300" frameborder="0" style="border:0"></iframe>
 </div>',
       'format' => 'full_html',
       'substitute' => TRUE,
