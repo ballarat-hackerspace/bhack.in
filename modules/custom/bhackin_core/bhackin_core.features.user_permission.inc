@@ -96,7 +96,6 @@ function bhackin_core_user_default_permissions() {
     'name' => 'create blog content',
     'roles' => array(
       'administrator' => 'administrator',
-      'member' => 'member',
       'superuser' => 'superuser',
     ),
     'module' => 'node',
@@ -137,7 +136,6 @@ function bhackin_core_user_default_permissions() {
     'name' => 'delete own blog content',
     'roles' => array(
       'administrator' => 'administrator',
-      'member' => 'member',
       'superuser' => 'superuser',
     ),
     'module' => 'node',
@@ -178,7 +176,6 @@ function bhackin_core_user_default_permissions() {
     'name' => 'edit own blog content',
     'roles' => array(
       'administrator' => 'administrator',
-      'member' => 'member',
       'superuser' => 'superuser',
     ),
     'module' => 'node',
