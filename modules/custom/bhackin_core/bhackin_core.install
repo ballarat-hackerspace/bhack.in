@@ -259,6 +259,13 @@ function bhackin_core_update_7104() {
     commerce_product_save($commerce_product);
   }
 
+  // Add 'Workshop hours' taxonomy term.
+  $term                          = new stdClass();
+  $term->vid                     = taxonomy_vocabulary_machine_name_load('event_type')->vid;
+  $term->name                    = 'Workshop hours';
+  $term->vocabulary_machine_name = 'event_type';
+  taxonomy_term_save($term);
+
   // Disable rules.
   $rules = array(
     'commerce_cart_add_to_cart_message',

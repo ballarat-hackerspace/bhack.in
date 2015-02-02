@@ -415,6 +415,7 @@ function bhackin_core_default_page_manager_pages() {
       'header' => NULL,
       'what' => NULL,
       'blog' => NULL,
+      'when' => NULL,
     ),
     'about' => array(
       'style' => 'naked',
@@ -893,6 +894,61 @@ function bhackin_core_default_page_manager_pages() {
     $pane->uuid = '492d5060-30ab-48dc-a5c1-0b6807160fc0';
     $display->content['new-492d5060-30ab-48dc-a5c1-0b6807160fc0'] = $pane;
     $display->panels['what'][2] = 'new-492d5060-30ab-48dc-a5c1-0b6807160fc0';
+    $pane = new stdClass();
+    $pane->pid = 'new-2e917f14-5d4d-464c-aafe-72ce66606827';
+    $pane->panel = 'when';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'When',
+      'body' => '<p>&nbsp;</p>',
+      'format' => 'markdown',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'column_size' => '12',
+        'offset_size' => '0',
+      ),
+      'style' => 'bhackin_row',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '2e917f14-5d4d-464c-aafe-72ce66606827';
+    $display->content['new-2e917f14-5d4d-464c-aafe-72ce66606827'] = $pane;
+    $display->panels['when'][0] = 'new-2e917f14-5d4d-464c-aafe-72ce66606827';
+    $pane = new stdClass();
+    $pane->pid = 'new-92e69003-6f12-4d48-bc09-de28586ddcf6';
+    $pane->panel = 'when';
+    $pane->type = 'block';
+    $pane->subtype = 'views-events-block_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'column_size' => '12',
+        'offset_size' => '0',
+      ),
+      'style' => 'bhackin_row',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '92e69003-6f12-4d48-bc09-de28586ddcf6';
+    $display->content['new-92e69003-6f12-4d48-bc09-de28586ddcf6'] = $pane;
+    $display->panels['when'][1] = 'new-92e69003-6f12-4d48-bc09-de28586ddcf6';
     $pane = new stdClass();
     $pane->pid = 'new-f694afb4-bccb-4e78-b5cb-f9dd01e31046';
     $pane->panel = 'where';
