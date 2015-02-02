@@ -48,7 +48,7 @@ projects[commerce_billy][version] = 1.0-beta2
 ; Auto install fonts - https://www.drupal.org/node/2417967#comment-9573171
 projects[commerce_billy][patch][] = https://www.drupal.org/files/issues/pdf_install-2417967-1.patch
 
-projects[commerce_billy_mail][version] = 1.0-beta3
+projects[commerce_billy_mail][download][revision] = c851f2f20095aaca5c52467a01f67f1373d93423
 
 projects[commerce_features][version] = 1.0
 
@@ -142,15 +142,11 @@ projects[mailchimp][version] = 2.12
 ; Add Subscribe e-mail to list rule - https://drupal.org/node/1909306#comment-7034190
 projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_subscribe_email.patch
 
-projects[mailsystem][version] = 2.34
-
 projects[markdown][version] = 1.2
 
 projects[maxlength][version] = 3.0-beta1
 
 projects[metatag][version] = 1.0-rc2
-
-projects[mimemail][version] = 1.0-beta3
 
 projects[module_filter][version] = 2.0-alpha2
 
