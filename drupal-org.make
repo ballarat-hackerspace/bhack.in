@@ -142,11 +142,15 @@ projects[mailchimp][version] = 2.12
 ; Add Subscribe e-mail to list rule - https://drupal.org/node/1909306#comment-7034190
 projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_subscribe_email.patch
 
+projects[mailsystem][version] = 2.34
+
 projects[markdown][version] = 1.2
 
 projects[maxlength][version] = 3.0-beta1
 
 projects[metatag][version] = 1.0-rc2
+
+projects[mimemail][version] = 1.0-beta3
 
 projects[module_filter][version] = 2.0-alpha2
 
