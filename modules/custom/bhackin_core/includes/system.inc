@@ -15,9 +15,11 @@ function bhackin_core_init() {
  * Implements hook_module_implementations_alter().
  */
 function bhackin_core_module_implements_alter(&$implementations, $hook) {
-  if ($hook == 'form_alter') {
+  $hooks = array('form_alter', 'query_alter');
+  if (in_array($hook, $hooks) && isset($implementations['bhackin_core'])) {
+    $implementation = $implementations['bhackin_core'];
     unset($implementations['bhackin_core']);
-    $implementations['bhackin_core'] = FALSE;
+    $implementations['bhackin_core'] = $implementation;
   }
 }
 

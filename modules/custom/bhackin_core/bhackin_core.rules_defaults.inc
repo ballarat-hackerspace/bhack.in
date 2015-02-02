@@ -76,72 +76,126 @@ function bhackin_core_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_membership'] = entity_import('rules_config', '{ "rules_membership" : {
-      "LABEL" : "Membership",
-      "PLUGIN" : "reaction rule",
+  $items['rules_create_new_memberships'] = entity_import('rules_config', '{ "rules_create_new_memberships" : {
+      "LABEL" : "Create new membership(s)",
+      "PLUGIN" : "rule",
       "OWNER" : "rules",
       "TAGS" : [ "bHack.in" ],
-      "REQUIRES" : [ "rules", "commerce_cart", "commerce_checkout", "profile2" ],
-      "ON" : { "profile2_insert" : [] },
+      "REQUIRES" : [
+        "rules",
+        "commerce_billy",
+        "rules_conditional",
+        "commerce_cart",
+        "commerce_checkout",
+        "commerce_billy_mail"
+      ],
+      "USES VARIABLES" : { "user" : { "label" : "User", "type" : "user" } },
       "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "profile2" ],
-            "type" : "profile2",
-            "bundle" : { "value" : { "membership" : "membership" } }
-          }
-        },
-        { "NOT data_is_empty" : { "data" : [ "profile2:field-membership-type" ] } }
+        { "NOT data_is_empty" : { "data" : [ "user:profile-membership:field-membership-type" ] } }
       ],
       "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "commerce_order",
+              "param_status" : "cart",
+              "param_type" : "commerce_order",
+              "param_owner" : [ "user" ],
+              "param_commerce_order_total" : { "value" : { "amount" : 0, "currency_code" : "AUD" } }
+            },
+            "PROVIDE" : { "entity_created" : { "order" : "Order" } }
+          }
+        },
+        { "commerce_billy_invoice_nr" : { "order" : [ "order" ] } },
+        { "entity_query" : {
+            "USING" : {
+              "type" : "commerce_customer_profile",
+              "property" : "uid",
+              "value" : [ "user:uid" ],
+              "limit" : "1"
+            },
+            "PROVIDE" : { "entity_fetched" : { "customer_profiles" : "Customer profiles" } }
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is_empty" : { "data" : [ "customer-profiles:0" ] } },
+              "DO" : [
+                { "entity_create" : {
+                    "USING" : {
+                      "type" : "commerce_customer_profile",
+                      "param_type" : "billing",
+                      "param_user" : [ "user" ]
+                    },
+                    "PROVIDE" : { "entity_created" : { "customer_profile" : "Customer profile" } }
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "customer-profile:commerce-customer-address" ],
+                    "value" : [ "customer-profile:commerce-customer-address" ]
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "customer-profile:commerce-customer-address:name-line" ],
+                    "value" : "[user:profile-profile:field-profile-first-name] [user:profile-profile:field-profile-last-name]"
+                  }
+                },
+                { "entity_save" : { "data" : [ "customer-profile" ], "immediate" : 1 } },
+                { "list_add" : {
+                    "list" : [ "customer-profiles" ],
+                    "item" : [ "customer-profile" ],
+                    "pos" : "start"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        { "data_set" : {
+            "data" : [ "order:commerce-customer-billing" ],
+            "value" : [ "customer-profiles:0" ]
+          }
+        },
+        { "data_set" : { "data" : [ "order:field-commerce-billy-i-date" ], "value" : "now" } },
+        { "entity_save" : { "data" : [ "order" ], "immediate" : 1 } },
         { "LOOP" : {
-            "USING" : { "list" : [ "profile2:field-membership-type" ] },
+            "USING" : { "list" : [ "user:profile-membership:field-membership-type" ] },
             "ITEM" : { "membership_type" : "Membership type" },
             "DO" : [
               { "commerce_cart_product_add_by_sku" : {
                   "USING" : {
-                    "user" : [ "profile2:user" ],
+                    "user" : [ "user" ],
                     "sku" : [ "membership-type:sku" ],
                     "quantity" : "1",
                     "combine" : 0
                   },
-                  "PROVIDE" : { "product_add_line_item" : { "membership" : "Membership" } }
+                  "PROVIDE" : { "product_add_line_item" : { "line_item" : "Line item" } }
                 }
               }
             ]
           }
         },
-        { "entity_query" : {
-            "USING" : {
-              "type" : "commerce_order",
-              "property" : "uid",
-              "value" : [ "profile2:user:uid" ],
-              "limit" : "1"
-            },
-            "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
-          }
-        },
-        { "commerce_checkout_complete" : { "commerce_order" : [ "order:0" ] } },
+        { "commerce_checkout_complete" : { "commerce_order" : [ "order" ] } },
         { "entity_create" : {
             "USING" : {
               "type" : "commerce_payment_transaction",
-              "param_user" : [ "profile2:user" ],
-              "param_order" : [ "order:0" ],
+              "param_user" : [ "user" ],
+              "param_order" : [ "order" ],
               "param_payment_method" : "bank_transfer"
             },
             "PROVIDE" : { "entity_created" : { "transaction" : "Transaction" } }
           }
         },
-        { "data_set" : { "data" : [ "transaction:status" ], "value" : "pending" } },
         { "data_set" : {
             "data" : [ "transaction:amount" ],
-            "value" : [ "order:0:commerce-order-total:amount" ]
+            "value" : [ "order:commerce-order-total:amount" ]
           }
         },
         { "data_set" : {
             "data" : [ "transaction:currency-code" ],
-            "value" : [ "order:0:commerce-order-total:currency-code" ]
+            "value" : [ "order:commerce-order-total:currency-code" ]
           }
-        }
+        },
+        { "commerce_billy_mail_action_send_invoice" : { "order" : [ "order" ] } }
       ]
     }
   }');
