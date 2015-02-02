@@ -131,7 +131,7 @@ function bhackin_core_default_rules_configuration() {
                 },
                 { "data_set" : {
                     "data" : [ "customer-profile:commerce-customer-address" ],
-                    "value" : [ "customer-profile:commerce-customer-address" ]
+                    "value" : [ "user:profile-membership:field-membership-address" ]
                   }
                 },
                 { "data_set" : {
@@ -185,6 +185,7 @@ function bhackin_core_default_rules_configuration() {
             "PROVIDE" : { "entity_created" : { "transaction" : "Transaction" } }
           }
         },
+        { "data_set" : { "data" : [ "transaction:status" ], "value" : "pending" } },
         { "data_set" : {
             "data" : [ "transaction:amount" ],
             "value" : [ "order:commerce-order-total:amount" ]
