@@ -16,6 +16,7 @@ $plugin = array(
     'about'  => t('About'),
     'what'   => t('What'),
     'quote'  => t('Quote'),
+    'when'   => t('When'),
     'where'  => t('Where'),
   ),
 );

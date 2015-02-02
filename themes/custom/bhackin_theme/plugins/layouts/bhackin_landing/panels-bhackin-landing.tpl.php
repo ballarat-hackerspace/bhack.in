@@ -52,7 +52,15 @@
   </div>
 </div>
 
-<div class="section-page-landing section-color-grey-light" id="where">
+<div class="section-page-landing section-color-grey-light" id="when">
+  <div class="inner-section">
+    <div class="container">
+      <?php print $content['when']; ?>
+    </div>
+  </div>
+</div>
+
+<div class="section-page-landing section-color-grey-dark" id="where">
   <div class="inner-section">
       <div class="container">
       <?php print $content['where']; ?>
