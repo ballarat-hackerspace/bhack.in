@@ -131,7 +131,7 @@ function bhackin_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'commerce_billy_mail_subject';
-  $strongarm->value = 'Your invoice.';
+  $strongarm->value = 'Invoice for order #[commerce-order:order-number]';
   $export['commerce_billy_mail_subject'] = $strongarm;
 
   $strongarm = new stdClass();

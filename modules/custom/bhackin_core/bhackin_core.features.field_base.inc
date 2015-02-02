@@ -39,6 +39,35 @@ function bhackin_core_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'commerce_line_items'
+  $field_bases['commerce_line_items'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_order',
+    ),
+    'field_name' => 'commerce_line_items',
+    'foreign keys' => array(
+      'line_item_id' => array(
+        'columns' => array(
+          'line_item_id' => 'line_item_id',
+        ),
+        'table' => 'commerce_line_item',
+      ),
+    ),
+    'indexes' => array(
+      'line_item_id' => array(
+        0 => 'line_item_id',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'commerce_line_item',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'commerce_line_item_reference',
+  );
+
   // Exported field_base: 'commerce_price'
   $field_bases['commerce_price'] = array(
     'active' => 1,

@@ -10,6 +10,55 @@
 function bhackin_core_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'commerce_order-commerce_order-commerce_line_items'
+  $field_instances['commerce_order-commerce_order-commerce_line_items'] = array(
+    'bundle' => 'commerce_order',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'administrator' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_line_item',
+        'settings' => array(
+          'view' => 'commerce_line_item_table|default',
+        ),
+        'type' => 'commerce_line_item_reference_view',
+        'weight' => -10,
+      ),
+      'customer' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_line_item',
+        'settings' => array(
+          'view' => 'commerce_line_item_table|default',
+        ),
+        'type' => 'commerce_line_item_reference_view',
+        'weight' => -10,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_line_item',
+        'settings' => array(
+          'view' => 'commerce_line_items|default',
+        ),
+        'type' => 'commerce_line_item_reference_view',
+        'weight' => -10,
+      ),
+    ),
+    'entity_type' => 'commerce_order',
+    'field_name' => 'commerce_line_items',
+    'label' => 'Line items',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_line_item',
+      'settings' => array(),
+      'type' => 'commerce_line_item_manager',
+      'weight' => -10,
+    ),
+  );
+
   // Exported field_instance: 'commerce_product-membership-commerce_price'
   $field_instances['commerce_product-membership-commerce_price'] = array(
     'bundle' => 'membership',
@@ -1024,6 +1073,7 @@ function bhackin_core_field_default_field_instances() {
   t('IRC nick');
   t('Image');
   t('Last name');
+  t('Line items');
   t('LinkedIn');
   t('Membership type(s)');
   t('Name');
