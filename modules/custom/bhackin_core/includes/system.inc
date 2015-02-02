@@ -68,7 +68,7 @@ function bhackin_core_block_info() {
   $blocks = array();
 
   // Load all block includes.
-  $dirname = dirname(__FILE__);
+  $dirname  = dirname(__FILE__);
   $includes = file_scan_directory("{$dirname}/../blocks", '/.inc$/');
   foreach ($includes as $file) {
     require_once $file->uri;
@@ -77,7 +77,7 @@ function bhackin_core_block_info() {
     $block = 'bhackinBlock_' . bhackin_core_underscores_to_camelcase($file->name, TRUE);
 
     // Build block info.
-    $block = new $block();
+    $block               = new $block();
     $blocks[$file->name] = $block->info();
   }
 
@@ -96,8 +96,10 @@ function bhackin_core_block_view($delta = '') {
 
     // Return block view.
     $block = new $block();
+
     return $block->view();
   }
+
   return FALSE;
 }
 
@@ -107,5 +109,6 @@ function bhackin_core_block_view($delta = '') {
 function bhackin_core_field_extra_fields() {
   $extra = array();
   drupal_alter('bhackin_core_field_extra_fields', $extra);
+
   return $extra;
 }

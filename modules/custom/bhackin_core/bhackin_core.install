@@ -104,7 +104,7 @@ function bhackin_core_update_7100() {
 
 /**
  * Flush caches and revert the feature, delete existing user aliases and
- * regenerate user aliases..
+ * regenerate user aliases.
  */
 function bhackin_core_update_7102() {
   // Flush caches and revert the feature.
