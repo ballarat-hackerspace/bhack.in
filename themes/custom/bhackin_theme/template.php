@@ -35,6 +35,20 @@ function bhackin_theme_preprocess_page(&$vars) {
 }
 
 /**
+ * Implements hook_html_head_alter().
+ */
+function bhackin_theme_html_head_alter(&$head_elements) {
+  $head_elements['viewport'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, maximum-scale=1',
+    ),
+  );
+}
+
+/**
  * Theme link override.
  *
  * @param $variables
