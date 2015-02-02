@@ -102,6 +102,72 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_mail_attach_pdf_invoice';
+  $strongarm->value = 1;
+  $export['commerce_billy_mail_attach_pdf_invoice'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_mail_bcc';
+  $strongarm->value = '';
+  $export['commerce_billy_mail_bcc'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_mail_body';
+  $strongarm->value = 'Find your invoice attached.';
+  $export['commerce_billy_mail_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_mail_from';
+  $strongarm->value = 'billing@bhack.in';
+  $export['commerce_billy_mail_from'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_mail_subject';
+  $strongarm->value = 'Your invoice.';
+  $export['commerce_billy_mail_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_pdf_css_files';
+  $strongarm->value = array(
+    0 => 'profiles/bhackin/modules/contrib/commerce_billy/modules/commerce_billy_pdf/css/pdf.css',
+  );
+  $export['commerce_billy_pdf_css_files'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_pdf_logo';
+  $strongarm->value = 'profiles/bhackin/themes/custom/bhackin_theme/images/logo-black.png';
+  $export['commerce_billy_pdf_logo'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_billy_pdf_text_settings';
+  $strongarm->value = array(
+    'invoice_header' => 'Ballarat Hackerspace Inc.,<br />
+Room 903, 107 Lydiard Street South<br />
+Ballarat VIC 3350, Australia',
+    'invoice_location' => '',
+    'invoice_date_format' => 'd/m/Y',
+    'invoice_text' => 'Invoice text',
+    'invoice_footer' => 'Ballarat Hackerspace, Inc.',
+  );
+  $export['commerce_billy_pdf_text_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'commerce_default_currency';
   $strongarm->value = 'AUD';
   $export['commerce_default_currency'] = $strongarm;
@@ -399,6 +465,29 @@ col-sm-offset-12';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__event';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '6',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '5',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_user__user';
   $strongarm->value = array(
     'view_modes' => array(
@@ -543,6 +632,13 @@ col-sm-offset-12';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_event';
+  $strongarm->value = array();
+  $export['menu_options_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -555,6 +651,13 @@ col-sm-offset-12';
   $strongarm->name = 'menu_parent_blog';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_blog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_event';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -576,6 +679,15 @@ col-sm-offset-12';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_event';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_page';
   $strongarm->value = array(
     0 => 'status',
@@ -593,6 +705,13 @@ col-sm-offset-12';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_event';
+  $strongarm->value = '1';
+  $export['node_preview_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_page';
   $strongarm->value = '1';
   $export['node_preview_page'] = $strongarm;
@@ -603,6 +722,13 @@ col-sm-offset-12';
   $strongarm->name = 'node_submitted_blog';
   $strongarm->value = 0;
   $export['node_submitted_blog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_event';
+  $strongarm->value = 0;
+  $export['node_submitted_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

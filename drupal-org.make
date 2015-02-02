@@ -44,6 +44,12 @@ projects[commerce][patch][] = https://www.drupal.org/files/issues/missing_setter
 
 projects[commerce_bank_transfer][version] = 1.0-alpha3
 
+projects[commerce_billy][version] = 1.0-beta2
+; Auto install fonts - https://www.drupal.org/node/2417967#comment-9573171
+projects[commerce_billy][patch][] = https://www.drupal.org/files/issues/pdf_install-2417967-1.patch
+
+projects[commerce_billy_mail][version] = 1.0-beta3
+
 projects[commerce_features][version] = 1.0
 
 projects[commerce_recurring][download][revision] = 406cfa9d9e5ddfd295babefd68d11064d2fbaa85
@@ -271,6 +277,9 @@ libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/
 
 libraries[dindent][download][type] = get
 libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/dindent/master/src/Parser.php
+
+libraries[dompdf][download][type] = get
+libraries[dompdf][download][url] = http://dompdf.googlecode.com/files/dompdf_0-6-0_beta3.tar.gz
 
 libraries[editarea][download][type] = get
 libraries[editarea][download][url] = http://downloads.sourceforge.net/project/editarea/EditArea/EditArea%200.8.2/editarea_0_8_2.zip?r=&ts=1334742944&use_mirror=internode
