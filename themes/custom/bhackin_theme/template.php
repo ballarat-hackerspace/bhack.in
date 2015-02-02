@@ -38,11 +38,22 @@ function bhackin_theme_preprocess_page(&$vars) {
  * Implements hook_html_head_alter().
  */
 function bhackin_theme_html_head_alter(&$head_elements) {
-  $head_elements['viewport'] = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
+  // Theme color.
+  $head_elements['theme-color'] = array(
+    '#type'       => 'html_tag',
+    '#type'       => 'meta',
     '#attributes' => array(
-      'name' => 'viewport',
+      'name'    => 'theme-color',
+      'content' => '#000000',
+    ),
+  );
+
+  // Viewport.
+  $head_elements['viewport'] = array(
+    '#type'       => 'html_tag',
+    '#tag'        => 'meta',
+    '#attributes' => array(
+      'name'    => 'viewport',
       'content' => 'width=device-width, initial-scale=1, maximum-scale=1',
     ),
   );
