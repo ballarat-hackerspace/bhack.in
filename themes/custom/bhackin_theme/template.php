@@ -41,7 +41,7 @@ function bhackin_theme_html_head_alter(&$head_elements) {
   // Theme color.
   $head_elements['theme-color'] = array(
     '#type'       => 'html_tag',
-    '#type'       => 'meta',
+    '#tag'        => 'meta',
     '#attributes' => array(
       'name'    => 'theme-color',
       'content' => '#000000',
