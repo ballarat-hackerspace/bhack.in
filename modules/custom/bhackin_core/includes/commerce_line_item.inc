@@ -11,7 +11,7 @@
  * registration.
  */
 function bhackin_core_query_commerce_line_item_access_alter(QueryAlterableInterface $query) {
-  if (isset($_POST['form_build_id'])) {
+  if (user_is_anonymous() && isset($_POST['form_build_id'])) {
     list($form, $form_state, $form_id, $form_build_id, $commands) = ajax_get_form();
     if ($form['#form_id'] == 'user_register_form') {
       // Remove preventative condition.
