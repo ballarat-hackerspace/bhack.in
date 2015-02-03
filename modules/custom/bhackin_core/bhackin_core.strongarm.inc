@@ -160,7 +160,10 @@ Room 903, 107 Lydiard Street South<br />
 Ballarat VIC 3350, Australia',
     'invoice_location' => '',
     'invoice_date_format' => 'd/m/Y',
-    'invoice_text' => '[commerce-order:payment-bank-details]',
+    'invoice_text' => '<p>Thank you; we really appreciate your business. Please send payment via Bank Transfer within 21 days of receiving this invoice.</p>
+<p>For initial membership payments, your membership is not active until receipt of payment has been confirmed.</p>
+
+[commerce-order:payment-bank-details]',
     'invoice_footer' => 'Ballarat Hackerspace, Inc.',
   );
   $export['commerce_billy_pdf_text_settings'] = $strongarm;
