@@ -2,7 +2,7 @@ bHack.in
 ================================================================================
 
 This is the Drupal install profile / makefile source for the bHack.in website,
-the home of the Ballarat Hackersapce.
+the home of the Ballarat Hackerspace.
 
 
 

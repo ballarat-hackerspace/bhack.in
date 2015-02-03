@@ -1,10 +1,18 @@
-bHack.in 7.x-1.x-dev, xxxx-xx-xx (development release)
+bHack.in 7.x-1.3, 2015-02-03
 --------------------------------------------------------------------------------
 
 * Added initial Commerce integration (@Decipher).
 * Added Staging context (@Decipher).
+* Added Commerce invoicing (@Decipher, @firnsy).
 * Updated Drupal core and contrib (@Decipher).
 * Updated profiles for membership (@Decipher).
+
+
+
+bHack.in 7.x-1.2.2, 2015-01-11
+--------------------------------------------------------------------------------
+
+* Security updates (@Decipher)
 
 
 
