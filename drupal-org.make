@@ -45,10 +45,14 @@ projects[commerce][patch][] = https://www.drupal.org/files/issues/missing_setter
 projects[commerce][patch][] = https://www.drupal.org/files/issues/data_property_info-2418995-1.patch
 
 projects[commerce_bank_transfer][version] = 1.0-alpha3
+; Add bank details token - https://www.drupal.org/node/1604292#comment-9579287
+projects[commerce_bank_transfer][patch][] = https://www.drupal.org/files/issues/bank_details_token-1604292-3.patch
 
 projects[commerce_billy][version] = 1.0-beta2
 ; Auto install fonts - https://www.drupal.org/node/2417967#comment-9573171
 projects[commerce_billy][patch][] = https://www.drupal.org/files/issues/pdf_install-2417967-1.patch
+; Tokens in invoice text - https://www.drupal.org/node/2338751#comment-9579333
+projects[commerce_billy][patch][] = https://www.drupal.org/files/issues/invoice_text_tokens-2338751-1.patch
 
 projects[commerce_billy_mail][download][revision] = c851f2f20095aaca5c52467a01f67f1373d93423
 

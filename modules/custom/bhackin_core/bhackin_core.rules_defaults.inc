@@ -23,11 +23,11 @@ function bhackin_core_default_rules_configuration() {
                 "method_id" : "bank_transfer",
                 "settings" : {
                   "details" : {
-                    "account_owner" : "",
-                    "account_number" : "",
+                    "account_owner" : "Ballarat Hackerspace, Inc",
+                    "account_number" : "' . variable_get('bhackin_account_number', '') . '",
                     "account_iban" : "",
-                    "bank_code_appellation" : "",
-                    "bank_code" : "",
+                    "bank_code_appellation" : "BSB",
+                    "bank_code" : "' . variable_get('bhackin_account_bsb', '') . '",
                     "account_swift" : "",
                     "account_bank" : "",
                     "account_branch" : ""

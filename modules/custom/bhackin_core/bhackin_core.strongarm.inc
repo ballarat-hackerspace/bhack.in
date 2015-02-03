@@ -139,7 +139,7 @@ function bhackin_core_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'commerce_billy_pdf_css_files';
   $strongarm->value = array(
-    0 => 'profiles/bhackin/modules/contrib/commerce_billy/modules/commerce_billy_pdf/css/pdf.css',
+    0 => 'profiles/bhackin/themes/custom/bhackin_theme/css/commerce_billy_pdf.css',
   );
   $export['commerce_billy_pdf_css_files'] = $strongarm;
 
@@ -160,7 +160,7 @@ Room 903, 107 Lydiard Street South<br />
 Ballarat VIC 3350, Australia',
     'invoice_location' => '',
     'invoice_date_format' => 'd/m/Y',
-    'invoice_text' => 'Invoice text',
+    'invoice_text' => '[commerce-order:payment-bank-details]',
     'invoice_footer' => 'Ballarat Hackerspace, Inc.',
   );
   $export['commerce_billy_pdf_text_settings'] = $strongarm;
