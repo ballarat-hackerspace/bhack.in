@@ -97,6 +97,7 @@ dependencies[] = system
 dependencies[] = tabsnomore
 dependencies[] = taxonomy
 dependencies[] = text
+dependencies[] = tweaker
 dependencies[] = user
 dependencies[] = vegas
 dependencies[] = views

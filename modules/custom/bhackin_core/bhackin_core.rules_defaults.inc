@@ -87,6 +87,7 @@ function bhackin_core_default_rules_configuration() {
         "rules_conditional",
         "commerce_cart",
         "commerce_checkout",
+        "tweaker",
         "commerce_billy_mail"
       ],
       "USES VARIABLES" : { "user" : { "label" : "User", "type" : "user" } },
@@ -194,6 +195,12 @@ function bhackin_core_default_rules_configuration() {
         { "data_set" : {
             "data" : [ "transaction:currency-code" ],
             "value" : [ "order:commerce-order-total:currency-code" ]
+          }
+        },
+        { "drupal_array_set_nested_value" : {
+            "data" : [ "order:data" ],
+            "parents" : "payment_method",
+            "value" : "bank_transfer|commerce_payment_bhackin_bank_transfer"
           }
         },
         { "commerce_billy_mail_action_send_invoice" : { "order" : [ "order" ] } }

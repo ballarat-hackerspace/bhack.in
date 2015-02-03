@@ -41,6 +41,8 @@ projects[commerce][version] = 1.10
 projects[commerce][patch][] = https://www.drupal.org/files/issues/illegal_titles-2341617-2.patch
 ; Add missing transaction setters - https://www.drupal.org/node/1604916#comment-9552891
 projects[commerce][patch][] = https://www.drupal.org/files/issues/missing_setters-1604916-4.patch
+; Add data property - https://www.drupal.org/node/2418995#comment-9579349
+projects[commerce][patch][] = https://www.drupal.org/files/issues/data_property_info-2418995-1.patch
 
 projects[commerce_bank_transfer][version] = 1.0-alpha3
 
@@ -239,6 +241,10 @@ projects[tabsnomore][patch][] = https://drupal.org/files/issues/cleanup-2168407-
 projects[tabsnomore][patch][] = https://drupal.org/files/issues/node_view_alter-1784338-2.patch
 
 projects[token][version] = 1.5
+
+projects[tweaker][download][type] = git
+projects[tweaker][download][url] = https://github.com/Decipher/tweaker.git
+projects[tweaker][download][revision] = d4d2c3ec6b0edd2c360ff8e417f07345088a67ed
 
 projects[variable][version] = 2.5
 
