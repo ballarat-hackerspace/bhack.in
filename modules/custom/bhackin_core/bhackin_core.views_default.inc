@@ -919,6 +919,7 @@ function bhackin_core_views_default_views() {
   $handler->display->display_options['filters']['field_event_type_tid']['table'] = 'field_data_field_event_type';
   $handler->display->display_options['filters']['field_event_type_tid']['field'] = 'field_event_type_tid';
   $handler->display->display_options['filters']['field_event_type_tid']['value'] = array(
+    13 => '13',
     12 => '12',
   );
   $handler->display->display_options['filters']['field_event_type_tid']['type'] = 'select';
