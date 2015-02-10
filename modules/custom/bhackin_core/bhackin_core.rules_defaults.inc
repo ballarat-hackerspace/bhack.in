@@ -107,6 +107,7 @@ function bhackin_core_default_rules_configuration() {
           }
         },
         { "commerce_billy_invoice_nr" : { "order" : [ "order" ] } },
+        { "data_set" : { "data" : [ "order:mail" ], "value" : [ "user:mail" ] } },
         { "entity_query" : {
             "USING" : {
               "type" : "commerce_customer_profile",
