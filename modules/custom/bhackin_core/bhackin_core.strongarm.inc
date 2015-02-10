@@ -44,6 +44,20 @@ function bhackin_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_event';
+  $strongarm->value = '1';
+  $export['ant_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_event';
+  $strongarm->value = 'Event: [node:field_event_type] - [node:field_event_date_time]';
+  $export['ant_pattern_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'bot_channels';
   $strongarm->value = '#bHack';
   $export['bot_channels'] = $strongarm;

@@ -298,6 +298,8 @@ features[user_role][] = workshop member
 
 features[variable][] = admin_select_defaults
 features[variable][] = admin_theme
+features[variable][] = ant_event
+features[variable][] = ant_pattern_event
 features[variable][] = bot_channels
 features[variable][] = bot_log_channels
 features[variable][] = bot_nickname
