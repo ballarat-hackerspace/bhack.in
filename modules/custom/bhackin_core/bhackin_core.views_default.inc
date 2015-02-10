@@ -752,6 +752,7 @@ function bhackin_core_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events list';
+  $handler->display->display_options['css_class'] = 'table table-striped';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -760,12 +761,39 @@ function bhackin_core_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group-item';
+  $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['class'] = 'list-group';
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_event_date_time' => 'field_event_date_time',
+    'field_event_members_only' => 'field_event_members_only',
+    'field_event_type' => 'field_event_type',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_event_date_time';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_event_date_time' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_event_members_only' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_event_type' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = FALSE;
   /* Field: Content: Date / Time */
   $handler->display->display_options['fields']['field_event_date_time']['id'] = 'field_event_date_time';
   $handler->display->display_options['fields']['field_event_date_time']['table'] = 'field_data_field_event_date_time';
@@ -840,10 +868,9 @@ function bhackin_core_views_default_views() {
   $handler->display->display_options['fields']['field_event_date_time']['id'] = 'field_event_date_time';
   $handler->display->display_options['fields']['field_event_date_time']['table'] = 'field_data_field_event_date_time';
   $handler->display->display_options['fields']['field_event_date_time']['field'] = 'field_event_date_time';
-  $handler->display->display_options['fields']['field_event_date_time']['label'] = '';
   $handler->display->display_options['fields']['field_event_date_time']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_date_time']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'medium',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -852,6 +879,17 @@ function bhackin_core_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date_time']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date_time']['delta_offset'] = '0';
+  /* Field: Content: Members only? */
+  $handler->display->display_options['fields']['field_event_members_only']['id'] = 'field_event_members_only';
+  $handler->display->display_options['fields']['field_event_members_only']['table'] = 'field_data_field_event_members_only';
+  $handler->display->display_options['fields']['field_event_members_only']['field'] = 'field_event_members_only';
+  $handler->display->display_options['fields']['field_event_members_only']['label'] = 'Audience';
+  $handler->display->display_options['fields']['field_event_members_only']['element_label_colon'] = FALSE;
+  /* Field: Content: Event type */
+  $handler->display->display_options['fields']['field_event_type']['id'] = 'field_event_type';
+  $handler->display->display_options['fields']['field_event_type']['table'] = 'field_data_field_event_type';
+  $handler->display->display_options['fields']['field_event_type']['field'] = 'field_event_type';
+  $handler->display->display_options['fields']['field_event_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;

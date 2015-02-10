@@ -35,6 +35,30 @@ function bhackin_theme_preprocess_page(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function bhackin_theme_preprocess_views_view(&$vars) {
+  if ($vars['view']->name == 'events' && $vars['view']->current_display == 'block_1') {
+    $vars['classes_array'][] = 'the-box-landing';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bhackin_theme_preprocess_views_view_table(&$vars) {
+  $vars['classes_array'] = array();
+  foreach ($vars['header_classes'] as &$header) {
+    $header = '';
+  }
+  foreach ($vars['field_classes'] as &$field) {
+    foreach ($field as &$item) {
+      $item = '';
+    }
+  }
+}
+
+/**
  * Implements hook_html_head_alter().
  */
 function bhackin_theme_html_head_alter(&$head_elements) {

@@ -283,40 +283,97 @@ function bhackin_core_update_7104() {
 }
 
 /**
- * Add 'Workshop hours' taxonomy term, flush caches and revert features and
- * pre-populate some 'Workshop hours' event content.
+ * Add 'Event type' taxonomy terms, flush caches and revert features and
+ * pre-populate some events.
  */
 function bhackin_core_update_7105() {
-  // Add 'Workshop hours' taxonomy term.
+  // Add 'Event type' taxonomy terms.
+  $terms = array();
+
   $term                          = new stdClass();
   $term->vid                     = 2;
   $term->name                    = 'Workshop hours';
   $term->vocabulary_machine_name = 'event_type';
   taxonomy_term_save($term);
+  $terms['workshop'] = $term;
+
+  $term                          = new stdClass();
+  $term->vid                     = 2;
+  $term->name                    = 'Meetup';
+  $term->vocabulary_machine_name = 'event_type';
+  taxonomy_term_save($term);
+  $terms['meetup'] = $term;
 
   // Flush caches and revert features.
   _bhackin_core_flush_revert();
 
-  // Pre-populate some 'Workshop hours' event content.
-  $node       = new stdClass();
-  $node->type = 'event';
-  node_object_prepare($node);
-  $node->uid    = 1;
-  $node->status = 1;
-
-  $field = field_info_field('field_event_date_time');
-  $item  = array(
-    'value'       => '2015-02-10 05:30:00',
-    'value2'      => '2015-02-10 08:00:00',
-    'rrule'       => 'RRULE:FREQ=WEEKLY;INTERVAL=1;BYDAY=TU;COUNT=52;WKST=SU',
-    'timezone'    => 'Australia/Melbourne',
-    'timezone_db' => 'UTC',
-    'date_type'   => 'datetime',
+  // Pre-populate someevents.
+  $events = array(
+    array(
+      'value'        => '2015-02-14 09:00:00',
+      'value2'       => '2015-02-14 15:00:00',
+      'rrule'        => 'RRULE:FREQ=WEEKLY;INTERVAL=1;BYDAY=SA;UNTIL=20151231T125959Z;WKST=SU',
+      'members_only' => 1,
+      'type'         => 'workshop',
+    ),
+    array(
+      'value'        => '2015-02-16 18:00:00',
+      'value2'       => '2015-02-16 21:00:00',
+      'rrule'        => 'RRULE:FREQ=WEEKLY;INTERVAL=1;BYDAY=MO;UNTIL=20151231T125959Z;WKST=SU',
+      'members_only' => 1,
+      'type'         => 'workshop',
+    ),
+    array(
+      'value'        => '2015-02-17 16:00:00',
+      'value2'       => '2015-02-17 19:00:00',
+      'rrule'        => 'RRULE:FREQ=WEEKLY;INTERVAL=1;BYDAY=TU;UNTIL=20151231T125959Z;WKST=SU',
+      'members_only' => 1,
+      'type'         => 'workshop',
+    ),
+    array(
+      'value'        => '2015-02-17 19:00:00',
+      'value2'       => '2015-02-17 21:00:00',
+      'rrule'        => 'RRULE:FREQ=MONTHLY;INTERVAL=1;BYDAY=+3TU;UNTIL=20151231T125959Z;WKST=SU',
+      'members_only' => 0,
+      'type'         => 'meetup',
+    ),
+    array(
+      'value'        => '2015-03-03 19:00:00',
+      'value2'       => '2015-03-03 21:00:00',
+      'rrule'        => 'RRULE:FREQ=MONTHLY;INTERVAL=1;BYDAY=+1TU;UNTIL=20151231T125959Z;WKST=SU',
+      'members_only' => 0,
+      'type'         => 'meetup',
+    ),
+    array(
+      'value'        => '2015-03-31 19:00:00',
+      'value2'       => '2015-03-31 21:00:00',
+      'rrule'        => 'RRULE:FREQ=MONTHLY;INTERVAL=1;BYDAY=+5TU;UNTIL=20151231T125959Z;WKST=SU',
+      'members_only' => 0,
+      'type'         => 'meetup',
+    ),
   );
 
-  $node->field_event_date_time[LANGUAGE_NONE]               = date_repeat_build_dates($item['rrule'], array(), $field, $item);
-  $node->field_event_members_only[LANGUAGE_NONE][]['value'] = 1;
-  $node->field_event_type[LANGUAGE_NONE][]['tid']           = $term->tid;
+  foreach ($events as $event) {
+    $node       = new stdClass();
+    $node->type = 'event';
+    node_object_prepare($node);
+    $node->uid    = 1;
+    $node->status = 1;
 
-  node_save($node);
+    $field = field_info_field('field_event_date_time');
+    $item  = array(
+      'value'       => $event['value'],
+      'value2'      => $event['value2'],
+      'rrule'       => $event['rrule'],
+      'timezone'    => 'Australia/Melbourne',
+      'timezone_db' => 'Australia/Melbourne',
+      'date_type'   => 'datetime',
+    );
+
+    $node->field_event_date_time[LANGUAGE_NONE]               = date_repeat_build_dates($item['rrule'], array(), $field, $item);
+    $node->field_event_members_only[LANGUAGE_NONE][]['value'] = $event['members_only'];
+    $node->field_event_type[LANGUAGE_NONE][]['tid']           = $terms[$event['type']]->tid;
+
+    node_save($node);
+  }
 }
