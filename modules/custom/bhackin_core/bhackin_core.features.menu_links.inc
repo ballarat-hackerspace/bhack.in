@@ -74,6 +74,28 @@ function bhackin_core_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_home:<front>',
   );
+  // Exported menu link: main-menu_when:<front>
+  $menu_links['main-menu_when:<front>'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'When',
+    'options' => array(
+      'fragment' => 'when',
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_when:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_home:<front>',
+  );
   // Exported menu link: main-menu_where:<front>
   $menu_links['main-menu_where:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -92,7 +114,7 @@ function bhackin_core_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
     'customized' => 1,
     'parent_identifier' => 'main-menu_home:<front>',
   );
@@ -188,6 +210,7 @@ function bhackin_core_menu_default_menu_links() {
   t('Content');
   t('Home');
   t('What');
+  t('When');
   t('Where');
 
 

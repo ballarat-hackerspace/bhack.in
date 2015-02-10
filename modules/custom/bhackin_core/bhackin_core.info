@@ -238,6 +238,7 @@ features[menu_custom][] = menu-administration
 features[menu_links][] = main-menu_about:<front>
 features[menu_links][] = main-menu_home:<front>
 features[menu_links][] = main-menu_what:<front>
+features[menu_links][] = main-menu_when:<front>
 features[menu_links][] = main-menu_where:<front>
 features[menu_links][] = menu-administration_add-content:node/add
 features[menu_links][] = menu-administration_basic-page:node/add/page
