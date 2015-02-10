@@ -1,3 +1,12 @@
+bHack.in 7.x-1.3.1, 2015-02-10
+--------------------------------------------------------------------------------
+
+* Added Events/When functionality (@Decipher).
+* Added Mollom for user registration (@Decipher).
+* Fixed invoice mail issues (@Decipher).
+
+
+
 bHack.in 7.x-1.3, 2015-02-03
 --------------------------------------------------------------------------------
 
