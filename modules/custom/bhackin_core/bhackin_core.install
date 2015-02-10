@@ -259,13 +259,6 @@ function bhackin_core_update_7104() {
     commerce_product_save($commerce_product);
   }
 
-  // Add 'Workshop hours' taxonomy term.
-  $term                          = new stdClass();
-  $term->vid                     = taxonomy_vocabulary_machine_name_load('event_type')->vid;
-  $term->name                    = 'Workshop hours';
-  $term->vocabulary_machine_name = 'event_type';
-  taxonomy_term_save($term);
-
   // Disable rules.
   $rules = array(
     'commerce_cart_add_to_cart_message',
@@ -287,4 +280,43 @@ function bhackin_core_update_7104() {
   $modules = array('navbar');
   module_disable($modules);
   drupal_uninstall_modules($modules);
+}
+
+/**
+ * Add 'Workshop hours' taxonomy term, flush caches and revert features and
+ * pre-populate some 'Workshop hours' event content.
+ */
+function bhackin_core_update_7105() {
+  // Add 'Workshop hours' taxonomy term.
+  $term                          = new stdClass();
+  $term->vid                     = 2;
+  $term->name                    = 'Workshop hours';
+  $term->vocabulary_machine_name = 'event_type';
+  taxonomy_term_save($term);
+
+  // Flush caches and revert features.
+  _bhackin_core_flush_revert();
+
+  // Pre-populate some 'Workshop hours' event content.
+  $node       = new stdClass();
+  $node->type = 'event';
+  node_object_prepare($node);
+  $node->uid    = 1;
+  $node->status = 1;
+
+  $field = field_info_field('field_event_date_time');
+  $item  = array(
+    'value'       => '2015-02-10 05:30:00',
+    'value2'      => '2015-02-10 08:00:00',
+    'rrule'       => 'RRULE:FREQ=WEEKLY;INTERVAL=1;BYDAY=TU;COUNT=52;WKST=SU',
+    'timezone'    => 'Australia/Melbourne',
+    'timezone_db' => 'UTC',
+    'date_type'   => 'datetime',
+  );
+
+  $node->field_event_date_time[LANGUAGE_NONE]               = date_repeat_build_dates($item['rrule'], array(), $field, $item);
+  $node->field_event_members_only[LANGUAGE_NONE][]['value'] = 1;
+  $node->field_event_type[LANGUAGE_NONE][]['tid']           = $term->tid;
+
+  node_save($node);
 }
