@@ -74,3 +74,14 @@ function bhackin_theme_link($variables) {
 
   return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . drupal_attributes($variables['options']['attributes']) . '>' . ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
 }
+
+/**
+ * Theme date ical link.
+ *
+ * @param $variables
+ *
+ * @return string
+ */
+function bhackin_theme_date_ical_icon($variables) {
+  return "<a href='{$variables['url']}' class='btn btn-primary btn-sm'><i class='fa fa-calendar'></i> Subscribe</a>";
+}

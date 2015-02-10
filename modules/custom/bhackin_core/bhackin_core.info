@@ -46,6 +46,7 @@ dependencies[] = contextual
 dependencies[] = ctools
 dependencies[] = custom_formatters
 dependencies[] = date
+dependencies[] = date_ical
 dependencies[] = date_repeat_field
 dependencies[] = date_views
 dependencies[] = diff

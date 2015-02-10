@@ -503,6 +503,9 @@ col-sm-offset-12';
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'ical' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

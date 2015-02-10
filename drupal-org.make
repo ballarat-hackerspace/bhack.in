@@ -92,6 +92,8 @@ projects[custom_formatters][patch][] = http://drupal.org/files/no_makefile-17212
 
 projects[date][version] = 2.8
 
+projects[date_ical][version] = 3.3
+
 projects[devel][version] = 1.5
 
 projects[diff][version] = 3.2
