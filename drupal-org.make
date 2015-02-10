@@ -160,9 +160,9 @@ projects[metatag][version] = 1.0-rc2
 
 projects[module_filter][version] = 2.0-alpha2
 
-projects[mollom][version] = 2.11
-; Exportables - https://drupal.org/node/717874#comment-7538947
-; projects[mollom][patch][] = https://drupal.org/files/717874-42-exportables_for_mollom.patch
+projects[mollom][version] = 2.13
+; Exportables - https://www.drupal.org/node/717874#comment-9331759
+projects[mollom][patch][] = https://www.drupal.org/files/issues/717874-91.mollom.exportables-7.x-2.12.patch
 
 projects[navbar][version] = 1.4
 

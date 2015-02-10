@@ -73,6 +73,7 @@ dependencies[] = mailchimp_lists
 dependencies[] = markdown
 dependencies[] = maxlength
 dependencies[] = menu
+dependencies[] = mollom
 dependencies[] = node
 dependencies[] = number
 dependencies[] = oauthconnector
@@ -138,6 +139,7 @@ features[ctools][] = context:context:3
 features[ctools][] = custom_formatters:custom_formatters:2
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
+features[ctools][] = mollom:mollom:1
 features[ctools][] = oauthconnector:oauthconnector:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = picture:default_picture_mapping:2
@@ -245,6 +247,8 @@ features[menu_links][] = menu-administration_add-content:node/add
 features[menu_links][] = menu-administration_basic-page:node/add/page
 features[menu_links][] = menu-administration_blog-post:node/add/blog
 features[menu_links][] = menu-administration_content:admin/content
+
+features[mollom_form][] = user_register_form
 
 features[node][] = blog
 features[node][] = event
