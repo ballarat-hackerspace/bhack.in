@@ -261,5 +261,26 @@ function bhackin_core_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_require_menu_link_or_url_alias'] = entity_import('rules_config', '{ "rules_require_menu_link_or_url_alias" : {
+      "LABEL" : "Require Menu link or URL alias",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "rules", "tweaker" ],
+      "ON" : { "form_validate" : [] },
+      "IF" : [
+        { "node_is_of_type" : { "node" : [ "form:#node" ], "type" : { "value" : { "page" : "page" } } } },
+        { "drupal_array_get_nested_value_empty" : { "array" : [ "form-state" ], "parents" : "values:menu:enabled" } },
+        { "drupal_array_get_nested_value_empty" : { "array" : [ "form-state" ], "parents" : "values:path:alias" } }
+      ],
+      "DO" : [
+        { "form_set_error" : {
+            "name" : "menu[enabled]",
+            "message" : "A menu entry or a manual URL alias is required."
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }

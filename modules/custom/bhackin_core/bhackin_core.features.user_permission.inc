@@ -14,6 +14,7 @@ function bhackin_core_user_default_permissions() {
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
     'roles' => array(
+      'administrator' => 'administrator',
       'superuser' => 'superuser',
     ),
     'module' => 'admin_menu',
@@ -23,6 +24,7 @@ function bhackin_core_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
+      'administrator' => 'administrator',
       'superuser' => 'superuser',
     ),
     'module' => 'system',
@@ -47,6 +49,15 @@ function bhackin_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access content overview'.
+  $permissions['access content overview'] = array(
+    'name' => 'access content overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'access contextual links'.
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
@@ -64,6 +75,16 @@ function bhackin_core_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer main-menu menu items'.
+  $permissions['administer main-menu menu items'] = array(
+    'name' => 'administer main-menu menu items',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'menu_admin_per_menu',
   );
 
   // Exported permission: 'administer nodes'.
@@ -109,6 +130,16 @@ function bhackin_core_user_default_permissions() {
       'superuser' => 'superuser',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'create url aliases'.
+  $permissions['create url aliases'] = array(
+    'name' => 'create url aliases',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'path',
   );
 
   // Exported permission: 'delete any blog content'.
@@ -225,6 +256,16 @@ function bhackin_core_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'profile2',
+  );
+
+  // Exported permission: 'view own unpublished content'.
+  $permissions['view own unpublished content'] = array(
+    'name' => 'view own unpublished content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'node',
   );
 
   return $permissions;

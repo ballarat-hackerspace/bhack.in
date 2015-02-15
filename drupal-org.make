@@ -154,6 +154,10 @@ projects[markdown][version] = 1.2
 
 projects[maxlength][version] = 3.0-beta1
 
+projects[menu_admin_per_menu][version] = 1.0
+
+projects[menu_view_unpublished][version] = 1.0-beta3
+
 projects[metatag][version] = 1.0-rc2
 
 projects[module_filter][version] = 2.0-alpha2
@@ -187,6 +191,8 @@ projects[profile2][version] = 1.3
 projects[prepro][download][revision] = 306d6c59e539add57c287c60c53dbe755550dd7a
 ; Variable integration - http://drupal.org/node/1958564#comment-7269614
 projects[prepro][patch][] = http://drupal.org/files/variable_integration-1958564-3.patch
+
+projects[publish_button][version] = 1.1
 
 projects[realname][version] = 1.2
 
