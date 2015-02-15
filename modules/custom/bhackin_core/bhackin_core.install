@@ -377,3 +377,12 @@ function bhackin_core_update_7105() {
     node_save($node);
   }
 }
+
+/**
+ * Uninstall modules.
+ */
+function bhackin_core_update_7106() {
+  $modules = array('admin_select');
+  module_disable($modules);
+  drupal_uninstall_modules($modules);
+}

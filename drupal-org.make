@@ -16,8 +16,6 @@ projects[addressfield][version] = 1.0-beta5
 
 projects[admin_menu][version] = 3.0-rc4
 
-projects[admin_select][download][revision] = 8caa5d52638bac8aa74109c3cc6afea28263b60b
-
 projects[adminimal_admin_menu][version] = 1.5
 
 projects[auto_nodetitle][version] = 1.0
@@ -163,8 +161,6 @@ projects[module_filter][version] = 2.0-alpha2
 projects[mollom][version] = 2.13
 ; Exportables - https://www.drupal.org/node/717874#comment-9331759
 projects[mollom][patch][] = https://www.drupal.org/files/issues/717874-91.mollom.exportables-7.x-2.12.patch
-
-projects[navbar][version] = 1.4
 
 projects[oauth][version] = 3.2
 ; Rules integration - https://drupal.org/node/1248184#comment-8771229
@@ -330,4 +326,6 @@ libraries[vegas][download][url] = https://github.com/jaysalvat/vegas/archive/v1.
 
 ; Deprecated
 
-projects[multifield][version] = 1.0-alpha1
+projects[admin_select][download][revision] = 8caa5d52638bac8aa74109c3cc6afea28263b60b
+
+projects[navbar][version] = 1.4
