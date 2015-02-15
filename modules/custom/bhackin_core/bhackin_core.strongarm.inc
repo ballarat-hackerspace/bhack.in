@@ -710,8 +710,7 @@ col-sm-offset-12';
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_blog';
   $strongarm->value = array(
-    0 => 'status',
-    1 => 'revision',
+    0 => 'revision',
   );
   $export['node_options_blog'] = $strongarm;
 
@@ -729,8 +728,7 @@ col-sm-offset-12';
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_page';
   $strongarm->value = array(
-    0 => 'status',
-    1 => 'revision',
+    0 => 'revision',
   );
   $export['node_options_page'] = $strongarm;
 
@@ -874,6 +872,20 @@ col-sm-offset-12';
   $strongarm->name = 'prlp_password_required';
   $strongarm->value = 0;
   $export['prlp_password_required'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'publish_button_content_type_blog';
+  $strongarm->value = 1;
+  $export['publish_button_content_type_blog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'publish_button_content_type_page';
+  $strongarm->value = 1;
+  $export['publish_button_content_type_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

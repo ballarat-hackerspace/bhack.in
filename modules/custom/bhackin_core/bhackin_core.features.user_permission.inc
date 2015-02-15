@@ -231,6 +231,26 @@ function bhackin_core_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: 'menu view unpublished'.
+  $permissions['menu view unpublished'] = array(
+    'name' => 'menu view unpublished',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'menu_view_unpublished',
+  );
+
+  // Exported permission: 'publish button publish any content types'.
+  $permissions['publish button publish any content types'] = array(
+    'name' => 'publish button publish any content types',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'publish_button',
+  );
+
   // Exported permission: 'use text format markdown'.
   $permissions['use text format markdown'] = array(
     'name' => 'use text format markdown',
