@@ -271,7 +271,8 @@ function bhackin_core_default_rules_configuration() {
       "IF" : [
         { "node_is_of_type" : { "node" : [ "form:#node" ], "type" : { "value" : { "page" : "page" } } } },
         { "drupal_array_get_nested_value_empty" : { "array" : [ "form-state" ], "parents" : "values:menu:enabled" } },
-        { "drupal_array_get_nested_value_empty" : { "array" : [ "form-state" ], "parents" : "values:path:alias" } }
+        { "drupal_array_get_nested_value_empty" : { "array" : [ "form-state" ], "parents" : "values:path:alias" } },
+        { "data_is" : { "data" : [ "form:#node_edit_form" ], "value" : 1 } }
       ],
       "DO" : [
         { "form_set_error" : {
