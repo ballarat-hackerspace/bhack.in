@@ -32,6 +32,8 @@ projects[botrules][patch][] = https://drupal.org/files/issues/part_mixed_case_fi
 
 projects[breakpoints][version] = 1.3
 
+projects[bueditor][version] = 1.8
+
 projects[coder][version] = 2.2
 
 projects[coffee][version] = 2.2
@@ -151,6 +153,8 @@ projects[mailchimp][version] = 2.12
 projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_subscribe_email.patch
 
 projects[markdown][version] = 1.2
+
+projects[markdowneditor][version] = 1.4
 
 projects[maxlength][version] = 3.0-beta1
 
