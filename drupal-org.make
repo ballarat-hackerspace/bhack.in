@@ -22,7 +22,7 @@ projects[auto_nodetitle][version] = 1.0
 
 projects[backup_migrate][version] = 3.0
 
-projects[bot][download][revision] = d0e10c65616f267543e717addc17422979f83bd2
+projects[bot][download][revision] = d0e10c6
 ; Allow Net_SmartIRC to be a Library - https://drupal.org/node/1944086#comment-7227558
 projects[bot][patch][] = https://drupal.org/files/bot_0.patch
 ; Add variable module integration - https://drupal.org/node/2264785#comment-8770721
@@ -58,19 +58,19 @@ projects[commerce_billy][patch][] = https://www.drupal.org/files/issues/pdf_inst
 ; Tokens in invoice text - https://www.drupal.org/node/2338751#comment-9579333
 projects[commerce_billy][patch][] = https://www.drupal.org/files/issues/invoice_text_tokens-2338751-1.patch
 
-projects[commerce_billy_mail][download][revision] = c851f2f20095aaca5c52467a01f67f1373d93423
+projects[commerce_billy_mail][download][revision] = c851f2f
 
 projects[commerce_features][version] = 1.0
 
-projects[commerce_recurring][download][revision] = 406cfa9d9e5ddfd295babefd68d11064d2fbaa85
+projects[commerce_recurring][download][revision] = 406cfa9
 
 projects[conditional_fields][version] = 3.0-alpha1
 
-projects[connector][download][revision] = 46cade3620061a41b3853374dc357f9eaf31829d
+projects[connector][download][revision] = 46cade3
 ; Fix data mapping - https://drupal.org/node/1503258#comment-8596491
 projects[connector][patch][] = https://drupal.org/files/issues/fix_map-1503258-13.patch
 
-projects[context][download][revision] = 543c1c157f37a33910dcc1623fc75119c7a70a95
+projects[context][download][revision] = 543c1c1
 ; Fixed context_empty() - http://drupal.org/node/1842566#comment-7269520
 projects[context][patch][] = http://drupal.org/files/context_empty-1842566-1.patch
 ; Fixed active menu trail - https://drupal.org/node/835090#comment-7608141
@@ -78,17 +78,17 @@ projects[context][patch][] = https://drupal.org/files/context_menu_fix_2013-07-0
 
 projects[context_condition_theme][version] = 1.0
 
-projects[context_module][download][revision] = b7a05aa1299d9286b77f66c539826de9bebde2fb
+projects[context_module][download][revision] = b7a05aa
 ; Prevent rederict loop - https://drupal.org/node/2076565#comment-7804715
 projects[context_module][patch][] = https://drupal.org/files/redirect_loop-2076565-1.patch
 
 projects[context_server_vars][download][revision] = 1d61d973ddb7513de9c3d82b33c8e24c24e907f2
 
-projects[context_variable][download][revision] = 8d611c2ac42c4aaa794f78edee994c3ae5f2f6c6
+projects[context_variable][download][revision] = 8d611c2
 
 projects[ctools][version] = 1.4
 
-projects[custom_formatters][download][revision] = 6463508a3b9dbfb7feb5662b0f6825c9f58c6f60
+projects[custom_formatters][download][revision] = 6463508
 ; Remove Custom Formatters makefile to prevent duplicate downloads - http://drupal.org/node/1721294#comment-6395368
 projects[custom_formatters][patch][] = http://drupal.org/files/no_makefile-1721294-1.patch
 
@@ -136,7 +136,7 @@ projects[geofield][version] = 1.2
 
 projects[geophp][version] = 1.7
 
-projects[google_analytics][download][revision] = d5c42e145e218cf54397b70bb275484a35d8d5dc
+projects[google_analytics][download][revision] = d5c42e1
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
 
@@ -198,7 +198,7 @@ projects[prlp][version] = 1.0
 
 projects[profile2][version] = 1.3
 
-projects[prepro][download][revision] = 306d6c59e539add57c287c60c53dbe755550dd7a
+projects[prepro][download][revision] = 306d6c5
 ; Variable integration - http://drupal.org/node/1958564#comment-7269614
 projects[prepro][patch][] = http://drupal.org/files/variable_integration-1958564-3.patch
 
@@ -206,13 +206,13 @@ projects[publish_button][version] = 1.1
 
 projects[realname][version] = 1.2
 
-projects[redirect][download][revision] = ad09f6caa52b371736e24c9e8657f2ce41b876ad
+projects[redirect][download][revision] = ad09f6c
 ; fix and/or prevent circular redirects - https://drupal.org/node/1796596#comment-7586945
 projects[redirect][patch][] = https://drupal.org/files/redirect_loop_detection-1796596-68-reroll.patch
 ; Merge global redirect functions into Redirect module: https://drupal.org/node/905914#comment-7179456
 projects[redirect][patch][] = https://drupal.org/files/redirect-global-905914-130.patch
 
-projects[reroute_email][download][revision] = f2e3878ec1ecba067d7206a4ba98482e6c9d836f
+projects[reroute_email][download][revision] = f2e3878
 ; Variable integration - http://drupal.org/node/1964070#comment-7294928
 projects[reroute_email][patch][] = http://drupal.org/files/reroute_email-add-variable-module-integration-1964070-2.patch
 
@@ -228,7 +228,7 @@ projects[sassy][patch][] = http://drupal.org/files/squish_text-1539310-5.patch
 
 projects[search_krumo][version] = 1.5
 
-projects[securesite][download][revision] = bff993c675dbb678c5b9a45e27586a856cc5d30a
+projects[securesite][download][revision] = bff993c
 
 projects[semantic_panels][version] = 1.2
 
@@ -254,7 +254,7 @@ projects[styleguide][version] = 1.1
 
 projects[tabsnomore][download][type] = git
 projects[tabsnomore][download][url] = http://git.drupal.org/sandbox/onkeltem/1730244.git
-projects[tabsnomore][download][revision] = 03ab4283ba71220c988362357b79ff1a20daab6a
+projects[tabsnomore][download][revision] = 03ab428
 ; Code cleanup - https://drupal.org/comment/8350053#comment-8350053
 projects[tabsnomore][patch][] = https://drupal.org/files/issues/cleanup-2168407-2.patch
 ; Remove hook_node_view_alter() - https://drupal.org/comment/8350061#comment-8350061
@@ -264,7 +264,7 @@ projects[token][version] = 1.5
 
 projects[tweaker][download][type] = git
 projects[tweaker][download][url] = https://github.com/Decipher/tweaker.git
-projects[tweaker][download][revision] = d4d2c3ec6b0edd2c360ff8e417f07345088a67ed
+projects[tweaker][download][revision] = d4d2c3e
 
 projects[variable][version] = 2.5
 
@@ -272,13 +272,13 @@ projects[vegas][version] = 1.0-alpha2
 ; Add page control - https://drupal.org/node/1929888#comment-8745029
 projects[vegas][patch][] = https://drupal.org/files/issues/page_control-1929888-15.patch
 
-projects[views][version] = 3.8
+projects[views][version] = 3.10
 
 projects[views_bulk_operations][version] = 3.2
 
 projects[views_cache_bully][version] = 3.1
 
-projects[which_feature][download][revision] = 3ba19eea51aa288806c2c6f6032bcf6a92291f92
+projects[which_feature][download][revision] = 3ba19ee
 
 projects[xmlsitemap][version] = 2.0
 ; Variable module integration - http://drupal.org/node/1989862#comment-7389678
@@ -324,11 +324,11 @@ libraries[Net_SmartIRC][download][url] = http://download.pear.php.net/package/Ne
 
 libraries[phpsass][download][type] = git
 libraries[phpsass][download][url] = https://github.com/Decipher/phpsass.git
-libraries[phpsass][download][revision] = eee7cdb42a387db67cec5b4495f56173c50e41c5
+libraries[phpsass][download][revision] = eee7cdb
 
 libraries[profiler][download][type] = git
 libraries[profiler][download][url] = http://git.drupal.org/project/profiler.git
-libraries[profiler][download][revision] = 6655a1b490be896c53dceba9a2b887f39461bd08
+libraries[profiler][download][revision] = 6655a1b
 ; Added support for Devel generate - https://drupal.org/node/1420344#comment-5890366
 libraries[profiler][patch][] = https://drupal.org/files/devel_generate-1420344-8.patch
 
@@ -342,6 +342,6 @@ libraries[vegas][download][url] = https://github.com/jaysalvat/vegas/archive/v1.
 
 ; Deprecated
 
-projects[admin_select][download][revision] = 8caa5d52638bac8aa74109c3cc6afea28263b60b
+projects[admin_select][download][revision] = 8caa5d5
 
 projects[navbar][version] = 1.4

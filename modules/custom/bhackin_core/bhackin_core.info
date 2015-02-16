@@ -2,7 +2,7 @@ name = bHack.in core
 description = Core feature for bHack.in
 core = 7.x
 package = bHack.in
-version = 7.x-1.2
+version = 7.x-1.4
 project = bhackin_core
 
 
