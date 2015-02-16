@@ -20,6 +20,8 @@ projects[adminimal_admin_menu][version] = 1.5
 
 projects[auto_nodetitle][version] = 1.0
 
+projects[backup_migrate][version] = 3.0
+
 projects[bot][download][revision] = d0e10c65616f267543e717addc17422979f83bd2
 ; Allow Net_SmartIRC to be a Library - https://drupal.org/node/1944086#comment-7227558
 projects[bot][patch][] = https://drupal.org/files/bot_0.patch

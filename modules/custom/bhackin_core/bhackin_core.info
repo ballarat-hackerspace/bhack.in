@@ -13,6 +13,7 @@ dependencies[] = addressfield
 dependencies[] = admin_menu
 dependencies[] = adminimal_admin_menu
 dependencies[] = auto_nodetitle
+dependencies[] = backup_migrate
 dependencies[] = bot
 dependencies[] = bot_agotchi
 dependencies[] = bot_factoid
@@ -119,6 +120,9 @@ dependencies[] = xmlsitemap_node
 
 ; Features
 
+features[backup_migrate_schedules][] = daily
+features[backup_migrate_schedules][] = weekly
+
 features[breakpoint_group][] = blog_image
 
 features[breakpoints][] = custom.user.desktop
@@ -137,6 +141,7 @@ features[context][] = server-development
 features[context][] = server-production
 features[context][] = server-staging
 
+features[ctools][] = backup_migrate:backup_migrate_exportables:1
 features[ctools][] = breakpoints:default_breakpoint_group:1
 features[ctools][] = breakpoints:default_breakpoints:1
 features[ctools][] = context:context:3
