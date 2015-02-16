@@ -405,6 +405,7 @@ function bhackin_core_field_default_field_instances() {
         'weight' => 9,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_blog_image',
     'label' => 'Image',
@@ -414,6 +415,25 @@ function bhackin_core_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'images/blog',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 0,
+          ),
+          'value' => '[node:created:custom:ymd]-[node:title].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 0,
+          ),
+          'value' => 'images/blog',
+        ),
+        'retroactive_update' => 1,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -424,6 +444,17 @@ function bhackin_core_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -753,23 +784,119 @@ function bhackin_core_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_page_images'
+  $field_instances['node-page-field_page_images'] = array(
+    'bundle' => 'page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_page_images',
+    'label' => 'Image(s)',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 0,
+          ),
+          'value' => '[node:title]-[file:fid].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => 'images/pages/[node:nid]',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'insert' => 1,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'bhackin_page_image',
+        'insert_styles' => array(
+          'auto' => 0,
+          'bhackin_page_image' => 'bhackin_page_image',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_blog' => 0,
+          'image_blog_custom_user_desktop_1x' => 0,
+          'image_blog_custom_user_tablet_1x' => 0,
+          'image_blog_custom_user_wide_1x' => 0,
+          'image_large' => 0,
+          'image_medium' => 0,
+          'image_page_image' => 0,
+          'image_page_image_custom_user_desktop_1x' => 0,
+          'image_page_image_custom_user_tablet_1x' => 0,
+          'image_page_image_custom_user_wide_1x' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 31,
     ),
   );
 
@@ -1323,6 +1450,7 @@ function bhackin_core_field_default_field_instances() {
   t('Google+');
   t('IRC nick');
   t('Image');
+  t('Image(s)');
   t('Last name');
   t('Line items');
   t('LinkedIn');

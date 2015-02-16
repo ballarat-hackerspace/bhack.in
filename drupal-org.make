@@ -126,6 +126,8 @@ projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-21557
 
 projects[field_group][version] = 1.4
 
+projects[filefield_paths][download][revision] = 8b39e73
+
 projects[fontawesome][version] = 1.0
 
 projects[geocoder][version] = 1.2
@@ -141,6 +143,8 @@ projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-
 projects[http_client][version] = 2.4
 
 projects[hacked][version] = 2.0-beta5
+
+projects[insert][version] = 1.3
 
 projects[interval][version] = 1.0
 

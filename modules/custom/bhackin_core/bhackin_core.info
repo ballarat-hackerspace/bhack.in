@@ -60,10 +60,12 @@ dependencies[] = entityform
 dependencies[] = entityform_block
 dependencies[] = features
 dependencies[] = field_group
+dependencies[] = filefield_paths
 dependencies[] = filter
 dependencies[] = fontawesome
 dependencies[] = googleanalytics
 dependencies[] = image
+dependencies[] = insert
 dependencies[] = jquery_update
 dependencies[] = link
 dependencies[] = list
@@ -124,6 +126,7 @@ features[backup_migrate_schedules][] = daily
 features[backup_migrate_schedules][] = weekly
 
 features[breakpoint_group][] = blog_image
+features[breakpoint_group][] = page_images
 
 features[breakpoints][] = custom.user.desktop
 features[breakpoints][] = custom.user.tablet
@@ -184,6 +187,7 @@ features[field_base][] = field_links_type
 features[field_base][] = field_links_url
 features[field_base][] = field_membership_address
 features[field_base][] = field_membership_type
+features[field_base][] = field_page_images
 features[field_base][] = field_profile_bio
 features[field_base][] = field_profile_facebook
 features[field_base][] = field_profile_first_name
@@ -219,6 +223,7 @@ features[field_instance][] = node-event-field_event_date_time
 features[field_instance][] = node-event-field_event_members_only
 features[field_instance][] = node-event-field_event_type
 features[field_instance][] = node-page-body
+features[field_instance][] = node-page-field_page_images
 features[field_instance][] = profile2-membership-field_membership_address
 features[field_instance][] = profile2-membership-field_membership_type
 features[field_instance][] = profile2-profile-field_profile_bio
@@ -241,6 +246,10 @@ features[image][] = blog
 features[image][] = blog_custom_user_desktop_1x
 features[image][] = blog_custom_user_tablet_1x
 features[image][] = blog_custom_user_wide_1x
+features[image][] = page_image
+features[image][] = page_image_custom_user_desktop_1x
+features[image][] = page_image_custom_user_tablet_1x
+features[image][] = page_image_custom_user_wide_1x
 
 features[mailchimp_list][] = register_interest
 
@@ -269,6 +278,7 @@ features[page_manager_pages][] = content
 features[page_manager_pages][] = home
 
 features[picture_mapping][] = blog_image
+features[picture_mapping][] = page_image
 
 features[profile2_type][] = membership
 features[profile2_type][] = profile
@@ -352,6 +362,7 @@ features[variable][] = ds_extras_field_template
 features[variable][] = entityform_block_types
 features[variable][] = field_bundle_settings_node__blog
 features[variable][] = field_bundle_settings_node__event
+features[variable][] = field_bundle_settings_node__page
 features[variable][] = field_bundle_settings_user__user
 features[variable][] = ft-default
 features[variable][] = googleanalytics_account
