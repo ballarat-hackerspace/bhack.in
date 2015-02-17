@@ -1,3 +1,12 @@
+bHack.in 7.x-1.3.2, 2015-02-17
+--------------------------------------------------------------------------------
+
+* #9: Fixed issue with unpublished permissions (@Decipher).
+* #6: Added backup schedule (@Decipher).
+* #5: Added permissions and tweaks for content creation (@Decipher).
+
+
+
 bHack.in 7.x-1.3.1, 2015-02-10
 --------------------------------------------------------------------------------
 
