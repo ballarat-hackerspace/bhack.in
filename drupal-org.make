@@ -272,6 +272,8 @@ projects[vegas][version] = 1.0-alpha2
 ; Add page control - https://drupal.org/node/1929888#comment-8745029
 projects[vegas][patch][] = https://drupal.org/files/issues/page_control-1929888-15.patch
 
+projects[view_unpublished][version] = 1.2
+
 projects[views][version] = 3.10
 
 projects[views_bulk_operations][version] = 3.2

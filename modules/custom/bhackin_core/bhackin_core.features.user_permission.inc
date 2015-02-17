@@ -262,6 +262,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'view any unpublished content'.
+  $permissions['view any unpublished content'] = array(
+    'name' => 'view any unpublished content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   // Exported permission: 'view bot logs: #bHack'.
   $permissions['view bot logs: #bHack'] = array(
     'name' => 'view bot logs: #bHack',
