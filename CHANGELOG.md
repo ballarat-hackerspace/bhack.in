@@ -1,3 +1,12 @@
+bHack.in 7.x-1.3.3, 2015-02-20
+--------------------------------------------------------------------------------
+
+* #13: Updated production context for ballarathackerspace.org.au (@Decipher).
+* #12: Added Contact form (@Decipher).
+* #11: Added Persistent Update module (@Decipher).
+
+
+
 bHack.in 7.x-1.3.2, 2015-02-17
 --------------------------------------------------------------------------------
 
