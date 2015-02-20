@@ -2,7 +2,7 @@ name = bHack.in core
 description = Core feature for bHack.in
 core = 7.x
 package = bHack.in
-version = 7.x-1.4
+version = 7.x-1.3.3
 project = bhackin_core
 
 
@@ -173,6 +173,7 @@ features[ds_layout_settings][] = user|user|teaser
 
 features[ds_view_modes][] = teaser
 
+features[entityform_type][] = contact
 features[entityform_type][] = register_interest
 
 features[features_api][] = api:2
@@ -182,6 +183,10 @@ features[field_base][] = commerce_line_items
 features[field_base][] = commerce_price
 features[field_base][] = field_blog_image
 features[field_base][] = field_blog_tags
+features[field_base][] = field_contact_email
+features[field_base][] = field_contact_message
+features[field_base][] = field_contact_name
+features[field_base][] = field_contact_subject
 features[field_base][] = field_event_date_time
 features[field_base][] = field_event_members_only
 features[field_base][] = field_event_type
@@ -213,6 +218,10 @@ features[field_group][] = group_user|user|user|form
 features[field_instance][] = commerce_order-commerce_order-commerce_line_items
 features[field_instance][] = commerce_product-membership-commerce_price
 features[field_instance][] = commerce_product-recurring-field_recurring_role
+features[field_instance][] = entityform-contact-field_contact_email
+features[field_instance][] = entityform-contact-field_contact_message
+features[field_instance][] = entityform-contact-field_contact_name
+features[field_instance][] = entityform-contact-field_contact_subject
 features[field_instance][] = entityform-register_interest-field_ri_email
 features[field_instance][] = entityform-register_interest-field_ri_name
 features[field_instance][] = entityform-register_interest-field_ri_postcode
@@ -268,6 +277,7 @@ features[menu_links][] = menu-administration_basic-page:node/add/page
 features[menu_links][] = menu-administration_blog-post:node/add/blog
 features[menu_links][] = menu-administration_content:admin/content
 
+features[mollom_form][] = contact_entityform_edit_form
 features[mollom_form][] = user_register_form
 
 features[node][] = blog
@@ -287,6 +297,7 @@ features[profile2_type][] = profile
 
 features[rules_config][] = commerce_payment_bhackin_bank_transfer
 features[rules_config][] = rules_blog_new
+features[rules_config][] = rules_contact_new_submission
 features[rules_config][] = rules_create_new_memberships
 features[rules_config][] = rules_register_interest
 features[rules_config][] = rules_require_menu_link_or_url_alias

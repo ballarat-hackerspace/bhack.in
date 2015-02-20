@@ -76,6 +76,33 @@ function bhackin_core_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_contact_new_submission'] = entity_import('rules_config', '{ "rules_contact_new_submission" : {
+      "LABEL" : "Contact: New submission",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "rules", "entityform" ],
+      "ON" : { "entityform_insert" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "entityform" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "contact" : "contact" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : [ "site:mail" ],
+            "subject" : "[contact] [entityform:field-contact-subject]",
+            "message" : "Contact form submission @ [entityform:created]\\r\\n\\r\\nName: [entityform:field-contact-name]\\r\\nEmail: [entityform:field-contact-email]\\r\\nSubject: [entityform:field-contact-subject]\\r\\n\\r\\nMessage:\\r\\n\\r\\n[entityform:field-contact-message]",
+            "from" : [ "entityform:field-contact-email" ],
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_create_new_memberships'] = entity_import('rules_config', '{ "rules_create_new_memberships" : {
       "LABEL" : "Create new membership(s)",
       "PLUGIN" : "rule",
