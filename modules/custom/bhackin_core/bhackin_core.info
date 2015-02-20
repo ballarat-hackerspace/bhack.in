@@ -88,6 +88,7 @@ dependencies[] = page_title
 dependencies[] = panels
 dependencies[] = path
 dependencies[] = pathauto
+dependencies[] = persistent_update
 dependencies[] = picture
 dependencies[] = prepro
 dependencies[] = prlp

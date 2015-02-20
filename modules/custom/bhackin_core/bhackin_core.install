@@ -8,11 +8,6 @@
  * Implements hook_install().
  */
 function bhackin_core_install() {
-  // Ensure persistent update isn't skipped.
-  // @TODO - We don't want to re-run any updates on subsequent installs. Ensure
-  // That on install we set the update hook prior to the 8000 update is set.
-  drupal_set_installed_schema_version('bhackin_core', 0);
-
   // Flush caches and revert the feature.
   _bhackin_core_flush_revert();
 
@@ -36,16 +31,11 @@ function bhackin_core_install() {
 }
 
 /**
- * [PERSISTENT] Flush caches and revert features.
+ * Implements hook_persistent_update().
  */
-function bhackin_core_update_8000() {
+function bhackin_core_persisten_update() {
   // Flush caches and revert features.
   _bhackin_core_flush_revert();
-
-  // Set the schema back to the last non-persistent update.
-  $schemas = drupal_get_schema_versions('bhackin_core');
-  array_unshift($schemas, 0);
-  drupal_set_installed_schema_version('bhackin_core', $schemas[count($schemas) - 2]);
 }
 
 /**
@@ -385,4 +375,11 @@ function bhackin_core_update_7106() {
   $modules = array('admin_select');
   module_disable($modules);
   drupal_uninstall_modules($modules);
+}
+
+/**
+ * Flush caches and revert features.
+ */
+function bhackin_core_update_7107() {
+  _bhackin_core_flush_revert();
 }
