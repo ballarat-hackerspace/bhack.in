@@ -272,7 +272,7 @@ function bhackin_core_context_default_contexts() {
             'name' => 'HTTP_HOST',
             'op' => '==',
             'negate' => 0,
-            'value' => 'bhack.in',
+            'value' => 'ballarathackerspace.org.au',
           ),
         ),
         'and_or' => 0,
@@ -319,7 +319,7 @@ function bhackin_core_context_default_contexts() {
             'name' => 'HTTP_HOST',
             'op' => '==',
             'negate' => 0,
-            'value' => 'stage.bhack.in',
+            'value' => 'stage.ballarathackerspace.org.au',
           ),
           1 => array(
             'name' => 'HTTP_HOST',
