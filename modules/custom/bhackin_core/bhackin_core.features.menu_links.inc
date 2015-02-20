@@ -32,6 +32,23 @@ function bhackin_core_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_home:<front>',
   );
+  // Exported menu link: main-menu_contact:eform/submit/contact
+  $menu_links['main-menu_contact:eform/submit/contact'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'eform/submit/contact',
+    'router_path' => 'eform/submit/%',
+    'link_title' => 'Contact',
+    'options' => array(
+      'identifier' => 'main-menu_contact:eform/submit/contact',
+    ),
+    'module' => 'entityform',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 50,
+    'customized' => 0,
+  );
   // Exported menu link: main-menu_home:<front>
   $menu_links['main-menu_home:<front>'] = array(
     'menu_name' => 'main-menu',
@@ -207,6 +224,7 @@ function bhackin_core_menu_default_menu_links() {
   t('Add content');
   t('Basic page');
   t('Blog post');
+  t('Contact');
   t('Content');
   t('Home');
   t('What');
