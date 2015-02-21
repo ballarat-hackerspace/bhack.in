@@ -37,6 +37,13 @@ function bhackin_theme_preprocess_page(&$vars) {
 /**
  * Implements hook_preprocess_HOOK().
  */
+function bhackin_theme_preprocess_date_nav_title(&$vars) {
+  $vars['format'] = 'F Y';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function bhackin_theme_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'events' && $vars['view']->current_display == 'block_1') {
     $vars['classes_array'][] = 'the-box-landing';
