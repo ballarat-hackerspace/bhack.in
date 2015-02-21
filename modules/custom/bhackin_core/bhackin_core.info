@@ -64,6 +64,7 @@ dependencies[] = filefield_paths
 dependencies[] = filter
 dependencies[] = fontawesome
 dependencies[] = googleanalytics
+dependencies[] = gplus_comments_block
 dependencies[] = image
 dependencies[] = insert
 dependencies[] = jquery_update

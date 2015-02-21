@@ -56,6 +56,16 @@ function bhackin_core_context_default_contexts() {
     ),
   );
   $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'gplus_comments_block-gplus_comments' => array(
+          'module' => 'gplus_comments_block',
+          'delta' => 'gplus_comments',
+          'region' => 'content',
+          'weight' => '10',
+        ),
+      ),
+    ),
     'breadcrumb' => 'blog',
     'menu' => 'blog',
   );
