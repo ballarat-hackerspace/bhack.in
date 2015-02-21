@@ -184,6 +184,38 @@ function bhackin_core_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'bean|block|default';
+  $ds_layout->entity_type = 'bean';
+  $ds_layout->bundle = 'block';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_block_body',
+      ),
+    ),
+    'fields' => array(
+      'field_block_body' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'well' => 'well',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['bean|block|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|blog|default';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'blog';

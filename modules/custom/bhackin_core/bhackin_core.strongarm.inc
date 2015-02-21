@@ -463,7 +463,11 @@ col-sm-offset-10
 col-sm-11
 col-sm-offset-11
 col-sm-12
-col-sm-offset-12';
+col-sm-offset-12
+well
+well-sm
+well-lg
+page-header';
   $export['ds_classes_regions'] = $strongarm;
 
   $strongarm = new stdClass();

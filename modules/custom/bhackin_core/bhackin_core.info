@@ -173,6 +173,7 @@ features[ds_field_settings][] = node|blog|teaser
 features[ds_field_settings][] = user|user|full
 features[ds_field_settings][] = user|user|teaser
 
+features[ds_layout_settings][] = bean|block|default
 features[ds_layout_settings][] = node|blog|default
 features[ds_layout_settings][] = node|blog|teaser
 features[ds_layout_settings][] = user|user|form

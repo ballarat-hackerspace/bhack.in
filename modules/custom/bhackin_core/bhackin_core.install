@@ -383,3 +383,20 @@ function bhackin_core_update_7106() {
 function bhackin_core_update_7107() {
   _bhackin_core_flush_revert();
 }
+
+/**
+ * Added Contact information Bean.
+ */
+function bhackin_core_update_7108() {
+  $bean = bean_create(array(
+    'label'            => 'Contact information',
+    'type'             => 'block',
+    'delta'            => 'contact-information',
+    'field_block_body' => array(
+      LANGUAGE_NONE => array(
+        array('value' => 'Have questions, suggestions or a general enquiry for the Ballarat Hackerspace? Fill out the form bellow and we\'ll get back to you as soon as humanly possible.')
+      )
+    )
+  ));
+  $bean->save();
+}
