@@ -79,6 +79,38 @@ function bhackin_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'layout-contact';
+  $context->description = '';
+  $context->tag = 'bhack.in::layout';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'contact*' => 'contact*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'bean-contact-information' => array(
+          'module' => 'bean',
+          'delta' => 'contact-information',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('bhack.in::layout');
+  $export['layout-contact'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'layout-global';
   $context->description = '';
   $context->tag = 'bhack.in::layout';

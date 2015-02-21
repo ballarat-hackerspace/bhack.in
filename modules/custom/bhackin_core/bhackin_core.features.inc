@@ -11,6 +11,9 @@ function bhackin_core_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "backup_migrate" && $api == "backup_migrate_exportables") {
     return array("version" => "1");
   }
+  if ($module == "bean_admin_ui" && $api == "bean") {
+    return array("version" => "5");
+  }
   if ($module == "breakpoints" && $api == "default_breakpoint_group") {
     return array("version" => "1");
   }

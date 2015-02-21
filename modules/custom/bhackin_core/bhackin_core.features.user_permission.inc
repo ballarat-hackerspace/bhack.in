@@ -30,6 +30,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'access bean overview'.
+  $permissions['access bean overview'] = array(
+    'name' => 'access bean overview',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'access connections tab'.
   $permissions['access connections tab'] = array(
     'name' => 'access connections tab',
@@ -62,6 +72,7 @@ function bhackin_core_user_default_permissions() {
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
     'roles' => array(
+      'administrator' => 'administrator',
       'superuser' => 'superuser',
     ),
     'module' => 'contextual',
@@ -182,6 +193,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any block bean'.
+  $permissions['edit any block bean'] = array(
+    'name' => 'edit any block bean',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'edit any blog content'.
   $permissions['edit any blog content'] = array(
     'name' => 'edit any blog content',
@@ -260,6 +281,17 @@ function bhackin_core_user_default_permissions() {
       'superuser' => 'superuser',
     ),
     'module' => 'filter',
+  );
+
+  // Exported permission: 'view any block bean'.
+  $permissions['view any block bean'] = array(
+    'name' => 'view any block bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'bean',
   );
 
   // Exported permission: 'view any unpublished content'.

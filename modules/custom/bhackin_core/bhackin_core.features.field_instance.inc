@@ -10,6 +10,45 @@
 function bhackin_core_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'bean-block-field_block_body'
+  $field_instances['bean-block-field_block_body'] = array(
+    'bundle' => 'block',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_block_body',
+    'label' => 'Body',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'commerce_order-commerce_order-commerce_line_items'
   $field_instances['commerce_order-commerce_order-commerce_line_items'] = array(
     'bundle' => 'commerce_order',
