@@ -1,3 +1,12 @@
+bHack.in 7.x-1.3.4, 2015-02-22
+--------------------------------------------------------------------------------
+
+* #17: Added Events page (@Decipher).
+* #14: Added Google+ comments on blog posts (@Decipher).
+* #12: Additional content on Contact form (@Decipher).
+
+
+
 bHack.in 7.x-1.3.3, 2015-02-20
 --------------------------------------------------------------------------------
 
