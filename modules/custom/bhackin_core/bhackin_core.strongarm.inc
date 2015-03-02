@@ -888,6 +888,13 @@ page-header';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_front';
+  $strongarm->value = '[site:name]';
+  $export['page_title_front'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_blog_pattern';
   $strongarm->value = 'blog/[node:created:custom:ymd]/[node:title]';
   $export['pathauto_node_blog_pattern'] = $strongarm;
@@ -1016,7 +1023,7 @@ page-header';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
-  $strongarm->value = 'bHack';
+  $strongarm->value = 'Ballarat Hackerspace';
   $export['site_name'] = $strongarm;
 
   $strongarm = new stdClass();
