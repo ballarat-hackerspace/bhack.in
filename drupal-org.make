@@ -88,7 +88,7 @@ projects[context_server_vars][download][revision] = 1d61d973ddb7513de9c3d82b33c8
 
 projects[context_variable][download][revision] = 8d611c2
 
-projects[ctools][version] = 1.4
+projects[ctools][version] = 1.7
 
 projects[custom_formatters][download][revision] = 6463508
 ; Remove Custom Formatters makefile to prevent duplicate downloads - http://drupal.org/node/1721294#comment-6395368
@@ -110,7 +110,7 @@ projects[ds][patch][] = https://drupal.org/files/remove_block_dependency-1635906
 
 projects[email][version] = 1.3
 
-projects[entity][version] = 1.5
+projects[entity][version] = 1.6
 
 projects[entitycache][version] = 1.2
 
