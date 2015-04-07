@@ -196,9 +196,7 @@ projects[panels][version] = 3.4
 
 projects[pathauto][version] = 1.2
 
-projects[persistent_update][download][type] = git
-projects[persistent_update][download][url] = http://git.drupal.org/sandbox/realityloop/2423957.git
-projects[persistent_update][download][revision] = 5d781b4
+projects[persistent_update][version] = 1.0
 
 projects[picture][version] = 2.6
 
