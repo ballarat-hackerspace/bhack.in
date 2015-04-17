@@ -638,7 +638,7 @@ function bhackin_core_default_page_manager_pages() {
       'admin_title' => 'Social icons',
       'title' => '',
       'body' => '<a href="https://github.com/ballarat-hackerspace/" data-toggle="tooltip" title="GitHub"><i class="fa fa-2x fa-github-alt social ico-github"></i></a>
-<a href="https://plus.bhack.in" data-toggle="tooltip" title="Google+"><i class="fa fa-2x fa-google-plus social ico-google-plus"></i></a>
+<a href="http://plus.bhack.in" data-toggle="tooltip" title="Google+"><i class="fa fa-2x fa-google-plus social ico-google-plus"></i></a>
 <a href="https://twitter.com/bHackerspace" data-toggle="tooltip" title="Twitter"><i class="fa fa-2x fa-twitter social ico-twitter"></i></a>',
       'format' => 'full_html',
       'substitute' => TRUE,
