@@ -13,6 +13,40 @@ function bhackin_core_custom_formatters_defaults() {
   $formatter = new stdClass();
   $formatter->disabled = FALSE; /* Edit this to true to make a default formatter disabled initially */
   $formatter->api_version = 2;
+  $formatter->name = 'event_type';
+  $formatter->label = 'Event type';
+  $formatter->description = '';
+  $formatter->mode = 'php';
+  $formatter->field_types = 'taxonomy_term_reference';
+  $formatter->code = '$elements = array();
+
+$terms = array();
+foreach ($items as $item) {
+  if (!isset($terms[$item[\'tid\']])) {
+    $terms[$item[\'tid\']] = taxonomy_term_load($item[\'tid\']);
+  }
+  $term = $terms[$item[\'tid\']];
+  if ($item[\'tid\'] == 14) {
+    $elements[] = array(
+      \'#type\'  => \'link\',
+      \'#title\' => $object->title,
+      \'#href\'  => "node/{$object->nid}",
+    );
+    continue;
+  }
+  $elements[] = array(
+    \'#type\'   => \'markup\',
+    \'#markup\' => $term->name,
+  );
+}
+
+return $elements;';
+  $formatter->fapi = '';
+  $export['event_type'] = $formatter;
+
+  $formatter = new stdClass();
+  $formatter->disabled = FALSE; /* Edit this to true to make a default formatter disabled initially */
+  $formatter->api_version = 2;
   $formatter->name = 'fontawesome_links';
   $formatter->label = 'Fontawesome links';
   $formatter->description = '';

@@ -714,7 +714,7 @@ function bhackin_core_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'ical' => array(
         'label' => 'hidden',
@@ -777,7 +777,7 @@ function bhackin_core_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -796,11 +796,11 @@ function bhackin_core_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
-          'fromto' => 'both',
+          'fromto' => 'value',
           'multiple_from' => '',
           'multiple_number' => 1,
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
+          'show_repeat_rule' => 'hide',
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -852,7 +852,7 @@ function bhackin_core_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'ical' => array(
         'label' => 'above',
@@ -907,10 +907,9 @@ function bhackin_core_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'ical' => array(
         'label' => 'above',

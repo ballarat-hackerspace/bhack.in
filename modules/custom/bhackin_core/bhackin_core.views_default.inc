@@ -296,9 +296,27 @@ function bhackin_core_views_default_views() {
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
 
-  /* Display: Block: Superuser */
-  $handler = $view->new_display('block', 'Block: Superuser', 'block_1');
+  /* Display: Content pane: Superuser */
+  $handler = $view->new_display('panel_pane', 'Content pane: Superuser', 'panel_pane_1');
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: Block: Administrator */
   $handler = $view->new_display('block', 'Block: Administrator', 'block_2');
@@ -825,7 +843,7 @@ function bhackin_core_views_default_views() {
   $handler->display->display_options['fields']['field_event_type']['table'] = 'field_data_field_event_type';
   $handler->display->display_options['fields']['field_event_type']['field'] = 'field_event_type';
   $handler->display->display_options['fields']['field_event_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_type']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_event_type']['type'] = 'custom_formatters_event_type';
   /* Sort criterion: Content: Date / Time -  start date (field_event_date_time) */
   $handler->display->display_options['sorts']['field_event_date_time_value']['id'] = 'field_event_date_time_value';
   $handler->display->display_options['sorts']['field_event_date_time_value']['table'] = 'field_data_field_event_date_time';
@@ -924,7 +942,7 @@ function bhackin_core_views_default_views() {
   $handler->display->display_options['fields']['field_event_type']['table'] = 'field_data_field_event_type';
   $handler->display->display_options['fields']['field_event_type']['field'] = 'field_event_type';
   $handler->display->display_options['fields']['field_event_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_type']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_event_type']['type'] = 'custom_formatters_event_type';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';

@@ -45,14 +45,14 @@ function bhackin_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_event';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['ant_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_event';
-  $strongarm->value = 'Event: [node:field_event_type] - [node:field_event_date_time]';
+  $strongarm->value = '[node:field_event_type] - [node:field-event-date-time:0:value:custom:d/m/Y]';
   $export['ant_pattern_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -464,6 +464,7 @@ col-sm-11
 col-sm-offset-11
 col-sm-12
 col-sm-offset-12
+row
 well
 well-sm
 well-lg
@@ -541,7 +542,7 @@ page-header';
         'custom_settings' => TRUE,
       ),
       'token' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -898,6 +899,13 @@ page-header';
   $strongarm->name = 'pathauto_node_blog_pattern';
   $strongarm->value = 'blog/[node:created:custom:ymd]/[node:title]';
   $export['pathauto_node_blog_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_event_pattern';
+  $strongarm->value = 'events/[node:field-event-date-time:0:value:custom:Y-m]/[node:title]';
+  $export['pathauto_node_event_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -130,6 +130,58 @@ function bhackin_core_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|event|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'event';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'prefix' => '<p>&nbsp;</p>',
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'col-sm-12',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_event_date_time' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb-el' => 'strong',
+          'lb-cl' => 'col-sm-2',
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'col-sm-10',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_event_members_only' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Audience',
+          'lb-el' => 'strong',
+          'lb-cl' => 'col-sm-2',
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'col-sm-10',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|event|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'user|user|full';
   $ds_fieldsetting->entity_type = 'user';
   $ds_fieldsetting->bundle = 'user';
@@ -283,6 +335,42 @@ function bhackin_core_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|blog|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|event|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'event';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_event_date_time',
+        1 => 'field_event_members_only',
+        2 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'field_event_date_time' => 'ds_content',
+      'field_event_members_only' => 'ds_content',
+      'body' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'row' => 'row',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|event|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

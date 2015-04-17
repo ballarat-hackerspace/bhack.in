@@ -72,16 +72,13 @@ function bhackin_core_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-787be360-781a-48a4-b70e-b825c6c90053';
+    $pane->pid = 'new-f68d723e-ad8e-44ae-99d4-723811a62c71';
     $pane->panel = 'middle';
-    $pane->type = 'block';
-    $pane->subtype = 'views-admin_content-block_1';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'admin_content-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -90,9 +87,9 @@ function bhackin_core_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '787be360-781a-48a4-b70e-b825c6c90053';
-    $display->content['new-787be360-781a-48a4-b70e-b825c6c90053'] = $pane;
-    $display->panels['middle'][0] = 'new-787be360-781a-48a4-b70e-b825c6c90053';
+    $pane->uuid = 'f68d723e-ad8e-44ae-99d4-723811a62c71';
+    $display->content['new-f68d723e-ad8e-44ae-99d4-723811a62c71'] = $pane;
+    $display->panels['middle'][0] = 'new-f68d723e-ad8e-44ae-99d4-723811a62c71';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

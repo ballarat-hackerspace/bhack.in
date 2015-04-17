@@ -33,7 +33,7 @@ function bhackin_core_install() {
 /**
  * Implements hook_persistent_update().
  */
-function bhackin_core_persisten_update() {
+function bhackin_core_persistent_update() {
   // Flush caches and revert features.
   _bhackin_core_flush_revert();
 }
@@ -403,4 +403,20 @@ function bhackin_core_update_7108() {
     )
   ));
   $bean->save();
+}
+
+/**
+ * Add 'Special' event type taxonomy term and delete 'Body' condition on 'Event'
+ * content type.
+ */
+function bhackin_core_update_7109() {
+  // Add 'Special' event type taxonomy term.
+  $term                          = new stdClass();
+  $term->vid                     = 2;
+  $term->name                    = 'Special';
+  $term->vocabulary_machine_name = 'event_type';
+  taxonomy_term_save($term);
+
+  // Delete 'Body' condition on 'Event' content type.
+  conditional_fields_dependency_delete(array(12));
 }

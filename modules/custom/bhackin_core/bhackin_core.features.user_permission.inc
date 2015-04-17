@@ -133,6 +133,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create event content'.
+  $permissions['create event content'] = array(
+    'name' => 'create event content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
@@ -163,6 +173,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any event content'.
+  $permissions['delete any event content'] = array(
+    'name' => 'delete any event content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
@@ -176,6 +196,16 @@ function bhackin_core_user_default_permissions() {
   // Exported permission: 'delete own blog content'.
   $permissions['delete own blog content'] = array(
     'name' => 'delete own blog content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own event content'.
+  $permissions['delete own event content'] = array(
+    'name' => 'delete own event content',
     'roles' => array(
       'administrator' => 'administrator',
       'superuser' => 'superuser',
@@ -213,6 +243,16 @@ function bhackin_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any event content'.
+  $permissions['edit any event content'] = array(
+    'name' => 'edit any event content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
@@ -226,6 +266,16 @@ function bhackin_core_user_default_permissions() {
   // Exported permission: 'edit own blog content'.
   $permissions['edit own blog content'] = array(
     'name' => 'edit own blog content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'superuser' => 'superuser',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own event content'.
+  $permissions['edit own event content'] = array(
+    'name' => 'edit own event content',
     'roles' => array(
       'administrator' => 'administrator',
       'superuser' => 'superuser',
