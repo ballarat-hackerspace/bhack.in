@@ -104,9 +104,7 @@ projects[diff][version] = 3.2
 
 projects[dindent][version] = 1.2
 
-projects[ds][version] = 2.6
-; Remove Block dependencies - https://drupal.org/node/1635906#comment-7672781
-projects[ds][patch][] = https://drupal.org/files/remove_block_dependency-1635906-4.patch
+projects[ds][version] = 2.8
 
 projects[email][version] = 1.3
 
@@ -238,7 +236,7 @@ projects[securesite][download][revision] = bff993c
 
 projects[semantic_panels][version] = 1.2
 
-projects[services][version] = 3.11
+projects[services][version] = 3.12
 
 projects[services_rules][version] = 1.0-beta1
 ; Remove 'rules_' prefix and add GET requests - https://drupal.org/node/2063819#comment-7765855
