@@ -293,9 +293,10 @@ function bhackin_core_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "bHack.in" ],
-      "REQUIRES" : [ "rules", "tweaker" ],
+      "REQUIRES" : [ "tweaker", "rules" ],
       "ON" : { "form_validate" : [] },
       "IF" : [
+        { "drupal_array_nested_key_exists" : { "array" : [ "form" ], "parents" : "#node" } },
         { "node_is_of_type" : { "node" : [ "form:#node" ], "type" : { "value" : { "page" : "page" } } } },
         { "drupal_array_get_nested_value_empty" : { "array" : [ "form-state" ], "parents" : "values:menu:enabled" } },
         { "drupal_array_get_nested_value_empty" : { "array" : [ "form-state" ], "parents" : "values:path:alias" } },
