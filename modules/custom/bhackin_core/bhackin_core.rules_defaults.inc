@@ -42,6 +42,18 @@ function bhackin_core_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_bhackin_complete_order'] = entity_import('rules_config', '{ "rules_bhackin_complete_order" : {
+      "LABEL" : "Complete order on full payment",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "commerce_order", "commerce_payment" ],
+      "ON" : { "commerce_payment_order_paid_in_full" : [] },
+      "DO" : [
+        { "commerce_order_update_state" : { "commerce_order" : [ "commerce_order" ], "order_state" : "completed" } }
+      ]
+    }
+  }');
   $items['rules_blog_new'] = entity_import('rules_config', '{ "rules_blog_new" : {
       "LABEL" : "Node: New blog post",
       "PLUGIN" : "reaction rule",
