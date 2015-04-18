@@ -235,7 +235,6 @@ function bhackin_core_update_7104() {
     $fields = array(
       'commerce_recurring_ini_period',
       'commerce_recurring_rec_period',
-      'commerce_recurring_end_period',
     );
     foreach ($fields as $field) {
       $commerce_product->{$field}[LANGUAGE_NONE][] = array(
@@ -419,4 +418,27 @@ function bhackin_core_update_7109() {
 
   // Delete 'Body' condition on 'Event' content type.
   conditional_fields_dependency_delete(array(12));
+}
+
+/**
+ * Remove 'End date' from recurring products and entities.
+ */
+function bhackin_core_update_7110() {
+  // Remove 'End date' from recurring products and entities.
+  $products = commerce_product_load_multiple(array(), array('type' => 'recurring'));
+  foreach ($products as $product) {
+    $product->commerce_recurring_end_period = array();
+    commerce_product_save($product);
+  }
+
+  $query   = new EntityFieldQuery();
+  $results = $query->entityCondition('entity_type', 'commerce_recurring')
+    ->execute();
+  if (isset($results['commerce_recurring'])) {
+    $recurring_entities = commerce_recurring_load_multiple(array_keys($results['commerce_recurring']));
+    foreach ($recurring_entities as $recurring_entity) {
+      $recurring_entity->end_date = 0;
+      entity_save('commerce_recurring', $recurring_entity);
+    }
+  }
 }
