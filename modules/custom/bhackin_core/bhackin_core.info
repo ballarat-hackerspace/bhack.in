@@ -2,7 +2,7 @@ name = bHack.in core
 description = Core feature for bHack.in
 core = 7.x
 package = bHack.in
-version = 7.x-1.3.3
+version = 7.x-1.3
 project = bhackin_core
 
 
@@ -313,11 +313,15 @@ features[picture_mapping][] = page_image
 features[profile2_type][] = membership
 features[profile2_type][] = profile
 
+features[rules_config][] = commerce_billy_invoice_order
 features[rules_config][] = commerce_payment_bhackin_bank_transfer
+features[rules_config][] = commerce_recurring_bhackin_generate_recurring_order
+features[rules_config][] = rules_add_payment_entity
 features[rules_config][] = rules_bhackin_complete_order
 features[rules_config][] = rules_blog_new
 features[rules_config][] = rules_contact_new_submission
 features[rules_config][] = rules_create_new_memberships
+features[rules_config][] = rules_invoice_on_order
 features[rules_config][] = rules_register_interest
 features[rules_config][] = rules_require_menu_link_or_url_alias
 

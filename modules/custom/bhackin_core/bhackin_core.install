@@ -421,7 +421,8 @@ function bhackin_core_update_7109() {
 }
 
 /**
- * Remove 'End date' from recurring products and entities.
+ * Remove 'End date' from recurring products and entities and disable default
+ * recurring order generation rule.
  */
 function bhackin_core_update_7110() {
   // Remove 'End date' from recurring products and entities.
@@ -441,4 +442,10 @@ function bhackin_core_update_7110() {
       entity_save('commerce_recurring', $recurring_entity);
     }
   }
+
+  // Disable default recurring order generation rule.
+  drupal_flush_all_caches();
+  $rule = rules_config_load('commerce_recurring_cron_generate_orders');
+  $rule->active = FALSE;
+  $rule->save();
 }

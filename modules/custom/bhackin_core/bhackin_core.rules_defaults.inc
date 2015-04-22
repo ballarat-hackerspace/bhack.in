@@ -9,6 +9,25 @@
  */
 function bhackin_core_default_rules_configuration() {
   $items = array();
+  $items['commerce_billy_invoice_order'] = entity_import('rules_config', '{ "commerce_billy_invoice_order" : {
+      "LABEL" : "Invoice order",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "rules", "commerce_order", "commerce_billy", "commerce_billy_mail" ],
+      "USES VARIABLES" : { "order" : { "label" : "Order", "type" : "commerce_order" } },
+      "IF" : [
+        { "entity_has_field" : { "entity" : [ "order" ], "field" : "field_commerce_billy_i_date" } },
+        { "data_is_empty" : { "data" : [ "order:field-commerce-billy-i-date" ] } }
+      ],
+      "DO" : [
+        { "commerce_order_update_state" : { "commerce_order" : [ "order" ], "order_state" : "invoiced" } },
+        { "commerce_billy_invoice_nr" : { "order" : [ "order" ] } },
+        { "data_set" : { "data" : [ "order:field-commerce-billy-i-date" ], "value" : "now" } },
+        { "commerce_billy_mail_action_send_invoice" : { "order" : [ "order" ] } }
+      ]
+    }
+  }');
   $items['commerce_payment_bhackin_bank_transfer'] = entity_import('rules_config', '{ "commerce_payment_bhackin_bank_transfer" : {
       "LABEL" : "Bank Transfer",
       "PLUGIN" : "reaction rule",
@@ -37,6 +56,85 @@ function bhackin_core_default_rules_configuration() {
                 }
               }
             }
+          }
+        }
+      ]
+    }
+  }');
+  $items['commerce_recurring_bhackin_generate_recurring_order'] = entity_import('rules_config', '{ "commerce_recurring_bhackin_generate_recurring_order" : {
+      "LABEL" : "Generate recurring orders on cron run",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "commerce_recurring", "rules" ],
+      "ON" : { "commerce_recurring_cron" : [] },
+      "DO" : [
+        { "commerce_recurring_get_due_items" : {
+            "USING" : { "number_items" : 5, "timestamp" : [ "site:current-date" ] },
+            "PROVIDE" : { "commerce_recurring_entities" : { "commerce_recurring_entities" : "Commerce recurring entities" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "commerce-recurring-entities" ] },
+            "ITEM" : { "current_recurring_entity" : "Current recurring entity" },
+            "DO" : [
+              { "commerce_recurring_provide_order_properties" : {
+                  "USING" : { "commerce_recurring" : [ "current-recurring-entity" ] },
+                  "PROVIDE" : {
+                    "commerce_order" : { "commerce_order" : "Commerce Order" },
+                    "commerce_customer_billing" : { "commerce_customer_billing" : "Billing information" }
+                  }
+                }
+              },
+              { "commerce_recurring_generate_order_from_recurring" : {
+                  "USING" : {
+                    "commerce_recurring" : [ "current-recurring-entity" ],
+                    "timestamp" : [ "site:current-date" ],
+                    "commerce_customer_billing" : [ "commerce-customer-billing" ]
+                  },
+                  "PROVIDE" : { "commerce_order" : { "recurring_order" : "Recurring Order" } }
+                }
+              },
+              { "component_rules_add_payment_entity" : { "order" : [ "recurring-order" ] } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_add_payment_entity'] = entity_import('rules_config', '{ "rules_add_payment_entity" : {
+      "LABEL" : "Add payment entity",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "rules", "tweaker" ],
+      "USES VARIABLES" : { "order" : { "label" : "Order", "type" : "commerce_order" } },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "commerce_payment_transaction",
+              "param_user" : [ "order:owner" ],
+              "param_order" : [ "order" ],
+              "param_payment_method" : "bank_transfer"
+            },
+            "PROVIDE" : { "entity_created" : { "transaction" : "Transaction" } }
+          }
+        },
+        { "data_set" : { "data" : [ "transaction:status" ], "value" : "pending" } },
+        { "data_set" : {
+            "data" : [ "transaction:amount" ],
+            "value" : [ "order:commerce-order-total:amount" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "transaction:currency-code" ],
+            "value" : [ "order:commerce-order-total:currency-code" ]
+          }
+        },
+        { "drupal_array_set_nested_value" : {
+            "data" : [ "order:data" ],
+            "parents" : "payment_method",
+            "value" : "bank_transfer|commerce_payment_bhackin_bank_transfer"
           }
         }
       ]
@@ -125,9 +223,7 @@ function bhackin_core_default_rules_configuration() {
         "commerce_billy",
         "rules_conditional",
         "commerce_cart",
-        "commerce_checkout",
-        "tweaker",
-        "commerce_billy_mail"
+        "commerce_checkout"
       ],
       "USES VARIABLES" : { "user" : { "label" : "User", "type" : "user" } },
       "IF" : [
@@ -196,7 +292,6 @@ function bhackin_core_default_rules_configuration() {
             "value" : [ "customer-profiles:0" ]
           }
         },
-        { "data_set" : { "data" : [ "order:field-commerce-billy-i-date" ], "value" : "now" } },
         { "entity_save" : { "data" : [ "order" ], "immediate" : 1 } },
         { "LOOP" : {
             "USING" : { "list" : [ "user:profile-membership:field-membership-type" ] },
@@ -216,34 +311,35 @@ function bhackin_core_default_rules_configuration() {
           }
         },
         { "commerce_checkout_complete" : { "commerce_order" : [ "order" ] } },
-        { "entity_create" : {
-            "USING" : {
-              "type" : "commerce_payment_transaction",
-              "param_user" : [ "user" ],
-              "param_order" : [ "order" ],
-              "param_payment_method" : "bank_transfer"
-            },
-            "PROVIDE" : { "entity_created" : { "transaction" : "Transaction" } }
+        { "component_rules_add_payment_entity" : { "order" : [ "order" ] } }
+      ]
+    }
+  }');
+  $items['rules_invoice_on_order'] = entity_import('rules_config', '{ "rules_invoice_on_order" : {
+      "LABEL" : "Invoice on order",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "bHack.in" ],
+      "REQUIRES" : [ "rules", "commerce_payment", "entity" ],
+      "ON" : { "commerce_order_update" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "commerce-order" ],
+            "type" : "commerce_order",
+            "bundle" : { "value" : { "commerce_order" : "commerce_order" } }
           }
         },
-        { "data_set" : { "data" : [ "transaction:status" ], "value" : "pending" } },
-        { "data_set" : {
-            "data" : [ "transaction:amount" ],
-            "value" : [ "order:commerce-order-total:amount" ]
+        { "data_is_empty" : { "data" : [ "commerce-order:field-commerce-billy-i-date" ] } },
+        { "list_count_is" : {
+            "list" : [ "commerce-order:commerce-line-items" ],
+            "op" : "\\u003E",
+            "value" : "0"
           }
         },
-        { "data_set" : {
-            "data" : [ "transaction:currency-code" ],
-            "value" : [ "order:commerce-order-total:currency-code" ]
-          }
-        },
-        { "drupal_array_set_nested_value" : {
-            "data" : [ "order:data" ],
-            "parents" : "payment_method",
-            "value" : "bank_transfer|commerce_payment_bhackin_bank_transfer"
-          }
-        },
-        { "commerce_billy_mail_action_send_invoice" : { "order" : [ "order" ] } }
+        { "commerce_payment_selected_payment_method" : { "commerce_order" : [ "commerce_order" ], "method_id" : "bank_transfer" } }
+      ],
+      "DO" : [
+        { "component_commerce_billy_invoice_order" : { "order" : [ "commerce-order" ] } }
       ]
     }
   }');
